@@ -1,0 +1,39 @@
+# ==========================================
+# Git Ignore for 500 Câu Đố Logic Project
+# ==========================================
+
+# File sách gốc PDF dung lượng lớn (>80MB/file)
+*.pdf
+
+# Toàn bộ ảnh scan thô trung gian trích xuất từ PDF
+sheets/
+
+# Thư mục kiểm tra / debug tạm thời
+test_inspect/
+
+# Python cache & Virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Hệ điều hành (Windows / macOS)
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

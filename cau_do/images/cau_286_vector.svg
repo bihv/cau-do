@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="100%" height="100%">
+  <defs>
+    <!-- Shadows and Glows -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+    <filter id="stick-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#0f172a" flood-opacity="0.22"/>
+    </filter>
+
+    <!-- Canvas Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Board Surface Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <!-- Matchstick Wood - Horizontal -->
+    <linearGradient id="wood-h" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Matchstick Wood - Vertical -->
+    <linearGradient id="wood-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Sulfur Red Tip -->
+    <radialGradient id="sulfur-red" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="40%" stop-color="#e11d48"/>
+      <stop offset="85%" stop-color="#9f1239"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Main Board Frame -->
+  <rect x="30" y="30" width="800" height="380" rx="24" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+
+  <!-- ==================== LEFT SIDE: 100 ==================== -->
+  <!-- Left Digit '1': (x=140, y from 182 to 258) -->
+  <g filter="url(#stick-shadow)">
+    <rect x="136.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="134.75" y="180" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="137.5" cy="186.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Left First '0': (x from 168 to 244, y from 182 to 258) -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top stick (head right) -->
+    <rect x="168" y="178.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="233" y="176.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="239.5" cy="179.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Right stick (head down) -->
+    <rect x="240.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="238.75" y="247" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="241.5" cy="253.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom stick (head left) -->
+    <rect x="168" y="254.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="166" y="252.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="172.5" cy="255.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Left stick (head up) -->
+    <rect x="164.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="162.75" y="180" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="165.5" cy="186.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Left Second '0': (x from 266 to 342, y from 182 to 258) -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top stick (head right) -->
+    <rect x="266" y="178.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="331" y="176.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="337.5" cy="179.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Right stick (head down) -->
+    <rect x="338.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="336.75" y="247" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="339.5" cy="253.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom stick (head left) -->
+    <rect x="266" y="254.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="264" y="252.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="270.5" cy="255.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Left stick (head up) -->
+    <rect x="262.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="260.75" y="180" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="263.5" cy="186.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== EQUALS SIGN: = ==================== -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top bar (y = 206) -->
+    <rect x="374" y="202.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="439" y="200.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="445.5" cy="203.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom bar (y = 234) -->
+    <rect x="374" y="230.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="439" y="228.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="445.5" cy="231.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== FRACTION BAR: 3 MATCHES ==================== -->
+  <g filter="url(#stick-shadow)">
+    <!-- Match 1 (x: 482 -> 558) -->
+    <rect x="482" y="216.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="547" y="214.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="553.5" cy="217.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Match 2 (x: 563 -> 639) -->
+    <rect x="563" y="216.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="628" y="214.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="634.5" cy="217.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Match 3 (x: 644 -> 720) -->
+    <rect x="644" y="216.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="709" y="214.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="715.5" cy="217.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== NUMERATOR: 100 ==================== -->
+  <!-- Numerator Digit '1': (x=500, y from 122 to 198) -->
+  <g filter="url(#stick-shadow)">
+    <rect x="496.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="494.75" y="120" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="497.5" cy="126.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Numerator First '0': (x from 528 to 604, y from 122 to 198) -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top stick -->
+    <rect x="528" y="118.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="593" y="116.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="599.5" cy="119.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Right stick -->
+    <rect x="600.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="598.75" y="187" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="601.5" cy="193.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom stick -->
+    <rect x="528" y="194.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="526" y="192.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="532.5" cy="195.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Left stick -->
+    <rect x="524.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="522.75" y="120" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="525.5" cy="126.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Numerator Second '0': (x from 626 to 702, y from 122 to 198) -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top stick -->
+    <rect x="626" y="118.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="691" y="116.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="697.5" cy="119.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Right stick -->
+    <rect x="698.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="696.75" y="187" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="699.5" cy="193.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom stick -->
+    <rect x="626" y="194.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="624" y="192.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="630.5" cy="195.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Left stick -->
+    <rect x="622.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="620.75" y="120" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="623.5" cy="126.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== DENOMINATOR: 100 ==================== -->
+  <!-- Denominator Digit '1': (x=500, y from 242 to 318) -->
+  <g filter="url(#stick-shadow)">
+    <rect x="496.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="494.75" y="240" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="497.5" cy="246.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Denominator First '0': (x from 528 to 604, y from 242 to 318) -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top stick -->
+    <rect x="528" y="238.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="593" y="236.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="599.5" cy="239.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Right stick -->
+    <rect x="600.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="598.75" y="307" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="601.5" cy="313.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom stick -->
+    <rect x="528" y="314.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="526" y="312.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="532.5" cy="315.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Left stick -->
+    <rect x="524.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="522.75" y="240" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="525.5" cy="246.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Denominator Second '0': (x from 626 to 702, y from 242 to 318) -->
+  <g filter="url(#stick-shadow)">
+    <!-- Top stick -->
+    <rect x="626" y="238.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="691" y="236.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="697.5" cy="239.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Right stick -->
+    <rect x="698.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="696.75" y="307" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="699.5" cy="313.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Bottom stick -->
+    <rect x="626" y="314.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="624" y="312.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="630.5" cy="315.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Left stick -->
+    <rect x="622.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="620.75" y="240" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="623.5" cy="246.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+</svg>

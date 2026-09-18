@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="100%" height="100%">
+  <defs>
+    <!-- Shadows and Glows -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+    <filter id="stick-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#0f172a" flood-opacity="0.22"/>
+    </filter>
+    <filter id="emerald-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#10b981" flood-opacity="0.75"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#047857" flood-opacity="0.4"/>
+    </filter>
+    <filter id="badge-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+
+    <!-- Canvas Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Board Surface Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <!-- Matchstick Wood - Horizontal -->
+    <linearGradient id="wood-h" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Matchstick Wood - Vertical -->
+    <linearGradient id="wood-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Sulfur Red Tip -->
+    <radialGradient id="sulfur-red" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="40%" stop-color="#e11d48"/>
+      <stop offset="85%" stop-color="#9f1239"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </radialGradient>
+
+    <!-- Added Matchstick Emerald - Horizontal -->
+    <linearGradient id="emerald-wood-h" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d1fae5"/>
+      <stop offset="30%" stop-color="#6ee7b7"/>
+      <stop offset="75%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Sulfur Emerald Tip -->
+    <radialGradient id="sulfur-emerald" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="40%" stop-color="#10b981"/>
+      <stop offset="85%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Main Board Frame -->
+  <rect x="30" y="30" width="800" height="380" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5" filter="url(#board-shadow)"/>
+
+  <!-- Header Banner -->
+  <g transform="translate(55, 48)">
+    <rect x="0" y="0" width="370" height="34" rx="17" fill="#f0fdf4" stroke="#10b981" stroke-width="1.2"/>
+    <circle cx="17" cy="17" r="10" fill="#10b981"/>
+    <path d="M12.5 17.5 L15.5 20.5 L21.5 13.5" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="36" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13.5" font-weight="800" fill="#065f46" letter-spacing="0.3">CÁCH 2: TẠO DẤU CHẤM THẬP PHÂN (1.00)</text>
+  </g>
+  <g transform="translate(595, 48)">
+    <rect x="0" y="0" width="210" height="34" rx="17" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+    <text x="105" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="14.5" font-weight="700" fill="#1e293b" text-anchor="middle">1.00 = 100 / 100 ✓</text>
+  </g>
+
+  <!-- ==================== LEFT SIDE: 1.00 ==================== -->
+  <!-- Left Digit '1': (x=105, y from 182 to 258) -->
+  <g filter="url(#stick-shadow)">
+    <rect x="101.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="99.75" y="180" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="102.5" cy="186.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- NEW ADDED MATCHSTICK: Horizontal Decimal Point at Baseline (x: 122 -> 198, y = 258) -->
+  <g filter="url(#emerald-glow)">
+    <rect x="122" y="254.25" width="76" height="7.5" rx="3.75" fill="url(#emerald-wood-h)" stroke="#047857" stroke-width="0.9"/>
+    <rect x="187" y="252.75" width="13" height="10.5" rx="5" fill="url(#sulfur-emerald)"/>
+    <ellipse cx="193.5" cy="255.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.75"/>
+  </g>
+
+  <!-- Action Callout Badge for Added Matchstick -->
+  <g transform="translate(100, 300)" filter="url(#badge-shadow)">
+    <polygon points="60,-5 54,0 66,0" fill="#10b981"/>
+    <rect x="0" y="0" width="120" height="26" rx="13" fill="#10b981"/>
+    <text x="60" y="17.5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#ffffff" text-anchor="middle">+1 QUE DIÊM (1.00)</text>
+  </g>
+
+  <!-- Left First '0': (x from 215 to 291, y from 182 to 258) -->
+  <g filter="url(#stick-shadow)">
+    <rect x="215" y="178.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="280" y="176.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="286.5" cy="179.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="287.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="285.75" y="247" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="288.5" cy="253.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="215" y="254.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="213" y="252.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="219.5" cy="255.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="211.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="209.75" y="180" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="212.5" cy="186.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Left Second '0': (x from 313 to 389, y from 182 to 258) -->
+  <g filter="url(#stick-shadow)">
+    <rect x="313" y="178.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="378" y="176.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="384.5" cy="179.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="385.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="383.75" y="247" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="386.5" cy="253.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="313" y="254.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="311" y="252.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="317.5" cy="255.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="309.25" y="182" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="307.75" y="180" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="310.5" cy="186.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== EQUALS SIGN: = ==================== -->
+  <g filter="url(#stick-shadow)">
+    <rect x="421" y="202.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="486" y="200.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="492.5" cy="203.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="421" y="230.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="486" y="228.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="492.5" cy="231.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== FRACTION BAR: 3 MATCHES ==================== -->
+  <g filter="url(#stick-shadow)">
+    <rect x="529" y="216.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="594" y="214.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="600.5" cy="217.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="610" y="216.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="675" y="214.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="681.5" cy="217.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="691" y="216.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="756" y="214.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="762.5" cy="217.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== NUMERATOR: 100 ==================== -->
+  <g filter="url(#stick-shadow)">
+    <!-- Digit 1 (x=547) -->
+    <rect x="543.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="541.75" y="120" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="544.5" cy="126.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- First 0 (x: 575 -> 651) -->
+    <rect x="575" y="118.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="640" y="116.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="646.5" cy="119.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="647.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="645.75" y="187" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="648.5" cy="193.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="575" y="194.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="573" y="192.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="579.5" cy="195.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="571.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="569.75" y="120" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="572.5" cy="126.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Second 0 (x: 673 -> 749) -->
+    <rect x="673" y="118.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="738" y="116.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="744.5" cy="119.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="745.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="743.75" y="187" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="746.5" cy="193.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="673" y="194.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="671" y="192.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="677.5" cy="195.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="669.25" y="122" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="667.75" y="120" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="670.5" cy="126.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== DENOMINATOR: 100 ==================== -->
+  <g filter="url(#stick-shadow)">
+    <!-- Digit 1 (x=547) -->
+    <rect x="543.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="541.75" y="240" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="544.5" cy="246.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- First 0 (x: 575 -> 651) -->
+    <rect x="575" y="238.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="640" y="236.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="646.5" cy="239.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="647.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="645.75" y="307" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="648.5" cy="313.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="575" y="314.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="573" y="312.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="579.5" cy="315.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="571.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="569.75" y="240" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="572.5" cy="246.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Second 0 (x: 673 -> 749) -->
+    <rect x="673" y="238.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="738" y="236.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="744.5" cy="239.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="745.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="743.75" y="307" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="746.5" cy="313.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="673" y="314.25" width="76" height="7.5" rx="3.75" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="671" y="312.75" width="13" height="10.5" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="677.5" cy="315.5" rx="3.5" ry="1.5" fill="#ffffff" opacity="0.6"/>
+
+    <rect x="669.25" y="242" width="7.5" height="76" rx="3.75" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.8"/>
+    <rect x="667.75" y="240" width="10.5" height="13" rx="5" fill="url(#sulfur-red)"/>
+    <ellipse cx="670.5" cy="246.5" rx="1.5" ry="3.5" fill="#ffffff" opacity="0.6"/>
+  </g>
+</svg>

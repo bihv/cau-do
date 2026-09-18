@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="100%" height="100%">
+  <defs>
+    <!-- Soft Shadows & Glows -->
+    <filter id="box-shadow" x="-10%" y="-10%" width="120%" height="124%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="target-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f59e0b" flood-opacity="0.5"/>
+    </filter>
+    <filter id="shape-depth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Premium Dark Fill (Deep Indigo Slate) -->
+    <linearGradient id="dark-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Target Cell Gradient -->
+    <linearGradient id="target-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- ==================================================== -->
+  <!-- TOP ROW: SEQUENCE OF 4 CARDS (THE PUZZLE)            -->
+  <!-- Box Centers: 184, 328, 472, 616 (y=110)              -->
+  <!-- Sequence: 1 Segment -> 2 Segments -> 3 Segments -> ? -->
+  <!-- ==================================================== -->
+  <g filter="url(#box-shadow)">
+    <!-- Card 1: 1 Line Segment (60px long, 7px thick, rounded caps) -->
+    <rect x="124" y="50" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="154" y="106.5" width="60" height="7" rx="3.5" fill="url(#dark-fill)" filter="url(#shape-depth)"/>
+
+    <!-- Card 2: 2 Line Segments (Angle <) -->
+    <rect x="268" y="50" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M 348 86 L 308 110 L 348 134" fill="none" stroke="url(#dark-fill)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#shape-depth)"/>
+
+    <!-- Card 3: 3 Line Segments (Triangle) -->
+    <rect x="412" y="50" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <polygon points="472,80 502,134 442,134" fill="#ffffff" stroke="url(#dark-fill)" stroke-width="6.5" stroke-linejoin="round" filter="url(#shape-depth)"/>
+
+    <!-- Card 4: Target Question Mark Cell -->
+    <rect x="556" y="50" width="120" height="120" rx="16" fill="url(#target-bg)" stroke="#f59e0b" stroke-width="2.6" stroke-dasharray="7,5" filter="url(#target-glow)"/>
+    <text x="616" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#d97706" text-anchor="middle" dominant-baseline="central">?</text>
+  </g>
+
+  <!-- ==================================================== -->
+  <!-- BOTTOM ROW: 4 MULTIPLE CHOICE OPTIONS A, B, C, D     -->
+  <!-- Box Centers: 184, 328, 472, 616 (y=270)              -->
+  <!-- ==================================================== -->
+  <g filter="url(#box-shadow)">
+    <!-- Option A: Cross X (y=210..330) -->
+    <g>
+      <rect x="124" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <g filter="url(#shape-depth)">
+        <line x1="162" y1="248" x2="206" y2="292" stroke="url(#dark-fill)" stroke-width="7" stroke-linecap="round"/>
+        <line x1="162" y1="292" x2="206" y2="248" stroke="url(#dark-fill)" stroke-width="7" stroke-linecap="round"/>
+      </g>
+      <!-- Letter 'A' Badge -->
+      <circle cx="184" cy="368" r="16" fill="#eff6ff" stroke="#dbeafe" stroke-width="1.5"/>
+      <text x="184" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">A</text>
+    </g>
+
+    <!-- Option B: Two Dots : (y=210..330) -->
+    <g>
+      <rect x="268" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <g filter="url(#shape-depth)">
+        <circle cx="328" cy="252" r="10" fill="url(#dark-fill)"/>
+        <circle cx="328" cy="288" r="10" fill="url(#dark-fill)"/>
+      </g>
+      <!-- Letter 'B' Badge -->
+      <circle cx="328" cy="368" r="16" fill="#eff6ff" stroke="#dbeafe" stroke-width="1.5"/>
+      <text x="328" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">B</text>
+    </g>
+
+    <!-- Option C: Square (y=210..330) -->
+    <g>
+      <rect x="412" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <rect x="446" y="244" width="52" height="52" rx="4" fill="#ffffff" stroke="url(#dark-fill)" stroke-width="6.5" filter="url(#shape-depth)"/>
+      <!-- Letter 'C' Badge -->
+      <circle cx="472" cy="368" r="16" fill="#eff6ff" stroke="#dbeafe" stroke-width="1.5"/>
+      <text x="472" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">C</text>
+    </g>
+
+    <!-- Option D: Circle (y=210..330) -->
+    <g>
+      <rect x="556" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <circle cx="616" cy="270" r="28" fill="#ffffff" stroke="url(#dark-fill)" stroke-width="6.5" filter="url(#shape-depth)"/>
+      <!-- Letter 'D' Badge -->
+      <circle cx="616" cy="368" r="16" fill="#eff6ff" stroke="#dbeafe" stroke-width="1.5"/>
+      <text x="616" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">D</text>
+    </g>
+  </g>
+</svg>

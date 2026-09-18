@@ -28,7 +28,8 @@ Toàn bộ 500 câu đố được phân loại theo các phương pháp tư duy
 - **Phần 10: Các trò chơi logic khác** (Câu 479 – Câu 500)
 
 ### 🖼️ Thư mục Hình Ảnh
-- `cau_do/images/`: Chứa toàn bộ 242 ảnh sơ đồ, lưới ô vuông, hình học minh họa cho đề bài và đáp án.
+- `cau_do/images/`: Chứa 58 ảnh sơ đồ, lưới ô vuông, hình học minh họa cho đề bài và đáp án.
+- 🎨 **Bộ Prompt Tạo Lại Ảnh AI:** Xem chi tiết prompt cho toàn bộ 58 ảnh tại [PROMPTS_RECREATE_IMAGES.md](PROMPTS_RECREATE_IMAGES.md).
 
 ---
 

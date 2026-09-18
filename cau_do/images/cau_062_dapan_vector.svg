@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="100%" height="100%">
+  <defs>
+    <!-- Soft Shadows & Glows -->
+    <filter id="box-shadow" x="-10%" y="-10%" width="120%" height="124%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="success-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#10b981" flood-opacity="0.5"/>
+    </filter>
+    <filter id="shape-depth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Premium Dark Fill (Deep Indigo Slate) -->
+    <linearGradient id="dark-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Success Cell Gradient -->
+    <linearGradient id="success-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- ==================================================== -->
+  <!-- TOP ROW: SEQUENCE OF 4 CARDS (WITH SOLVED CARD 4)    -->
+  <!-- Box Centers: 184, 328, 472, 616 (y=110)              -->
+  <!-- Sequence: 1 Segment -> 2 Segments -> 3 Segments -> 4  -->
+  <!-- ==================================================== -->
+  <g filter="url(#box-shadow)">
+    <!-- Card 1: 1 Line Segment (width=60, height=7, rx=3.5) -->
+    <rect x="124" y="50" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="154" y="106.5" width="60" height="7" rx="3.5" fill="url(#dark-fill)" filter="url(#shape-depth)"/>
+
+    <!-- Card 2: 2 Line Segments (Angle <) -->
+    <rect x="268" y="50" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M 348 86 L 308 110 L 348 134" fill="none" stroke="url(#dark-fill)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#shape-depth)"/>
+
+    <!-- Card 3: 3 Line Segments (Triangle) -->
+    <rect x="412" y="50" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <polygon points="472,80 502,134 442,134" fill="#ffffff" stroke="url(#dark-fill)" stroke-width="6.5" stroke-linejoin="round" filter="url(#shape-depth)"/>
+
+    <!-- Card 4: SOLVED TARGET CELL (Square with 4 segments - Emerald) -->
+    <g filter="url(#success-glow)">
+      <rect x="556" y="50" width="120" height="120" rx="16" fill="url(#success-bg)" stroke="#10b981" stroke-width="2.8"/>
+      <rect x="590" y="84" width="52" height="52" rx="4" fill="#ffffff" stroke="#047857" stroke-width="6.5"/>
+      <!-- Small Victory Badge at top-right of Card 4 -->
+      <circle cx="662" cy="64" r="10" fill="#10b981"/>
+      <path d="M 658 64 L 661 67 L 666 61" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- ==================================================== -->
+  <!-- BOTTOM ROW: 4 MULTIPLE CHOICE OPTIONS WITH C WON     -->
+  <!-- Box Centers: 184, 328, 472, 616 (y=270)              -->
+  <!-- ==================================================== -->
+  <g filter="url(#box-shadow)">
+    <!-- Option A (Inactive) -->
+    <g opacity="0.38">
+      <rect x="124" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <line x1="162" y1="248" x2="206" y2="292" stroke="#64748b" stroke-width="7" stroke-linecap="round"/>
+      <line x1="162" y1="292" x2="206" y2="248" stroke="#64748b" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="184" cy="368" r="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+      <text x="184" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#64748b" text-anchor="middle" dominant-baseline="central">A</text>
+    </g>
+
+    <!-- Option B (Inactive) -->
+    <g opacity="0.38">
+      <rect x="268" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <circle cx="328" cy="252" r="10" fill="#64748b"/>
+      <circle cx="328" cy="288" r="10" fill="#64748b"/>
+      <circle cx="328" cy="368" r="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+      <text x="328" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#64748b" text-anchor="middle" dominant-baseline="central">B</text>
+    </g>
+
+    <!-- Option C (WINNER HIGHLIGHTED - MINT GREEN) -->
+    <g filter="url(#success-glow)">
+      <!-- Winner Card Backing -->
+      <rect x="412" y="210" width="120" height="120" rx="16" fill="url(#success-bg)" stroke="#10b981" stroke-width="2.8"/>
+      <!-- Square with Emerald Border -->
+      <rect x="446" y="244" width="52" height="52" rx="4" fill="#ffffff" stroke="#047857" stroke-width="6.5"/>
+      <!-- Letter 'C' Badge in Emerald -->
+      <circle cx="472" cy="368" r="16" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+      <text x="472" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">C</text>
+      <!-- Checkmark Badge on Winner Card -->
+      <circle cx="518" cy="224" r="11" fill="#10b981"/>
+      <path d="M 514 224 L 516.5 226.5 L 522 221" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Option D (Inactive) -->
+    <g opacity="0.38">
+      <rect x="556" y="210" width="120" height="120" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <circle cx="616" cy="270" r="28" fill="#ffffff" stroke="#64748b" stroke-width="6.5"/>
+      <circle cx="616" cy="368" r="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+      <text x="616" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#64748b" text-anchor="middle" dominant-baseline="central">D</text>
+    </g>
+  </g>
+</svg>

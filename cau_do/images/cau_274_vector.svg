@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" width="100%" height="100%">
+  <defs>
+    <!-- Shadows & Glows -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+    <filter id="node-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="target-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f59e0b" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#b45309" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Canvas Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Board Surface Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <!-- Outer Node Gradient -->
+    <linearGradient id="outer-node-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Center Target Node Gradient -->
+    <linearGradient id="center-target-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffdf5"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Main Puzzle Board -->
+  <rect x="30" y="30" width="700" height="700" rx="28" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+
+  <!-- Decorative Orbit Guide Circle (Dashed) -->
+  <circle cx="380" cy="380" r="260" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6,6"/>
+
+  <!-- 9 Connecting Lines Passing Through Center (No filters to avoid zero-dimension rendering bug) -->
+  <g stroke="#94a3b8" stroke-width="2.6" stroke-linecap="round">
+    <!-- Pair 0 - 9: Vertical line -->
+    <line x1="380" y1="120" x2="380" y2="640"/>
+    <!-- Pair 1 - 10 -->
+    <line x1="468.93" y1="135.68" x2="291.07" y2="624.32"/>
+    <!-- Pair 2 - 11 -->
+    <line x1="547.12" y1="180.83" x2="212.88" y2="579.17"/>
+    <!-- Pair 3 - 12 -->
+    <line x1="605.17" y1="250.00" x2="154.83" y2="510.00"/>
+    <!-- Pair 4 - 13 -->
+    <line x1="636.05" y1="334.85" x2="123.95" y2="425.15"/>
+    <!-- Pair 5 - 14 -->
+    <line x1="636.05" y1="425.15" x2="123.95" y2="334.85"/>
+    <!-- Pair 6 - 15 -->
+    <line x1="605.17" y1="510.00" x2="154.83" y2="250.00"/>
+    <!-- Pair 7 - 16 -->
+    <line x1="547.12" y1="579.17" x2="212.88" y2="180.83"/>
+    <!-- Pair 8 - 17 -->
+    <line x1="468.93" y1="624.32" x2="291.07" y2="135.68"/>
+  </g>
+
+  <!-- 18 Outer Circular Nodes -->
+  <g filter="url(#node-shadow)">
+    <!-- k = 0 (12 o'clock) -->
+    <circle cx="380.00" cy="120.00" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 1 -->
+    <circle cx="468.93" cy="135.68" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 2 -->
+    <circle cx="547.12" cy="180.83" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 3 -->
+    <circle cx="605.17" cy="250.00" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 4 -->
+    <circle cx="636.05" cy="334.85" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 5 -->
+    <circle cx="636.05" cy="425.15" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 6 -->
+    <circle cx="605.17" cy="510.00" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 7 -->
+    <circle cx="547.12" cy="579.17" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 8 -->
+    <circle cx="468.93" cy="624.32" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 9 (6 o'clock) -->
+    <circle cx="380.00" cy="640.00" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 10 -->
+    <circle cx="291.07" cy="624.32" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 11 -->
+    <circle cx="212.88" cy="579.17" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 12 -->
+    <circle cx="154.83" cy="510.00" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 13 -->
+    <circle cx="123.95" cy="425.15" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 14 -->
+    <circle cx="123.95" cy="334.85" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 15 -->
+    <circle cx="154.83" cy="250.00" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 16 -->
+    <circle cx="212.88" cy="180.83" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+    <!-- k = 17 -->
+    <circle cx="291.07" cy="135.68" r="28" fill="url(#outer-node-grad)" stroke="#334155" stroke-width="2.5"/>
+  </g>
+
+  <!-- Center Target Node with Glow -->
+  <g filter="url(#target-glow)">
+    <circle cx="380" cy="380" r="38" fill="url(#center-target-grad)" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- Question Mark in Center Node -->
+  <text x="380" y="382" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="800" fill="#d97706" text-anchor="middle" dominant-baseline="central">?</text>
+</svg>

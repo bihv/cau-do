@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="100%" height="100%">
+  <defs>
+    <!-- Soft Shadows & Glows -->
+    <filter id="box-shadow" x="-8%" y="-8%" width="120%" height="124%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="success-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#10b981" flood-opacity="0.5"/>
+    </filter>
+    <filter id="shape-depth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Premium Dark Fill (Deep Indigo Slate) -->
+    <linearGradient id="dark-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Success Cell Gradient -->
+    <linearGradient id="success-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+
+    <!-- Shaded Cell Base Gradient -->
+    <linearGradient id="shaded-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <!-- Modern Diagonal Hatching Pattern -->
+    <pattern id="modern-hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#475569" stroke-width="2.2" stroke-linecap="square"/>
+    </pattern>
+
+    <!-- 5-Pointed Star Definition (Centered at 0,0, radius 8.5px) -->
+    <polygon id="star-icon" points="0,-8.5 2.23,-3.07 8.08,-2.63 3.61,1.17 5.00,6.88 0,3.8 -5.00,6.88 -3.61,1.17 -8.08,-2.63 -2.23,-3.07" fill="url(#dark-fill)"/>
+    <polygon id="star-inactive" points="0,-8.5 2.23,-3.07 8.08,-2.63 3.61,1.17 5.00,6.88 0,3.8 -5.00,6.88 -3.61,1.17 -8.08,-2.63 -2.23,-3.07" fill="#64748b"/>
+
+    <!-- Clip Path for Matrix Frame (Smooth Rounded Corners) -->
+    <clipPath id="matrix-clip">
+      <rect x="60" y="55" width="348" height="348" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- ==================================================== -->
+  <!-- LEFT SIDE: 3x3 IQ MATRIX CONTAINER                   -->
+  <!-- Box: x=60, y=55, w=348, h=348                        -->
+  <!-- Cell Size: 116x116 each                              -->
+  <!-- ==================================================== -->
+  <g filter="url(#box-shadow)">
+    <!-- Base Matrix Background Card -->
+    <rect x="60" y="55" width="348" height="348" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+
+    <!-- Clipped Area for Interior Patterns & Backgrounds -->
+    <g clip-path="url(#matrix-clip)">
+      <!-- Shaded Cell (2,3) Background & Hatching -->
+      <rect x="292" y="171" width="116" height="116" fill="url(#shaded-base)"/>
+      <rect x="292" y="171" width="116" height="116" fill="url(#modern-hatch)"/>
+
+      <!-- Shaded Cell (3,1) Background & Hatching -->
+      <rect x="60" y="287" width="116" height="116" fill="url(#shaded-base)"/>
+      <rect x="60" y="287" width="116" height="116" fill="url(#modern-hatch)"/>
+    </g>
+
+    <!-- Grid Divider Lines -->
+    <line x1="176" y1="55" x2="176" y2="403" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="292" y1="55" x2="292" y2="403" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="60" y1="171" x2="408" y2="171" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="60" y1="287" x2="408" y2="287" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- ================= ROW 1 (White Circles) ================= -->
+    <!-- Cell (1,1): Star (left) + White Circle -->
+    <g filter="url(#shape-depth)">
+      <use href="#star-icon" x="88" y="113"/>
+      <circle cx="124" cy="113" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
+    </g>
+
+    <!-- Cell (1,2): White Circle alone -->
+    <g filter="url(#shape-depth)">
+      <circle cx="234" cy="113" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
+    </g>
+
+    <!-- Cell (1,3): White Circle + Black Dot (top-right) -->
+    <g filter="url(#shape-depth)">
+      <circle cx="344" cy="115" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
+      <circle cx="366" cy="93" r="5.5" fill="url(#dark-fill)"/>
+    </g>
+
+    <!-- ================= ROW 2 (Black Squares) ================= -->
+    <!-- Cell (2,1): Star (left) + Black Square -->
+    <g filter="url(#shape-depth)">
+      <use href="#star-icon" x="88" y="229"/>
+      <rect x="104" y="209" width="40" height="40" rx="4" fill="url(#dark-fill)"/>
+    </g>
+
+    <!-- Cell (2,2): Black Square alone -->
+    <g filter="url(#shape-depth)">
+      <rect x="214" y="209" width="40" height="40" rx="4" fill="url(#dark-fill)"/>
+    </g>
+
+    <!-- Cell (2,3): Shaded cell (already rendered above) -->
+
+    <!-- ================= ROW 3 (White Triangles) ================= -->
+    <!-- Cell (3,1): Shaded cell (already rendered above) -->
+
+    <!-- Cell (3,2): White Triangle alone -->
+    <g filter="url(#shape-depth)">
+      <polygon points="234,323 257,363 211,363" fill="#ffffff" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Cell (3,3): SOLVED TARGET CELL (Điền phương án C - Emerald Glow) -->
+    <g filter="url(#success-glow)">
+      <rect x="296" y="291" width="108" height="108" rx="12" fill="url(#success-bg)" stroke="#10b981" stroke-width="2.8"/>
+      <!-- Triangle White with Emerald Stroke -->
+      <polygon points="346,323 369,363 323,363" fill="#ffffff" stroke="#047857" stroke-width="2.8" stroke-linejoin="round"/>
+      <!-- Emerald Dot top-right -->
+      <circle cx="370" cy="316" r="5.5" fill="#047857"/>
+      <!-- Victory Check Badge on solved cell -->
+      <circle cx="392" cy="303" r="9" fill="#10b981"/>
+      <path d="M 388 303 L 391 306 L 396 300" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- ==================================================== -->
+  <!-- RIGHT SIDE: 4 MULTIPLE CHOICE OPTIONS WITH C WON     -->
+  <!-- ==================================================== -->
+  <g filter="url(#box-shadow)">
+    <!-- OPTION A (Inactive) -->
+    <g opacity="0.38">
+      <rect x="460" y="65" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
+      <circle cx="492" cy="125" r="16" fill="#f1f5f9"/>
+      <text x="492" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#64748b" text-anchor="middle" dominant-baseline="central">A</text>
+      <polygon points="548,105 570,145 526,145" fill="#64748b" stroke="#64748b" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="572" cy="98" r="5.5" fill="#64748b"/>
+    </g>
+
+    <!-- OPTION B (Inactive) -->
+    <g opacity="0.38">
+      <rect x="630" y="65" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
+      <circle cx="676" cy="127" r="22" fill="#ffffff" stroke="#64748b" stroke-width="2.6"/>
+      <circle cx="698" cy="105" r="5.5" fill="#64748b"/>
+      <circle cx="738" cy="125" r="16" fill="#f1f5f9"/>
+      <text x="738" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#64748b" text-anchor="middle" dominant-baseline="central">B</text>
+    </g>
+
+    <!-- OPTION C (WINNER HIGHLIGHTED - MINT GREEN) -->
+    <g filter="url(#success-glow)">
+      <!-- Winner Card Backing with Mint Green Tint -->
+      <rect x="460" y="250" width="140" height="120" rx="14" fill="#f0fdf4" stroke="#10b981" stroke-width="2.5"/>
+      <!-- Letter 'C' Badge in Emerald -->
+      <circle cx="492" cy="310" r="16" fill="#dcfce7"/>
+      <text x="492" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">C</text>
+      <!-- Shapes for C: White Triangle with Emerald stroke + Emerald Dot top-right -->
+      <polygon points="548,290 570,330 526,330" fill="#ffffff" stroke="#047857" stroke-width="2.8" stroke-linejoin="round"/>
+      <circle cx="572" cy="283" r="5.5" fill="#047857"/>
+      <!-- Checkmark Badge on Winner Card -->
+      <circle cx="585" cy="262" r="11" fill="#10b981"/>
+      <path d="M 581 262 L 583.5 264.5 L 589 259" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- OPTION D (Inactive) -->
+    <g opacity="0.38">
+      <rect x="630" y="250" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
+      <polygon points="676,290 698,330 654,330" fill="#ffffff" stroke="#64748b" stroke-width="2.6" stroke-linejoin="round"/>
+      <use href="#star-inactive" x="696" y="281"/>
+      <circle cx="738" cy="310" r="16" fill="#f1f5f9"/>
+      <text x="738" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#64748b" text-anchor="middle" dominant-baseline="central">D</text>
+    </g>
+  </g>
+</svg>

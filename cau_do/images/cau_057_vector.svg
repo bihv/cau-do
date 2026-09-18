@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" width="100%" height="100%">
+  <defs>
+    <!-- Soft shadow for the entire gallery layout -->
+    <filter id="gallery-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+
+    <!-- Entrance Arrow Marker -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <!-- Clean Background -->
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+
+  <!-- Main Floor Plan Group -->
+  <g filter="url(#gallery-shadow)">
+    <!-- ========================================== -->
+    <!-- ROOM FLOORS (Distinct aesthetic pastel fills)-->
+    <!-- ========================================== -->
+    <!-- Room S (tall rectangular gallery, width 100, height 200) -->
+    <rect x="50" y="50" width="100" height="200" fill="#f0fdf4" stroke="none"/>
+
+    <!-- Room T (square gallery 100x100) -->
+    <rect x="150" y="50" width="100" height="100" fill="#eff6ff" stroke="none"/>
+
+    <!-- Room R (central entrance gallery 100x100) -->
+    <rect x="150" y="150" width="100" height="100" fill="#fefce8" stroke="none"/>
+
+    <!-- Room X (crossroad gallery 100x100) -->
+    <rect x="250" y="150" width="100" height="100" fill="#fff7ed" stroke="none"/>
+
+    <!-- Room U (lower branch gallery 100x100) -->
+    <rect x="250" y="250" width="100" height="100" fill="#faf5ff" stroke="none"/>
+
+    <!-- Room Y (corridor gallery 100x100) -->
+    <rect x="350" y="150" width="100" height="100" fill="#f0fdfa" stroke="none"/>
+
+    <!-- Room Z (terminal end gallery 100x100) -->
+    <rect x="450" y="150" width="100" height="100" fill="#fff1f2" stroke="none"/>
+
+    <!-- ========================================== -->
+    <!-- WALLS WITH PRECISE DOORWAY OPENINGS        -->
+    <!-- Wall thickness: 6px, stroke: #1e293b       -->
+    <!-- ========================================== -->
+    <!-- OUTER PERIMETER WALLS -->
+    <!-- Room S: Left wall (continuous) -->
+    <line x1="50" y1="50" x2="50" y2="250" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <!-- Room S: Top wall -->
+    <line x1="50" y1="50" x2="150" y2="50" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <!-- Room T: Top wall -->
+    <line x1="150" y1="50" x2="250" y2="50" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <!-- Room T: Right wall (upper part) -->
+    <line x1="250" y1="50" x2="250" y2="150" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Room X, Y, Z: Top long wall -->
+    <line x1="250" y1="150" x2="550" y2="150" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Room Z: Far right wall -->
+    <line x1="550" y1="150" x2="550" y2="250" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Room Z, Y: Bottom wall -->
+    <line x1="350" y1="250" x2="550" y2="250" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Room U: Right wall -->
+    <line x1="350" y1="250" x2="350" y2="350" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <!-- Room U: Bottom wall -->
+    <line x1="250" y1="350" x2="350" y2="350" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <!-- Room U: Left wall -->
+    <line x1="250" y1="250" x2="250" y2="350" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Room S: Bottom wall -->
+    <line x1="50" y1="250" x2="150" y2="250" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Room R: Bottom wall WITH ENTRANCE DOORWAY (gap from x=180 to 220) -->
+    <line x1="150" y1="250" x2="180" y2="250" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <line x1="220" y1="250" x2="250" y2="250" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- ========================================== -->
+    <!-- INTERIOR PARTITION WALLS & 7 DOORS         -->
+    <!-- Doorway gap width = 36px                   -->
+    <!-- ========================================== -->
+
+    <!-- 1. DOOR S - T (Vertical wall at x=150, from y=50 to 150) -->
+    <!-- Gap from y=82 to y=118 -->
+    <line x1="150" y1="50" x2="150" y2="82" stroke="#1e293b" stroke-width="5"/>
+    <line x1="150" y1="118" x2="150" y2="150" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 150,82 A 36 36 0 0 1 186,118" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="150" y1="82" x2="175" y2="108" stroke="#ca8a04" stroke-width="2.5"/>
+
+    <!-- 2. DOOR S - R (Vertical wall at x=150, from y=150 to 250) -->
+    <!-- Gap from y=182 to y=218 -->
+    <line x1="150" y1="150" x2="150" y2="182" stroke="#1e293b" stroke-width="5"/>
+    <line x1="150" y1="218" x2="150" y2="250" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 150,182 A 36 36 0 0 1 186,218" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="150" y1="182" x2="175" y2="208" stroke="#ca8a04" stroke-width="2.5"/>
+
+    <!-- 3. DOOR R - T (Horizontal wall at y=150, from x=150 to 250) -->
+    <!-- Gap from x=182 to x=218 -->
+    <line x1="150" y1="150" x2="182" y2="150" stroke="#1e293b" stroke-width="5"/>
+    <line x1="218" y1="150" x2="250" y2="150" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 182,150 A 36 36 0 0 1 218,186" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="182" y1="150" x2="208" y2="175" stroke="#ca8a04" stroke-width="2.5"/>
+
+    <!-- 4. DOOR R - X (Vertical wall at x=250, from y=150 to 250) -->
+    <!-- Gap from y=182 to y=218 -->
+    <line x1="250" y1="150" x2="250" y2="182" stroke="#1e293b" stroke-width="5"/>
+    <line x1="250" y1="218" x2="250" y2="250" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 250,182 A 36 36 0 0 1 286,218" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="250" y1="182" x2="275" y2="208" stroke="#ca8a04" stroke-width="2.5"/>
+
+    <!-- 5. DOOR X - U (Horizontal wall at y=250, from x=250 to 350) -->
+    <!-- Gap from x=282 to x=318 -->
+    <line x1="250" y1="250" x2="282" y2="250" stroke="#1e293b" stroke-width="5"/>
+    <line x1="318" y1="250" x2="350" y2="250" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 282,250 A 36 36 0 0 1 318,286" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="282" y1="250" x2="308" y2="275" stroke="#ca8a04" stroke-width="2.5"/>
+
+    <!-- 6. DOOR X - Y (Vertical wall at x=350, from y=150 to 250) -->
+    <!-- Gap from y=182 to y=218 -->
+    <line x1="350" y1="150" x2="350" y2="182" stroke="#1e293b" stroke-width="5"/>
+    <line x1="350" y1="218" x2="350" y2="250" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 350,182 A 36 36 0 0 1 386,218" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="350" y1="182" x2="375" y2="208" stroke="#ca8a04" stroke-width="2.5"/>
+
+    <!-- 7. DOOR Y - Z (Vertical wall at x=450, from y=150 to 250) -->
+    <!-- Gap from y=182 to y=218 -->
+    <line x1="450" y1="150" x2="450" y2="182" stroke="#1e293b" stroke-width="5"/>
+    <line x1="450" y1="218" x2="450" y2="250" stroke="#1e293b" stroke-width="5"/>
+    <!-- Door leaf and swing arc -->
+    <path d="M 450,182 A 36 36 0 0 1 486,218" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="450" y1="182" x2="475" y2="208" stroke="#ca8a04" stroke-width="2.5"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- ROOM LABELS (Clean, Bold, Elegant Sans)   -->
+  <!-- ========================================== -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <text x="100" y="150" fill="#166534">S</text>
+    <text x="200" y="100" fill="#1e40af">T</text>
+    <text x="200" y="200" fill="#854d0e">R</text>
+    <text x="300" y="200" fill="#9a3412">X</text>
+    <text x="300" y="300" fill="#6b21a8">U</text>
+    <text x="400" y="200" fill="#115e59">Y</text>
+    <text x="500" y="200" fill="#9f1239">Z</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- ENTRANCE INDICATOR TO ROOM R               -->
+  <!-- ========================================== -->
+  <g>
+    <!-- Entry arrow line -->
+    <line x1="200" y1="315" x2="200" y2="260" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowhead)"/>
+    <!-- Stylish Entrance Tag -->
+    <rect x="130" y="325" width="140" height="34" rx="17" fill="#16a34a" filter="url(#gallery-shadow)"/>
+    <text x="200" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">
+      LỐI VÀO
+    </text>
+  </g>
+</svg>

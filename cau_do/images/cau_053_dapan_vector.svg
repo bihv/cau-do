@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Shadow filter for board and tokens -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+    <filter id="token-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.32"/>
+    </filter>
+
+    <!-- Wood / Board Gradients -->
+    <linearGradient id="board-frame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Initial Game Token (Ruby Red) -->
+    <radialGradient id="token-initial" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="30%" stop-color="#ef4444"/>
+      <stop offset="70%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#450a0a"/>
+    </radialGradient>
+
+    <!-- Added Solution Token (Sapphire Blue) -->
+    <radialGradient id="token-added" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="30%" stop-color="#0284c7"/>
+      <stop offset="70%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </radialGradient>
+
+    <linearGradient id="token-highlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Component: Initial 2 Tokens (With Gold Border Ring) -->
+    <g id="initial-token">
+      <circle cx="0" cy="0" r="27" fill="none" stroke="#eab308" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="25" fill="#7f1d1d" filter="url(#token-shadow)"/>
+      <circle cx="0" cy="0" r="23" fill="url(#token-initial)"/>
+      <circle cx="0" cy="0" r="17" fill="none" stroke="#fca5a5" stroke-width="1.5" opacity="0.6"/>
+      <ellipse cx="-7" cy="-8" rx="8" ry="4.5" transform="rotate(-30 -7 -8)" fill="url(#token-highlight)"/>
+      <circle cx="7" cy="8" r="2" fill="#ffffff" opacity="0.4"/>
+    </g>
+
+    <!-- Component: 10 Newly Added Solution Tokens -->
+    <g id="added-token">
+      <circle cx="0" cy="0" r="25" fill="#0c4a6e" filter="url(#token-shadow)"/>
+      <circle cx="0" cy="0" r="23" fill="url(#token-added)"/>
+      <circle cx="0" cy="0" r="17" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.6"/>
+      <ellipse cx="-7" cy="-8" rx="8" ry="4.5" transform="rotate(-30 -7 -8)" fill="url(#token-highlight)"/>
+      <circle cx="7" cy="8" r="2" fill="#ffffff" opacity="0.4"/>
+    </g>
+  </defs>
+
+  <!-- Clean Background -->
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+
+  <!-- Main Board Container -->
+  <g filter="url(#board-shadow)">
+    <!-- Outer Board Frame -->
+    <rect x="42" y="42" width="516" height="516" rx="16" fill="url(#board-frame)" stroke="#0f172a" stroke-width="3"/>
+    <!-- Board Inner Bevel -->
+    <rect x="50" y="50" width="500" height="500" rx="8" fill="#ffffff"/>
+
+    <!-- 6x6 Grid Cells (each cell 83.333 x 83.333) -->
+    <!-- Row 1 -->
+    <rect x="50" y="50" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="133.333" y="50" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="216.667" y="50" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="300" y="50" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="383.333" y="50" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="466.667" y="50" width="83.333" height="83.333" fill="#f1f5f9"/>
+
+    <!-- Row 2 -->
+    <rect x="50" y="133.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="133.333" y="133.333" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="216.667" y="133.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="300" y="133.333" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="383.333" y="133.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="466.667" y="133.333" width="83.333" height="83.333" fill="#f8fafc"/>
+
+    <!-- Row 3 -->
+    <rect x="50" y="216.667" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="133.333" y="216.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="216.667" y="216.667" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="300" y="216.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="383.333" y="216.667" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="466.667" y="216.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+
+    <!-- Row 4 -->
+    <rect x="50" y="300" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="133.333" y="300" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="216.667" y="300" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="300" y="300" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="383.333" y="300" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="466.667" y="300" width="83.333" height="83.333" fill="#f8fafc"/>
+
+    <!-- Row 5 -->
+    <rect x="50" y="383.333" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="133.333" y="383.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="216.667" y="383.333" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="300" y="383.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="383.333" y="383.333" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="466.667" y="383.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+
+    <!-- Row 6 -->
+    <rect x="50" y="466.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="133.333" y="466.667" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="216.667" y="466.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="300" y="466.667" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="383.333" y="466.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="466.667" y="466.667" width="83.333" height="83.333" fill="#f8fafc"/>
+
+    <!-- Grid Lines -->
+    <line x1="133.333" y1="50" x2="133.333" y2="550" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="216.667" y1="50" x2="216.667" y2="550" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="300" y1="50" x2="300" y2="550" stroke="#94a3b8" stroke-width="2.5"/>
+    <line x1="383.333" y1="50" x2="383.333" y2="550" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="466.667" y1="50" x2="466.667" y2="550" stroke="#cbd5e1" stroke-width="2"/>
+
+    <line x1="50" y1="133.333" x2="550" y2="133.333" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="216.667" x2="550" y2="216.667" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="300" x2="550" y2="300" stroke="#94a3b8" stroke-width="2.5"/>
+    <line x1="50" y1="383.333" x2="550" y2="383.333" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="466.667" x2="550" y2="466.667" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Board Perimeter Border -->
+    <rect x="50" y="50" width="500" height="500" fill="none" stroke="#334155" stroke-width="3"/>
+  </g>
+
+  <!-- ====================================================================== -->
+  <!-- 12 TOKENS EXACT SOLUTION MATCHING BOOK SCAN cau_053_dapan.png          -->
+  <!-- Row 1: (1,1)[Initial], (1,3)                                           -->
+  <!-- Row 2: (2,3), (2,5)                                                    -->
+  <!-- Row 3: (3,1), (3,2)                                                    -->
+  <!-- Row 4: (4,5), (4,6)                                                    -->
+  <!-- Row 5: (5,2), (5,4)                                                    -->
+  <!-- Row 6: (6,4), (6,6)[Initial]                                           -->
+  <!-- ====================================================================== -->
+  <g id="board-tokens-solution">
+    <!-- ROW 1 -->
+    <use href="#initial-token" x="91.667" y="91.667"/>   <!-- (1,1) Initial -->
+    <use href="#added-token" x="258.333" y="91.667"/>     <!-- (1,3) -->
+
+    <!-- ROW 2 -->
+    <use href="#added-token" x="258.333" y="175.000"/>    <!-- (2,3) -->
+    <use href="#added-token" x="425.000" y="175.000"/>    <!-- (2,5) -->
+
+    <!-- ROW 3 -->
+    <use href="#added-token" x="91.667" y="258.333"/>     <!-- (3,1) -->
+    <use href="#added-token" x="175.000" y="258.333"/>    <!-- (3,2) -->
+
+    <!-- ROW 4 -->
+    <use href="#added-token" x="425.000" y="341.667"/>    <!-- (4,5) -->
+    <use href="#added-token" x="508.333" y="341.667"/>    <!-- (4,6) -->
+
+    <!-- ROW 5 -->
+    <use href="#added-token" x="175.000" y="425.000"/>    <!-- (5,2) -->
+    <use href="#added-token" x="341.667" y="425.000"/>    <!-- (5,4) -->
+
+    <!-- ROW 6 -->
+    <use href="#added-token" x="341.667" y="508.333"/>    <!-- (6,4) -->
+    <use href="#initial-token" x="508.333" y="508.333"/>  <!-- (6,6) Initial -->
+  </g>
+</svg>

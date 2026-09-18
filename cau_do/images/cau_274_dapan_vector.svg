@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" width="100%" height="100%">
+  <defs>
+    <!-- Shadows & Glows -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+    <filter id="node-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="center-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f59e0b" flood-opacity="0.55"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#b45309" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- Canvas Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Board Surface Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <!-- Center Golden Medallion Gradient -->
+    <linearGradient id="gold-medallion" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="40%" stop-color="#fef3c7"/>
+      <stop offset="80%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fcd34d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- Main Puzzle Board -->
+  <rect x="30" y="30" width="700" height="700" rx="28" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+
+  <!-- Decorative Orbit Guide Circle (Dashed) -->
+  <circle cx="380" cy="380" r="260" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+
+  <!-- 9 Connecting Lines Passing Through Center (Harmonized with pair colors, no filter to prevent zero-dimension bugs) -->
+  <g stroke-width="2.6" stroke-linecap="round">
+    <!-- Pair 1: 1 & 19 (Rose) -->
+    <line x1="380.00" y1="120.00" x2="380.00" y2="640.00" stroke="#f43f5e" stroke-opacity="0.6"/>
+    <!-- Pair 2: 2 & 18 (Orange) -->
+    <line x1="468.93" y1="135.68" x2="291.07" y2="624.32" stroke="#f97316" stroke-opacity="0.6"/>
+    <!-- Pair 3: 3 & 17 (Amber) -->
+    <line x1="547.12" y1="180.83" x2="212.88" y2="579.17" stroke="#f59e0b" stroke-opacity="0.6"/>
+    <!-- Pair 4: 4 & 16 (Emerald) -->
+    <line x1="605.17" y1="250.00" x2="154.83" y2="510.00" stroke="#10b981" stroke-opacity="0.6"/>
+    <!-- Pair 5: 5 & 15 (Teal) -->
+    <line x1="636.05" y1="334.85" x2="123.95" y2="425.15" stroke="#14b8a6" stroke-opacity="0.6"/>
+    <!-- Pair 6: 6 & 14 (Cyan) -->
+    <line x1="636.05" y1="425.15" x2="123.95" y2="334.85" stroke="#06b6d4" stroke-opacity="0.6"/>
+    <!-- Pair 7: 7 & 13 (Blue) -->
+    <line x1="605.17" y1="510.00" x2="154.83" y2="250.00" stroke="#3b82f6" stroke-opacity="0.6"/>
+    <!-- Pair 8: 8 & 12 (Indigo) -->
+    <line x1="547.12" y1="579.17" x2="212.88" y2="180.83" stroke="#6366f1" stroke-opacity="0.6"/>
+    <!-- Pair 9: 9 & 11 (Purple) -->
+    <line x1="468.93" y1="624.32" x2="291.07" y2="135.68" stroke="#a855f7" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- 18 Outer Circular Nodes & Numbers -->
+  <g filter="url(#node-shadow)">
+    <!-- Pair 1: 1 (top) & 19 (bottom) - Rose Theme -->
+    <circle cx="380.00" cy="120.00" r="28" fill="#fff1f2" stroke="#f43f5e" stroke-width="2.6"/>
+    <text x="380.00" y="121.00" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#be123c" text-anchor="middle" dominant-baseline="central">1</text>
+
+    <circle cx="380.00" cy="640.00" r="28" fill="#fff1f2" stroke="#f43f5e" stroke-width="2.6"/>
+    <text x="380.00" y="641.00" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#be123c" text-anchor="middle" dominant-baseline="central">19</text>
+
+    <!-- Pair 2: 2 & 18 - Orange Theme -->
+    <circle cx="468.93" cy="135.68" r="28" fill="#fff7ed" stroke="#f97316" stroke-width="2.6"/>
+    <text x="468.93" y="136.68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">2</text>
+
+    <circle cx="291.07" cy="624.32" r="28" fill="#fff7ed" stroke="#f97316" stroke-width="2.6"/>
+    <text x="291.07" y="625.32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">18</text>
+
+    <!-- Pair 3: 3 & 17 - Amber Theme -->
+    <circle cx="547.12" cy="180.83" r="28" fill="#fffbeb" stroke="#f59e0b" stroke-width="2.6"/>
+    <text x="547.12" y="181.83" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">3</text>
+
+    <circle cx="212.88" cy="579.17" r="28" fill="#fffbeb" stroke="#f59e0b" stroke-width="2.6"/>
+    <text x="212.88" y="580.17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">17</text>
+
+    <!-- Pair 4: 4 & 16 - Emerald Theme -->
+    <circle cx="605.17" cy="250.00" r="28" fill="#ecfdf5" stroke="#10b981" stroke-width="2.6"/>
+    <text x="605.17" y="251.00" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">4</text>
+
+    <circle cx="154.83" cy="510.00" r="28" fill="#ecfdf5" stroke="#10b981" stroke-width="2.6"/>
+    <text x="154.83" y="511.00" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">16</text>
+
+    <!-- Pair 5: 5 & 15 - Teal Theme -->
+    <circle cx="636.05" cy="334.85" r="28" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2.6"/>
+    <text x="636.05" y="335.85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f766e" text-anchor="middle" dominant-baseline="central">5</text>
+
+    <circle cx="123.95" cy="425.15" r="28" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2.6"/>
+    <text x="123.95" y="426.15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f766e" text-anchor="middle" dominant-baseline="central">15</text>
+
+    <!-- Pair 6: 6 & 14 - Cyan Theme -->
+    <circle cx="636.05" cy="425.15" r="28" fill="#ecfeff" stroke="#06b6d4" stroke-width="2.6"/>
+    <text x="636.05" y="426.15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0e7490" text-anchor="middle" dominant-baseline="central">6</text>
+
+    <circle cx="123.95" cy="334.85" r="28" fill="#ecfeff" stroke="#06b6d4" stroke-width="2.6"/>
+    <text x="123.95" y="335.85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0e7490" text-anchor="middle" dominant-baseline="central">14</text>
+
+    <!-- Pair 7: 7 & 13 - Blue Theme -->
+    <circle cx="605.17" cy="510.00" r="28" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.6"/>
+    <text x="605.17" y="511.00" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">7</text>
+
+    <circle cx="154.83" cy="250.00" r="28" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.6"/>
+    <text x="154.83" y="251.00" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">13</text>
+
+    <!-- Pair 8: 8 & 12 - Indigo Theme -->
+    <circle cx="547.12" cy="579.17" r="28" fill="#eef2ff" stroke="#6366f1" stroke-width="2.6"/>
+    <text x="547.12" y="580.17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#4338ca" text-anchor="middle" dominant-baseline="central">8</text>
+
+    <circle cx="212.88" cy="180.83" r="28" fill="#eef2ff" stroke="#6366f1" stroke-width="2.6"/>
+    <text x="212.88" y="181.83" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#4338ca" text-anchor="middle" dominant-baseline="central">12</text>
+
+    <!-- Pair 9: 9 & 11 - Purple Theme -->
+    <circle cx="468.93" cy="624.32" r="28" fill="#faf5ff" stroke="#a855f7" stroke-width="2.6"/>
+    <text x="468.93" y="625.32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#7e22ce" text-anchor="middle" dominant-baseline="central">9</text>
+
+    <circle cx="291.07" cy="135.68" r="28" fill="#faf5ff" stroke="#a855f7" stroke-width="2.6"/>
+    <text x="291.07" y="136.68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#7e22ce" text-anchor="middle" dominant-baseline="central">11</text>
+  </g>
+
+  <!-- Center Target Node (The Solved Center: 10) -->
+  <g filter="url(#center-glow)">
+    <!-- Outer Ring -->
+    <circle cx="380" cy="380" r="40" fill="url(#gold-medallion)" stroke="#f59e0b" stroke-width="3.5"/>
+    <!-- Inner Accent Ring -->
+    <circle cx="380" cy="380" r="33" fill="none" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4,3"/>
+  </g>
+
+  <!-- The Number 10 in Center -->
+  <text x="380" y="381.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="900" fill="#78350f" text-anchor="middle" dominant-baseline="central">10</text>
+</svg>

@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 620" width="100%" height="100%">
+  <defs>
+    <!-- Shadows & Glows -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+    <filter id="stick-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.22"/>
+    </filter>
+    <filter id="success-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10b981" flood-opacity="0.65"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#047857" flood-opacity="0.3"/>
+    </filter>
+    <filter id="badge-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- Canvas Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Board Surface Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fafafa"/>
+    </linearGradient>
+
+    <!-- Wood Horizontal -->
+    <linearGradient id="wood-h" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Wood Vertical -->
+    <linearGradient id="wood-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fef3c7"/>
+      <stop offset="70%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Sulfur Red Tip -->
+    <radialGradient id="sulfur-red" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="40%" stop-color="#e11d48"/>
+      <stop offset="85%" stop-color="#9f1239"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </radialGradient>
+
+    <!-- Emerald Matchstick Horizontal -->
+    <linearGradient id="emerald-h" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="40%" stop-color="#34d399"/>
+      <stop offset="80%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Emerald Matchstick Vertical -->
+    <linearGradient id="emerald-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="40%" stop-color="#34d399"/>
+      <stop offset="80%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Emerald Sulfur Head -->
+    <radialGradient id="sulfur-emerald" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="40%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </radialGradient>
+
+    <!-- Arrowhead Marker -->
+    <marker id="arrow-emerald" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+      <polygon points="0 1.5, 7 4.5, 0 7.5" fill="#10b981"/>
+    </marker>
+
+    <!-- Cell 1x1 Mint Gradient -->
+    <linearGradient id="cell-mint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="1" y="1" width="758" height="618" rx="19" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Inner Playing Mat -->
+  <g filter="url(#board-shadow)">
+    <rect x="80" y="35" width="600" height="550" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5"/>
+  </g>
+  <rect x="182.0" y="112.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
+  <rect x="454.0" y="112.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
+  <rect x="318.0" y="248.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
+  <rect x="182.0" y="384.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
+  <rect x="454.0" y="384.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
+  <g filter="url(#stick-shadow)">
+      <rect x="180.0" y="101.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="292.0" y="99.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="303.0" cy="103.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="307.0" y="110.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="305.0" y="222.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="309.0" cy="233.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="180.0" y="237.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="178.0" y="235.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="184.0" cy="239.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="171.0" y="110.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="169.0" y="108.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="173.0" cy="114.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="452.0" y="101.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="564.0" y="99.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="575.0" cy="103.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="579.0" y="110.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="577.0" y="222.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="581.0" cy="233.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="452.0" y="237.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="450.0" y="235.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="456.0" cy="239.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="443.0" y="110.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="441.0" y="108.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="445.0" cy="114.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="316.0" y="237.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="428.0" y="235.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="439.0" cy="239.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="443.0" y="246.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="441.0" y="358.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="445.0" cy="369.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="316.0" y="373.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="314.0" y="371.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="320.0" cy="375.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="307.0" y="246.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="305.0" y="244.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="309.0" cy="250.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="180.0" y="373.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="292.0" y="371.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="303.0" cy="375.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="307.0" y="382.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="305.0" y="494.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="309.0" cy="505.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="180.0" y="509.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="178.0" y="507.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="184.0" cy="511.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="171.0" y="382.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="169.0" y="380.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="173.0" cy="386.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="452.0" y="373.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="564.0" y="371.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="575.0" cy="375.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="579.0" y="382.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="577.0" y="494.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="581.0" cy="505.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="452.0" y="509.0" width="128.0" height="10" rx="4" fill="url(#wood-h)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="450.0" y="507.0" width="18" height="14" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="456.0" cy="511.0" rx="4" ry="2" fill="#ffffff" opacity="0.6"/>
+    </g>
+  <g filter="url(#stick-shadow)">
+      <rect x="443.0" y="382.0" width="10" height="128.0" rx="4" fill="url(#wood-v)" stroke="#b45309" stroke-width="0.9"/>
+      <rect x="441.0" y="380.0" width="14" height="18" rx="7" fill="url(#sulfur-red)"/>
+      <ellipse cx="445.0" cy="386.0" rx="2" ry="4" fill="#ffffff" opacity="0.6"/>
+    </g>
+</svg>

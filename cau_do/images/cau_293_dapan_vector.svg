@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 580" width="100%" height="100%">
+  <defs>
+    <!-- Shadows & Glows -->
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <filter id="success-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#10b981" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#047857" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <linearGradient id="emerald-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+
+    <linearGradient id="emerald-badge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+
+  <!-- ==================== LEFT MAIN CARD: 21 NUMBERED TRIANGLES ==================== -->
+  <rect x="30" y="30" width="520" height="520" rx="24" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+
+  <!-- Header Pill -->
+  <g transform="translate(50, 52)">
+    <rect x="0" y="0" width="235" height="32" rx="16" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <circle cx="16" cy="16" r="6" fill="#10b981"/>
+    <text x="32" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#065f46" letter-spacing="0.3">21 TAM GIÁC ĐƯỢC ĐÁNH SỐ</text>
+  </g>
+
+  <!-- Total Badge -->
+  <g transform="translate(420, 52)">
+    <rect x="0" y="0" width="110" height="32" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+    <text x="55" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#15803d" text-anchor="middle">21 ▲ = 7 LẦN</text>
+  </g>
+
+  <!-- Pyramid Background Base Shape -->
+  <polygon points="290,100 86,453.34 494,453.34" fill="#f8fafc"/>
+
+  <!-- ==================== 15 DOWNWARD TRIANGLES (Solid Soft Neutral, No Holes) ==================== -->
+  <g fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Tier 2 -->
+    <polygon points="290,217.78 256,158.89 324,158.89"/>
+    <!-- Tier 3 -->
+    <polygon points="256,276.67 222,217.78 290,217.78"/>
+    <polygon points="324,276.67 290,217.78 358,217.78"/>
+    <!-- Tier 4 -->
+    <polygon points="222,335.56 188,276.67 256,276.67"/>
+    <polygon points="290,335.56 256,276.67 324,276.67"/>
+    <polygon points="358,335.56 324,276.67 392,276.67"/>
+    <!-- Tier 5 -->
+    <polygon points="188,394.45 154,335.56 222,335.56"/>
+    <polygon points="256,394.45 222,335.56 290,335.56"/>
+    <polygon points="324,394.45 290,335.56 358,335.56"/>
+    <polygon points="392,394.45 358,335.56 426,335.56"/>
+    <!-- Tier 6 -->
+    <polygon points="154,453.34 120,394.45 188,394.45"/>
+    <polygon points="222,453.34 188,394.45 256,394.45"/>
+    <polygon points="290,453.34 256,394.45 324,394.45"/>
+    <polygon points="358,453.34 324,394.45 392,394.45"/>
+    <polygon points="426,453.34 392,394.45 460,394.45"/>
+  </g>
+
+  <!-- ==================== 21 UPWARD TRIANGLES GROUPED INTO 7 HUES ==================== -->
+
+  <!-- DIP 1 (Rose / Đỏ hồng): ▲ 1, 2, 3 -->
+  <g fill="#ffe4e6" stroke="#f43f5e" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="290,100 256,158.89 324,158.89"/>
+    <polygon points="256,158.89 222,217.78 290,217.78"/>
+    <polygon points="324,158.89 290,217.78 358,217.78"/>
+  </g>
+
+  <!-- DIP 2 (Orange / Cam): ▲ 4, 5, 6 -->
+  <g fill="#ffedd5" stroke="#f97316" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="222,217.78 188,276.67 256,276.67"/>
+    <polygon points="290,217.78 256,276.67 324,276.67"/>
+    <polygon points="358,217.78 324,276.67 392,276.67"/>
+  </g>
+
+  <!-- DIP 3 (Yellow / Vàng hổ phách): ▲ 7, 8, 9 -->
+  <g fill="#fef9c3" stroke="#eab308" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="188,276.67 154,335.56 222,335.56"/>
+    <polygon points="256,276.67 222,335.56 290,335.56"/>
+    <polygon points="324,276.67 290,335.56 358,335.56"/>
+  </g>
+
+  <!-- DIP 4 (Emerald / Xanh lục): ▲ 10, 11, 12 -->
+  <g fill="#d1fae5" stroke="#10b981" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="392,276.67 358,335.56 426,335.56"/>
+    <polygon points="154,335.56 120,394.45 188,394.45"/>
+    <polygon points="222,335.56 188,394.45 256,394.45"/>
+  </g>
+
+  <!-- DIP 5 (Cyan / Xanh ngọc): ▲ 13, 14, 15 -->
+  <g fill="#cffafe" stroke="#06b6d4" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="290,335.56 256,394.45 324,394.45"/>
+    <polygon points="358,335.56 324,394.45 392,394.45"/>
+    <polygon points="426,335.56 392,394.45 460,394.45"/>
+  </g>
+
+  <!-- DIP 6 (Blue / Xanh lam): ▲ 16, 17, 18 -->
+  <g fill="#dbeafe" stroke="#3b82f6" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="120,394.45 86,453.34 154,453.34"/>
+    <polygon points="188,394.45 154,453.34 222,453.34"/>
+    <polygon points="256,394.45 222,453.34 290,453.34"/>
+  </g>
+
+  <!-- DIP 7 (Purple / Tím): ▲ 19, 20, 21 -->
+  <g fill="#ede9fe" stroke="#8b5cf6" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="324,394.45 290,453.34 358,453.34"/>
+    <polygon points="392,394.45 358,453.34 426,453.34"/>
+    <polygon points="460,394.45 426,453.34 494,453.34"/>
+  </g>
+
+  <!-- Outer Perimeter Border -->
+  <polygon points="290,100 86,453.34 494,453.34" fill="none" stroke="#0f172a" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- ==================== CLEAR NUMBERS 1 TO 21 ==================== -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" text-anchor="middle" dominant-baseline="central">
+    <!-- DIP 1 (Rose) -->
+    <text x="290" y="139.3" fill="#be123c">1</text>
+    <text x="256" y="198.2" fill="#be123c">2</text>
+    <text x="324" y="198.2" fill="#be123c">3</text>
+
+    <!-- DIP 2 (Orange) -->
+    <text x="222" y="257.0" fill="#c2410c">4</text>
+    <text x="290" y="257.0" fill="#c2410c">5</text>
+    <text x="358" y="257.0" fill="#c2410c">6</text>
+
+    <!-- DIP 3 (Yellow) -->
+    <text x="188" y="315.9" fill="#a16207">7</text>
+    <text x="256" y="315.9" fill="#a16207">8</text>
+    <text x="324" y="315.9" fill="#a16207">9</text>
+
+    <!-- DIP 4 (Emerald) -->
+    <text x="392" y="315.9" fill="#047857">10</text>
+    <text x="154" y="374.8" fill="#047857">11</text>
+    <text x="222" y="374.8" fill="#047857">12</text>
+
+    <!-- DIP 5 (Cyan) -->
+    <text x="290" y="374.8" fill="#0e7490">13</text>
+    <text x="358" y="374.8" fill="#0e7490">14</text>
+    <text x="426" y="374.8" fill="#0e7490">15</text>
+
+    <!-- DIP 6 (Blue) -->
+    <text x="120" y="433.7" fill="#1d4ed8">16</text>
+    <text x="188" y="433.7" fill="#1d4ed8">17</text>
+    <text x="256" y="433.7" fill="#1d4ed8">18</text>
+
+    <!-- DIP 7 (Purple) -->
+    <text x="324" y="433.7" fill="#6d28d9">19</text>
+    <text x="392" y="433.7" fill="#6d28d9">20</text>
+    <text x="460" y="433.7" fill="#6d28d9">21</text>
+  </g>
+
+  <!-- Tier Labels on Left Side (T1 - T6) with counts -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#64748b" text-anchor="end">
+    <text x="246" y="139">T1 (1▲)</text>
+    <text x="212" y="198">T2 (2▲)</text>
+    <text x="178" y="257">T3 (3▲)</text>
+    <text x="144" y="316">T4 (4▲)</text>
+    <text x="110" y="375">T5 (5▲)</text>
+    <text x="76" y="434">T6 (6▲)</text>
+  </g>
+
+  <!-- Bottom Summary for Left Card -->
+  <g transform="translate(60, 485)">
+    <rect x="0" y="0" width="460" height="36" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="230" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">
+      Tổng tam giác hướng lên: <tspan font-weight="900" fill="#059669">1+2+3+4+5+6 = 21 ▲</tspan> (63 đoạn nét)
+    </text>
+  </g>
+
+
+  <!-- ==================== RIGHT TOP CARD: UNIT SAMPLE ==================== -->
+  <rect x="575" y="30" width="335" height="210" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)"/>
+
+  <!-- Unit Sample Header -->
+  <g transform="translate(595, 48)">
+    <rect x="0" y="0" width="180" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="90" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">CỤM MẪU 1 LẦN CHẤM MỰC</text>
+  </g>
+
+  <!-- Sample Triangle (Side 2) with numbered triangles 1, 2, 3 -->
+  <polygon points="742,80 692,166 792,166" fill="#f8fafc" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+  <!-- Middle Inverted Triangle -->
+  <polygon points="717,123 767,123 742,166" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <!-- 3 Upward Triangles with soft tint -->
+  <polygon points="742,80 717,123 767,123" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.8"/>
+  <polygon points="717,123 692,166 742,166" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.8"/>
+  <polygon points="767,123 742,166 792,166" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.8"/>
+
+  <!-- Numbers in sample -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#be123c" text-anchor="middle" dominant-baseline="central">
+    <text x="742" y="108">1</text>
+    <text x="717" y="152">2</text>
+    <text x="767" y="152">3</text>
+  </g>
+
+  <!-- Unit Sample Formula Pill -->
+  <g transform="translate(590, 175)">
+    <rect x="0" y="0" width="305" height="28" rx="14" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="152" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#166534" text-anchor="middle">
+      1 Lần chấm = <tspan font-weight="900" fill="#059669">3 tam giác ▲</tspan> (9 đoạn nét)
+    </text>
+  </g>
+
+
+  <!-- ==================== RIGHT BOTTOM CARD: 7 DIPS TABLE & SOLUTION ==================== -->
+  <rect x="575" y="255" width="335" height="295" rx="24" fill="url(#emerald-card-grad)" stroke="#86efac" stroke-width="2" filter="url(#card-shadow)"/>
+
+  <!-- Victory Checkmark Badge Header -->
+  <g transform="translate(595, 275)">
+    <rect x="0" y="0" width="295" height="46" rx="23" fill="url(#emerald-badge-grad)" filter="url(#success-glow)"/>
+    <circle cx="24" cy="23" r="14" fill="#ffffff"/>
+    <path d="M17 23 L22 28 L31 18" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="48" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#ffffff" letter-spacing="0.6">KẾT QUẢ CHÍNH XÁC</text>
+    <text x="48" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="900" fill="#ffffff">ÍT NHẤT 7 LẦN CHẤM</text>
+  </g>
+
+  <!-- 7 Dips Micro-Cards Grid (2 Columns, Crystal Clear) -->
+  <g transform="translate(590, 332)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700">
+    <!-- Col 1 -->
+    <!-- Dip 1 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="145" height="26" rx="8" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1"/>
+      <text x="10" y="17" fill="#be123c">Lần 1: <tspan font-weight="900">▲ 1, 2, 3</tspan></text>
+    </g>
+    <!-- Dip 2 -->
+    <g transform="translate(0, 32)">
+      <rect x="0" y="0" width="145" height="26" rx="8" fill="#ffedd5" stroke="#f97316" stroke-width="1"/>
+      <text x="10" y="17" fill="#c2410c">Lần 2: <tspan font-weight="900">▲ 4, 5, 6</tspan></text>
+    </g>
+    <!-- Dip 3 -->
+    <g transform="translate(0, 64)">
+      <rect x="0" y="0" width="145" height="26" rx="8" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+      <text x="10" y="17" fill="#a16207">Lần 3: <tspan font-weight="900">▲ 7, 8, 9</tspan></text>
+    </g>
+    <!-- Dip 4 -->
+    <g transform="translate(0, 96)">
+      <rect x="0" y="0" width="145" height="26" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="1"/>
+      <text x="10" y="17" fill="#047857">Lần 4: <tspan font-weight="900">▲ 10, 11, 12</tspan></text>
+    </g>
+
+    <!-- Col 2 -->
+    <!-- Dip 5 -->
+    <g transform="translate(155, 0)">
+      <rect x="0" y="0" width="150" height="26" rx="8" fill="#cffafe" stroke="#06b6d4" stroke-width="1"/>
+      <text x="10" y="17" fill="#0e7490">Lần 5: <tspan font-weight="900">▲ 13, 14, 15</tspan></text>
+    </g>
+    <!-- Dip 6 -->
+    <g transform="translate(155, 32)">
+      <rect x="0" y="0" width="150" height="26" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <text x="10" y="17" fill="#1d4ed8">Lần 6: <tspan font-weight="900">▲ 16, 17, 18</tspan></text>
+    </g>
+    <!-- Dip 7 -->
+    <g transform="translate(155, 64)">
+      <rect x="0" y="0" width="150" height="26" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="10" y="17" fill="#6d28d9">Lần 7: <tspan font-weight="900">▲ 19, 20, 21</tspan></text>
+    </g>
+    <!-- Total Indicator -->
+    <g transform="translate(155, 96)">
+      <rect x="0" y="0" width="150" height="26" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.2"/>
+      <text x="10" y="17" fill="#15803d">Tổng: <tspan font-weight="900">21 tam giác ▲</tspan></text>
+    </g>
+  </g>
+
+  <!-- Formula Summary Pill -->
+  <g transform="translate(590, 470)">
+    <rect x="0" y="0" width="305" height="60" rx="14" fill="#ffffff" stroke="#bbf7d0" stroke-width="1.5"/>
+    <text x="152" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" text-anchor="middle">
+      21 tam giác ▲ ÷ 3 ▲/lần = <tspan font-weight="900" fill="#059669">7 LẦN</tspan>
+    </text>
+    <text x="152" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">
+      (hoặc 63 đoạn nét ÷ 9 nét/lần = 7 lần)
+    </text>
+  </g>
+</svg>

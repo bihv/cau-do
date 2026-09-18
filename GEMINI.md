@@ -14,12 +14,17 @@ Dự án này trích xuất 500 câu đố logic từ 2 cuốn sách scan "Các 
    - Đáp án & Lời giải chi tiết được ẩn trong thẻ thu gọn `<details><summary>💡 Xem đáp án & Lời giải chi tiết</summary>...</details>`.
 
 ### Kích hoạt Skill:
-Mọi thông tin chi tiết về bảng ánh xạ trang sách, số tờ scan, cấu trúc 9 phần và mẫu định dạng markdown đã được ghi đầy đủ trong Skill:
-`[.agents/skills/extract-cau-do/SKILL.md](file:///E:/project/cau%20do/.agents/skills/extract-cau-do/SKILL.md)`
+1. **Skill Trích xuất câu đố:**
+   - Mọi thông tin về bảng ánh xạ trang sách, số tờ scan, cấu trúc 9 phần và mẫu định dạng markdown:
+   - [.agents/skills/extract-cau-do/SKILL.md](file:///home/bi/projects/cau-do/.agents/skills/extract-cau-do/SKILL.md)
+2. **Skill Vẽ lại ảnh Vector SVG:**
+   - Quy trình soi ảnh scan gốc, chuẩn hóa hình học, nguyên tắc sạch chữ và phong cách UI Premium cho ảnh câu đố:
+   - [.agents/skills/draw-puzzle-svg/SKILL.md](file:///home/bi/projects/cau-do/.agents/skills/draw-puzzle-svg/SKILL.md)
 
 ### Tiến độ hiện tại:
 - **ĐÃ HOÀN THÀNH 100% TOÀN BỘ DỰ ÁN (500/500 câu đố)** trên cả Tập 1 và Tập 2.
 - **Tập 1 (Câu 001 - 232):** 232 câu (Phần 1 - 4).
 - **Tập 2 (Câu 233 - 500):** 268 câu (Phần 5 - 10).
 - Tất cả các file Markdown đều chuẩn chỉnh metadata, tóm tắt đề, đề bài và lời giải chi tiết trong thẻ `<details>`.
+- Đang tiến hành vẽ lại các hình scan mờ/đen trắng thành Vector SVG chất lượng cao (Câu 015, 053, 057, 058, 059...).
 

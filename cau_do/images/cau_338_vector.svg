@@ -6,12 +6,6 @@
     </filter>
 
     <!-- Canvas Background Gradient -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="50%" stop-color="#f1f5f9"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
-    </linearGradient>
-
     <!-- Deep Indigo Slate Node Gradient -->
     <linearGradient id="dot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#334155"/>
@@ -19,9 +13,6 @@
       <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
   </defs>
-
-  <!-- Canvas Background -->
-  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
 
   <!-- ==================== 9 CIRCULAR DOTS (3x3 GRID - PERFECTLY CENTERED) ==================== -->
   <g id="nine-dots" filter="url(#node-shadow)">

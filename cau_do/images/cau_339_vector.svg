@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 70 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Dot Gradient -->
+    <radialGradient id="dotGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+
+    <!-- Dot Shadow -->
+    <filter id="dotShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- 16 Dots in 4x4 Grid -->
+  <g filter="url(#dotShadow)">
+    <!-- Row 1 (y = 150) -->
+    <circle cx="280" cy="150" r="13" fill="url(#dotGrad)"/>
+    <circle cx="360" cy="150" r="13" fill="url(#dotGrad)"/>
+    <circle cx="440" cy="150" r="13" fill="url(#dotGrad)"/>
+    <circle cx="520" cy="150" r="13" fill="url(#dotGrad)"/>
+
+    <!-- Row 2 (y = 230) -->
+    <circle cx="280" cy="230" r="13" fill="url(#dotGrad)"/>
+    <circle cx="360" cy="230" r="13" fill="url(#dotGrad)"/>
+    <circle cx="440" cy="230" r="13" fill="url(#dotGrad)"/>
+    <circle cx="520" cy="230" r="13" fill="url(#dotGrad)"/>
+
+    <!-- Row 3 (y = 310) -->
+    <circle cx="280" cy="310" r="13" fill="url(#dotGrad)"/>
+    <circle cx="360" cy="310" r="13" fill="url(#dotGrad)"/>
+    <circle cx="440" cy="310" r="13" fill="url(#dotGrad)"/>
+    <circle cx="520" cy="310" r="13" fill="url(#dotGrad)"/>
+
+    <!-- Row 4 (y = 390) -->
+    <circle cx="280" cy="390" r="13" fill="url(#dotGrad)"/>
+    <circle cx="360" cy="390" r="13" fill="url(#dotGrad)"/>
+    <circle cx="440" cy="390" r="13" fill="url(#dotGrad)"/>
+    <circle cx="520" cy="390" r="13" fill="url(#dotGrad)"/>
+  </g>
+
+  <!-- Highlights on Dots -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="276" cy="146" r="3.5"/>
+    <circle cx="356" cy="146" r="3.5"/>
+    <circle cx="436" cy="146" r="3.5"/>
+    <circle cx="516" cy="146" r="3.5"/>
+
+    <circle cx="276" cy="226" r="3.5"/>
+    <circle cx="356" cy="226" r="3.5"/>
+    <circle cx="436" cy="226" r="3.5"/>
+    <circle cx="516" cy="226" r="3.5"/>
+
+    <circle cx="276" cy="306" r="3.5"/>
+    <circle cx="356" cy="306" r="3.5"/>
+    <circle cx="436" cy="306" r="3.5"/>
+    <circle cx="516" cy="306" r="3.5"/>
+
+    <circle cx="276" cy="386" r="3.5"/>
+    <circle cx="356" cy="386" r="3.5"/>
+    <circle cx="436" cy="386" r="3.5"/>
+    <circle cx="516" cy="386" r="3.5"/>
+  </g>
+</svg>

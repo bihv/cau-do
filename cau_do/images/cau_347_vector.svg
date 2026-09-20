@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="190 60 340 280" width="100%" height="100%">
+  <defs>
+    <!-- Sphere Gradient (Deep Indigo / Slate 3D) -->
+    <radialGradient id="sphereGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#0284c7"/>
+      <stop offset="70%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+
+    <!-- Sphere Shadow -->
+    <filter id="sphereShadow" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- 10 Spheres (Radius = 18) -->
+  <g filter="url(#sphereShadow)">
+    <!-- Row 1 (1 sphere): y = 100 -->
+    <circle cx="360" cy="100" r="18" fill="url(#sphereGrad)"/>
+
+    <!-- Row 2 (2 spheres): y = 166 -->
+    <circle cx="320" cy="166" r="18" fill="url(#sphereGrad)"/>
+    <circle cx="400" cy="166" r="18" fill="url(#sphereGrad)"/>
+
+    <!-- Row 3 (3 spheres): y = 232 -->
+    <circle cx="280" cy="232" r="18" fill="url(#sphereGrad)"/>
+    <circle cx="360" cy="232" r="18" fill="url(#sphereGrad)"/>
+    <circle cx="440" cy="232" r="18" fill="url(#sphereGrad)"/>
+
+    <!-- Row 4 (4 spheres): y = 298 -->
+    <circle cx="240" cy="298" r="18" fill="url(#sphereGrad)"/>
+    <circle cx="320" cy="298" r="18" fill="url(#sphereGrad)"/>
+    <circle cx="400" cy="298" r="18" fill="url(#sphereGrad)"/>
+    <circle cx="480" cy="298" r="18" fill="url(#sphereGrad)"/>
+  </g>
+
+  <!-- Specular Highlights -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="354" cy="94" r="5"/>
+    <circle cx="314" cy="160" r="5"/>
+    <circle cx="394" cy="160" r="5"/>
+    <circle cx="274" cy="226" r="5"/>
+    <circle cx="354" cy="226" r="5"/>
+    <circle cx="434" cy="226" r="5"/>
+    <circle cx="234" cy="292" r="5"/>
+    <circle cx="314" cy="292" r="5"/>
+    <circle cx="394" cy="292" r="5"/>
+    <circle cx="474" cy="292" r="5"/>
+  </g>
+</svg>

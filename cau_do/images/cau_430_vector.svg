@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="100%" height="100%">
+  <defs>
+    <!-- Gradients for 4 pieces -->
+    <linearGradient id="gP1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="gP2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="gP3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="gP4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- ==================== LEFT: 8x8 GRID ==================== -->
+  <g id="grid_8x8" filter="url(#shadow)">
+    <!-- Background Card -->
+    <rect x="60.0" y="76.0" width="208.0" height="208.0" fill="#ffffff"/>
+
+    <!-- Pieces Fills -->
+    <!-- Piece 3 (Lower Triangle in top part): (0,0) - (8*cs1, 3*cs1) - (0, 3*cs1) -->
+    <polygon points="60.0,76.0 268.0,154.0 60.0,154.0" fill="url(#gP3)"/>
+    <!-- Piece 4 (Upper Triangle in top part): (0,0) - (8*cs1, 0) - (8*cs1, 3*cs1) -->
+    <polygon points="60.0,76.0 268.0,76.0 268.0,154.0" fill="url(#gP4)"/>
+    <!-- Piece 1 (Left Trapezoid): (0, 3*cs1) - (5*cs1, 3*cs1) - (3*cs1, 8*cs1) - (0, 8*cs1) -->
+    <polygon points="60.0,154.0 190.0,154.0 138.0,284.0 60.0,284.0" fill="url(#gP1)"/>
+    <!-- Piece 2 (Right Trapezoid): (5*cs1, 3*cs1) - (8*cs1, 3*cs1) - (8*cs1, 8*cs1) - (3*cs1, 8*cs1) -->
+    <polygon points="190.0,154.0 268.0,154.0 268.0,284.0 138.0,284.0" fill="url(#gP2)"/>
+
+    <!-- Grid lines -->
+    <g stroke="#cbd5e1" stroke-width="1">
+      <line x1="60.0" y1="76.0" x2="60.0" y2="284.0"/>
+      <line x1="86.0" y1="76.0" x2="86.0" y2="284.0"/>
+      <line x1="112.0" y1="76.0" x2="112.0" y2="284.0"/>
+      <line x1="138.0" y1="76.0" x2="138.0" y2="284.0"/>
+      <line x1="164.0" y1="76.0" x2="164.0" y2="284.0"/>
+      <line x1="190.0" y1="76.0" x2="190.0" y2="284.0"/>
+      <line x1="216.0" y1="76.0" x2="216.0" y2="284.0"/>
+      <line x1="242.0" y1="76.0" x2="242.0" y2="284.0"/>
+      <line x1="268.0" y1="76.0" x2="268.0" y2="284.0"/>
+      <line x1="60.0" y1="76.0" x2="268.0" y2="76.0"/>
+      <line x1="60.0" y1="102.0" x2="268.0" y2="102.0"/>
+      <line x1="60.0" y1="128.0" x2="268.0" y2="128.0"/>
+      <line x1="60.0" y1="154.0" x2="268.0" y2="154.0"/>
+      <line x1="60.0" y1="180.0" x2="268.0" y2="180.0"/>
+      <line x1="60.0" y1="206.0" x2="268.0" y2="206.0"/>
+      <line x1="60.0" y1="232.0" x2="268.0" y2="232.0"/>
+      <line x1="60.0" y1="258.0" x2="268.0" y2="258.0"/>
+      <line x1="60.0" y1="284.0" x2="268.0" y2="284.0"/>
+    </g>
+
+    <!-- Thick Cut Lines -->
+    <line x1="60.0" y1="154.0" x2="268.0" y2="154.0" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="60.0" y1="76.0" x2="268.0" y2="154.0" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="190.0" y1="154.0" x2="138.0" y2="284.0" stroke="#0f172a" stroke-width="2.5"/>
+
+    <!-- Outer border -->
+    <rect x="60.0" y="76.0" width="208.0" height="208.0" fill="none" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Badges (Centered in respective pieces) -->
+    <g transform="translate(129.4, 128.0)">
+      <circle r="12" fill="#059669"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+    </g>
+    <g transform="translate(198.6, 102.0)">
+      <circle r="12" fill="#7c3aed"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+    </g>
+    <g transform="translate(114.6, 219.0)">
+      <circle r="12" fill="#2563eb"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+    </g>
+    <g transform="translate(213.4, 219.0)">
+      <circle r="12" fill="#d97706"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT: 5x13 GRID ==================== -->
+  <g id="grid_5x13" filter="url(#shadow)">
+    <!-- Background Card -->
+    <rect x="380.0" y="120.0" width="312.0" height="120.0" fill="#ffffff"/>
+
+    <!-- Reassembled Pieces Fills -->
+    <!-- Piece 1 (Lower-Left Trapezoid): (0,0) - (5*cs2, 2*cs2) - (5*cs2, 5*cs2) - (0, 5*cs2) -->
+    <polygon points="380.0,120.0 500.0,168.0 500.0,240.0 380.0,240.0" fill="url(#gP1)"/>
+
+    <!-- Piece 4 (Lower-Right Triangle): (5*cs2, 2*cs2) - (13*cs2, 5*cs2) - (5*cs2, 5*cs2) -->
+    <polygon points="500.0,168.0 692.0,240.0 500.0,240.0" fill="url(#gP4)"/>
+
+    <!-- Piece 3 (Upper-Left Triangle): (0,0) - (8*cs2, 0) - (8*cs2, 3*cs2) -->
+    <polygon points="380.0,120.0 572.0,120.0 572.0,192.0" fill="url(#gP3)"/>
+
+    <!-- Piece 2 (Upper-Right Trapezoid): (8*cs2, 0) - (13*cs2, 0) - (13*cs2, 5*cs2) - (8*cs2, 3*cs2) -->
+    <polygon points="572.0,120.0 692.0,120.0 692.0,240.0 572.0,192.0" fill="url(#gP2)"/>
+
+    <!-- Grid lines -->
+    <g stroke="#cbd5e1" stroke-width="1">
+      <line x1="380.0" y1="120.0" x2="380.0" y2="240.0"/>
+      <line x1="404.0" y1="120.0" x2="404.0" y2="240.0"/>
+      <line x1="428.0" y1="120.0" x2="428.0" y2="240.0"/>
+      <line x1="452.0" y1="120.0" x2="452.0" y2="240.0"/>
+      <line x1="476.0" y1="120.0" x2="476.0" y2="240.0"/>
+      <line x1="500.0" y1="120.0" x2="500.0" y2="240.0"/>
+      <line x1="524.0" y1="120.0" x2="524.0" y2="240.0"/>
+      <line x1="548.0" y1="120.0" x2="548.0" y2="240.0"/>
+      <line x1="572.0" y1="120.0" x2="572.0" y2="240.0"/>
+      <line x1="596.0" y1="120.0" x2="596.0" y2="240.0"/>
+      <line x1="620.0" y1="120.0" x2="620.0" y2="240.0"/>
+      <line x1="644.0" y1="120.0" x2="644.0" y2="240.0"/>
+      <line x1="668.0" y1="120.0" x2="668.0" y2="240.0"/>
+      <line x1="692.0" y1="120.0" x2="692.0" y2="240.0"/>
+      <line x1="380.0" y1="120.0" x2="692.0" y2="120.0"/>
+      <line x1="380.0" y1="144.0" x2="692.0" y2="144.0"/>
+      <line x1="380.0" y1="168.0" x2="692.0" y2="168.0"/>
+      <line x1="380.0" y1="192.0" x2="692.0" y2="192.0"/>
+      <line x1="380.0" y1="216.0" x2="692.0" y2="216.0"/>
+      <line x1="380.0" y1="240.0" x2="692.0" y2="240.0"/>
+    </g>
+
+    <!-- Thick Cut Lines -->
+    <!-- 1. The continuous main diagonal cut from (0,0) to (13,5) -->
+    <line x1="380.0" y1="120.0" x2="692.0" y2="240.0" stroke="#0f172a" stroke-width="3"/>
+
+    <!-- 2. Vertical cut at col 5 from diagonal down to bottom edge -->
+    <line x1="500.0" y1="168.0" x2="500.0" y2="240.0" stroke="#0f172a" stroke-width="2.5"/>
+
+    <!-- 3. Vertical cut at col 8 from top edge down to diagonal -->
+    <line x1="572.0" y1="120.0" x2="572.0" y2="192.0" stroke="#0f172a" stroke-width="2.5"/>
+
+    <!-- Outer border -->
+    <rect x="380.0" y="120.0" width="312.0" height="120.0" fill="none" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Badges (Centroid of each piece: clear of all borders and cut lines!) -->
+    <!-- Badge 1 in Piece 1 (lower-left) -->
+    <g transform="translate(428.0, 199.2)">
+      <circle r="12" fill="#2563eb"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+    </g>
+    <!-- Badge 3 in Piece 3 (upper-left) -->
+    <g transform="translate(507.9, 144.0)">
+      <circle r="12" fill="#059669"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+    </g>
+    <!-- Badge 4 in Piece 4 (lower-right) -->
+    <g transform="translate(564.1, 216.0)">
+      <circle r="12" fill="#7c3aed"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+    </g>
+    <!-- Badge 2 in Piece 2 (upper-right) -->
+    <g transform="translate(644.0, 160.8)">
+      <circle r="12" fill="#d97706"/><text y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+    </g>
+  </g>
+</svg>

@@ -15,12 +15,6 @@
     </filter>
 
     <!-- Canvas Background Gradient -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="50%" stop-color="#f1f5f9"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
-    </linearGradient>
-
     <!-- Emerald Success Theme for Connected Nodes -->
     <linearGradient id="emerald-dot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#059669"/>
@@ -34,9 +28,6 @@
       <stop offset="100%" stop-color="#fef3c7"/>
     </linearGradient>
   </defs>
-
-  <!-- Canvas Background -->
-  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
 
   <!-- ==================== 2 BREAKOUT RADAR BEACONS (OUTSIDE THE GRID) ==================== -->
   <!-- Breakout Vertex 1: (160, 160) - Top-Left Outside -->

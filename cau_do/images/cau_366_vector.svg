@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Pulley Gradient -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Brass / Weight Gradient -->
+    <linearGradient id="weightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="30%" stop-color="#f59e0b"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Monkey Brown Gradient -->
+    <linearGradient id="monkeyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <linearGradient id="monkeyFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="100%" stop-color="#fdba74"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Ceiling Mount -->
+  <rect x="230" y="20" width="100" height="12" rx="4" fill="#334155"/>
+  <rect x="274" y="32" width="12" height="40" fill="#64748b"/>
+
+  <!-- Pulley Wheel -->
+  <g filter="url(#shadow)">
+    <!-- Outer Rim -->
+    <circle cx="280" cy="110" r="44" fill="url(#metalGrad)" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="280" cy="110" r="38" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+    
+    <!-- Spokes -->
+    <line x1="280" y1="72" x2="280" y2="148" stroke="#64748b" stroke-width="2.5"/>
+    <line x1="242" y1="110" x2="318" y2="110" stroke="#64748b" stroke-width="2.5"/>
+    <line x1="253" y1="83" x2="307" y2="137" stroke="#64748b" stroke-width="2.5"/>
+    <line x1="253" y1="137" x2="307" y2="83" stroke="#64748b" stroke-width="2.5"/>
+
+    <!-- Central Axle -->
+    <circle cx="280" cy="110" r="14" fill="url(#metalGrad)"/>
+    <circle cx="280" cy="110" r="5" fill="#f1f5f9"/>
+  </g>
+
+  <!-- Rope -->
+  <!-- Arc over pulley -->
+  <path d="M 236,110 A 44,44 0 0,1 324,110" fill="none" stroke="#d97706" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Left hanging segment -->
+  <line x1="236" y1="110" x2="236" y2="330" stroke="#d97706" stroke-width="4" stroke-dasharray="8,2"/>
+  <!-- Right hanging segment -->
+  <line x1="324" y1="110" x2="324" y2="470" stroke="#d97706" stroke-width="4" stroke-dasharray="8,2"/>
+
+  <!-- Equal Level Reference Line -->
+  <line x1="150" y1="360" x2="430" y2="360" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Left Side: 10kg Counterweight -->
+  <g filter="url(#shadow)">
+    <!-- Hook / Ring -->
+    <circle cx="236" cy="336" r="8" fill="none" stroke="#64748b" stroke-width="3"/>
+    <!-- Trapezoidal Bell Weight -->
+    <path d="M 226,344 L 246,344 L 264,405 L 208,405 Z" fill="url(#weightGrad)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Bottom Rim -->
+    <rect x="204" y="405" width="64" height="8" rx="3" fill="#92400e"/>
+    <!-- Label 10 kg -->
+    <text x="236" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#451a03" text-anchor="middle">10 kg</text>
+  </g>
+
+  <!-- Right Side: 10kg Monkey -->
+  <g transform="translate(324, 350)" filter="url(#shadow)">
+    <!-- Tail -->
+    <path d="M 12,25 C 35,40 45,75 25,95 C 15,105 5,95 10,85 C 15,75 25,60 10,40" fill="none" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Left Arm & Hand holding rope -->
+    <path d="M -5,-15 Q -15,-20 0,-30" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="0" cy="-30" r="5" fill="#fdba74"/>
+
+    <!-- Right Arm & Hand holding rope -->
+    <path d="M 5,-10 Q -5,0 0,10" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="0" cy="10" r="5" fill="#fdba74"/>
+
+    <!-- Legs & Feet holding rope -->
+    <path d="M -5,15 Q -15,30 0,35" fill="none" stroke="#78350f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 8,15 Q 15,30 0,40" fill="none" stroke="#78350f" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="0" cy="35" r="5" fill="#fdba74"/>
+    <circle cx="0" cy="40" r="5" fill="#fdba74"/>
+
+    <!-- Body -->
+    <ellipse cx="6" cy="5" rx="16" ry="22" fill="url(#monkeyGrad)"/>
+    <ellipse cx="6" cy="5" rx="10" ry="15" fill="url(#monkeyFace)"/>
+
+    <!-- Ears -->
+    <circle cx="-6" cy="-28" r="7" fill="#78350f"/>
+    <circle cx="-6" cy="-28" r="4" fill="#fdba74"/>
+    <circle cx="26" cy="-28" r="7" fill="#78350f"/>
+    <circle cx="26" cy="-28" r="4" fill="#fdba74"/>
+
+    <!-- Head -->
+    <circle cx="10" cy="-28" r="16" fill="url(#monkeyGrad)"/>
+    <!-- Face mask -->
+    <ellipse cx="7" cy="-26" rx="6" ry="8" fill="url(#monkeyFace)"/>
+    <ellipse cx="13" cy="-26" rx="6" ry="8" fill="url(#monkeyFace)"/>
+    <ellipse cx="10" cy="-22" rx="7" ry="6" fill="url(#monkeyFace)"/>
+
+    <!-- Eyes -->
+    <circle cx="7" cy="-26" r="2.5" fill="#1e293b"/>
+    <circle cx="13" cy="-26" r="2.5" fill="#1e293b"/>
+    <!-- Muzzle & Smile -->
+    <path d="M 8,-19 Q 10,-16 12,-19" fill="none" stroke="#78350f" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Weight badge on Monkey -->
+    <rect x="28" y="-5" width="48" height="22" rx="6" fill="#3b82f6" filter="url(#shadow)"/>
+    <text x="52" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">10 kg</text>
+  </g>
+
+  <!-- Dynamic Question Marks on motion -->
+  <!-- On weight side -->
+  <g transform="translate(180, 360)">
+    <circle cx="0" cy="0" r="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="0" y="6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#0284c7" text-anchor="middle">?</text>
+    <!-- Motion arrows prompt -->
+    <path d="M 0,-24 L 0,-38 M -4,-32 L 0,-38 L 4,-32" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 0,24 L 0,38 M -4,32 L 0,38 L 4,32" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Monkey climbing arrow (upward) -->
+  <g transform="translate(430, 300)">
+    <path d="M 0,40 L 0,0 M -5,10 L 0,0 L 5,10" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

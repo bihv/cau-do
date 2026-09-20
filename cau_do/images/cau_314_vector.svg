@@ -16,12 +16,6 @@
     </filter>
 
     <!-- Canvas Background Gradient -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="50%" stop-color="#f8fafc"/>
-      <stop offset="100%" stop-color="#f1f5f9"/>
-    </linearGradient>
-
     <!-- 5 VIBRANT JEWEL-TONED GRADIENTS -->
     <!-- 1. Star: Radiant Amber Gold -->
     <radialGradient id="star-grad" cx="40%" cy="35%" r="65%">
@@ -112,9 +106,6 @@
       <ellipse cx="-8" cy="-10" rx="4" ry="2.5" transform="rotate(-30, -8, -10)" fill="#fee2e2" opacity="0.6"/>
     </g>
   </defs>
-
-  <!-- Canvas Background -->
-  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
 
   <!-- ==================================================== -->
   <!-- STEPPED GRID CONTAINER (STAIRCASE)                   -->

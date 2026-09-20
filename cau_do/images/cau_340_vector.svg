@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="180 50 440 440" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <!-- Clock Outer Rim Gradient -->
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Clock Face Gradient -->
+    <radialGradient id="faceGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="85%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </radialGradient>
+
+    <!-- Card Shadow -->
+    <!-- Clock Shadow -->
+    <filter id="clockShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Clock Outer Rim & Body -->
+  <g filter="url(#clockShadow)">
+    <!-- Outer Bezel -->
+    <circle cx="400" cy="270" r="195" fill="url(#rimGrad)"/>
+    <!-- Inner Rim Ring -->
+    <circle cx="400" cy="270" r="186" fill="#475569" stroke="#64748b" stroke-width="1"/>
+    <!-- Clock Face -->
+    <circle cx="400" cy="270" r="180" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  </g>
+
+  <!-- Minute Tick Marks -->
+  <g stroke="#94a3b8" stroke-width="2" stroke-linecap="round">
+    <!-- 12 Major Hour Ticks -->
+    <line x1="400" y1="96" x2="400" y2="108" stroke="#1e293b" stroke-width="3.5"/>
+    <line x1="400" y1="432" x2="400" y2="444" stroke="#1e293b" stroke-width="3.5"/>
+    <line x1="226" y1="270" x2="238" y2="270" stroke="#1e293b" stroke-width="3.5"/>
+    <line x1="562" y1="270" x2="574" y2="270" stroke="#1e293b" stroke-width="3.5"/>
+
+    <line x1="487" y1="119" x2="481" y2="130" stroke="#334155" stroke-width="3"/>
+    <line x1="551" y1="183" x2="540" y2="189" stroke="#334155" stroke-width="3"/>
+    <line x1="551" y1="357" x2="540" y2="351" stroke="#334155" stroke-width="3"/>
+    <line x1="487" y1="421" x2="481" y2="410" stroke="#334155" stroke-width="3"/>
+
+    <line x1="313" y1="421" x2="319" y2="410" stroke="#334155" stroke-width="3"/>
+    <line x1="249" y1="357" x2="260" y2="351" stroke="#334155" stroke-width="3"/>
+    <line x1="249" y1="183" x2="260" y2="189" stroke="#334155" stroke-width="3"/>
+    <line x1="313" y1="119" x2="319" y2="130" stroke="#334155" stroke-width="3"/>
+  </g>
+
+  <!-- Clock Center Pivot Pin -->
+  <circle cx="400" cy="270" r="7" fill="#0f172a"/>
+  <circle cx="400" cy="270" r="3" fill="#94a3b8"/>
+
+  <!-- 12 Hour Numbers -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle" dominant-baseline="central">
+    <text x="400" y="132">12</text>
+    <text x="469" y="151">1</text>
+    <text x="519" y="201">2</text>
+    <text x="537" y="270">3</text>
+    <text x="519" y="339">4</text>
+    <text x="469" y="389">5</text>
+    <text x="400" y="408">6</text>
+    <text x="331" y="389">7</text>
+    <text x="281" y="339">8</text>
+    <text x="263" y="270">9</text>
+    <text x="281" y="201">10</text>
+    <text x="331" y="151">11</text>
+  </g>
+</svg>

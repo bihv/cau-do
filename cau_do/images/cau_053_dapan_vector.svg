@@ -55,9 +55,6 @@
     </g>
   </defs>
 
-  <!-- Clean Background -->
-  <rect width="100%" height="100%" fill="#f8fafc"/>
-
   <!-- Main Board Container -->
   <g filter="url(#board-shadow)">
     <!-- Outer Board Frame -->

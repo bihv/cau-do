@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="160 90 480 200" width="100%" height="100%">
+  <defs>
+    <!-- Long Rod Gradient (Cyan/Blue 2a) -->
+    <linearGradient id="longRodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Short Rod Gradient (Amber/Orange a) -->
+    <linearGradient id="shortRodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Rod Glow Filter -->
+    <filter id="rodGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0284c7" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Subtle Interior Fills for 3 Squares -->
+  <polygon points="190,190 260,120 330,190 260,260" fill="#f0fdf4" opacity="0.6"/>
+  <polygon points="330,190 400,120 470,190 400,260" fill="#ecfdf5" opacity="0.6"/>
+  <polygon points="470,190 540,120 610,190 540,260" fill="#f0fdf4" opacity="0.6"/>
+
+  <!-- 4 LONG RODS (Length 2a, stroke-width 8, stroke-linecap round) -->
+  <g filter="url(#rodGlow)">
+    <!-- Long Rod 1: V3 (260, 260) -> V4 (400, 120) -->
+    <line x1="260" y1="260" x2="400" y2="120" stroke="url(#longRodGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Long Rod 2: V1 (260, 120) -> V6 (400, 260) -->
+    <line x1="260" y1="120" x2="400" y2="260" stroke="url(#longRodGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Long Rod 3: V6 (400, 260) -> V7 (540, 120) -->
+    <line x1="400" y1="260" x2="540" y2="120" stroke="url(#longRodGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Long Rod 4: V4 (400, 120) -> V9 (540, 260) -->
+    <line x1="400" y1="120" x2="540" y2="260" stroke="url(#longRodGrad)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- 4 SHORT RODS (Length a, stroke-width 8, stroke-linecap round) -->
+  <g filter="url(#rodGlow)">
+    <!-- Short Rod 1: V0 (190, 190) -> V1 (260, 120) -->
+    <line x1="190" y1="190" x2="260" y2="120" stroke="url(#shortRodGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Short Rod 2: V0 (190, 190) -> V3 (260, 260) -->
+    <line x1="190" y1="190" x2="260" y2="260" stroke="url(#shortRodGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Short Rod 3: V7 (540, 120) -> V8 (610, 190) -->
+    <line x1="540" y1="120" x2="610" y2="190" stroke="url(#shortRodGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Short Rod 4: V9 (540, 260) -> V8 (610, 190) -->
+    <line x1="540" y1="260" x2="610" y2="190" stroke="url(#shortRodGrad)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Vertex Joints -->
+  <g fill="#ffffff" stroke="#0f172a" stroke-width="2">
+    <circle cx="190" cy="190" r="4"/>
+    <circle cx="260" cy="120" r="4"/>
+    <circle cx="330" cy="190" r="5" fill="#38bdf8"/>
+    <circle cx="260" cy="260" r="4"/>
+    <circle cx="400" cy="120" r="4"/>
+    <circle cx="470" cy="190" r="5" fill="#38bdf8"/>
+    <circle cx="400" cy="260" r="4"/>
+    <circle cx="540" cy="120" r="4"/>
+    <circle cx="610" cy="190" r="4"/>
+    <circle cx="540" cy="260" r="4"/>
+  </g>
+</svg>

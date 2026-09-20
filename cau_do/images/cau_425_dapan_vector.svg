@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 540" width="100%" height="100%">
+  <defs>
+    <!-- Gold Coin Fixed -->
+    <radialGradient id="coinFixed" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </radialGradient>
+
+    <!-- Orange Moving Coin -->
+    <radialGradient id="coinMoving" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </radialGradient>
+
+    <radialGradient id="coinHalf" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#bbf7d0"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Orbit Path (Dashed Circle of radius 2R = 140) -->
+  <circle cx="280" cy="250" r="140" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Orbital Direction Arrow -->
+  <path d="M 420,200 A 140,140 0 0,0 230,115" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="236,108 220,115 233,124" fill="#0284c7"/>
+
+  <!-- Central Fixed Coin (Center at 280, 250, R=70) -->
+  <g filter="url(#shadow)">
+    <circle cx="280" cy="250" r="70" fill="url(#coinFixed)" stroke="#78350f" stroke-width="2.5"/>
+    <circle cx="280" cy="250" r="60" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <circle cx="280" cy="250" r="14" fill="#78350f"/>
+    <circle cx="280" cy="250" r="5" fill="#fef08a"/>
+    <text x="280" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#451a03" text-anchor="middle">FIXED</text>
+  </g>
+
+  <!-- Position 1: Start / Finish (Right: 420, 250) -->
+  <g transform="translate(420, 250)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="70" fill="url(#coinMoving)" stroke="#9a3412" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#fdba74" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <!-- Arrow pointing UP (phi = 0 / 720) -->
+    <line x1="0" y1="0" x2="0" y2="-48" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+    <polygon points="-6,-38 0,-50 6,-38" fill="#ffffff"/>
+    <circle cx="0" cy="0" r="4" fill="#7c2d12"/>
+    <!-- Revolution badge -->
+    <rect x="-35" y="10" width="70" height="20" rx="6" fill="#7c2d12"/>
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">0 / 2 Rev</text>
+  </g>
+
+  <!-- Position 2: Halfway Orbit (Left: 140, 250) -->
+  <g transform="translate(140, 250)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="70" fill="url(#coinHalf)" stroke="#14532d" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#86efac" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <!-- Arrow pointing UP (phi = 360 deg -> exactly 1 full spin!) -->
+    <line x1="0" y1="0" x2="0" y2="-48" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+    <polygon points="-6,-38 0,-50 6,-38" fill="#ffffff"/>
+    <circle cx="0" cy="0" r="4" fill="#14532d"/>
+    <!-- Revolution badge -->
+    <rect x="-35" y="10" width="70" height="20" rx="6" fill="#14532d"/>
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">1.0 Rev ★</text>
+  </g>
+
+  <!-- Position 3: Top Orbit (280, 110) - ghost showing 0.5 rev (arrow down) -->
+  <g transform="translate(280, 110)" opacity="0.85">
+    <circle cx="0" cy="0" r="70" fill="#ffffff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3"/>
+    <!-- Arrow pointing DOWN (phi = 180 deg -> half spin) -->
+    <line x1="0" y1="0" x2="0" y2="48" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="-6,38 0,50 6,38" fill="#64748b"/>
+    <circle cx="0" cy="0" r="3" fill="#64748b"/>
+    <text x="0" y="-12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">0.5 Rev</text>
+  </g>
+
+  <!-- Formula Badge at Bottom -->
+  <g transform="translate(280, 480)" filter="url(#shadow)">
+    <rect x="-140" y="-20" width="280" height="40" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+    <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#065f46" text-anchor="middle">N = (R₁ + R₂) / R₂ = 2 Revolutions</text>
+  </g>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 440" width="100%" height="100%">
+  <defs>
+    <!-- Gold Coin Gradient -->
+    <radialGradient id="coinFixed" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </radialGradient>
+
+    <radialGradient id="coinMoving" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Orbit Path (Dashed Circle of radius 2R = 130) -->
+  <circle cx="210" cy="240" r="130" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Ghost Coin at Top Position (0, -2R) -> (210, 110) -->
+  <circle cx="210" cy="110" r="65" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="210" cy="110" r="3" fill="#94a3b8"/>
+
+  <!-- Direction Arrow along Orbit -->
+  <path d="M 330,175 C 320,125 285,95 240,90" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="244,84 230,90 242,98" fill="#0284c7"/>
+
+  <!-- Fixed Coin C1 (Center at 210, 240, R=65) -->
+  <g filter="url(#shadow)">
+    <circle cx="210" cy="240" r="65" fill="url(#coinFixed)" stroke="#78350f" stroke-width="2.5"/>
+    <circle cx="210" cy="240" r="56" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <!-- Fixed anchor / center pin -->
+    <circle cx="210" cy="240" r="12" fill="#78350f"/>
+    <circle cx="210" cy="240" r="5" fill="#fef08a"/>
+    <!-- Label -->
+    <text x="210" y="278" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#451a03" text-anchor="middle">FIXED</text>
+  </g>
+
+  <!-- Moving Coin C2 (Center at 340, 240, R=65) -->
+  <g filter="url(#shadow)">
+    <circle cx="340" cy="240" r="65" fill="url(#coinMoving)" stroke="#9a3412" stroke-width="2.5"/>
+    <circle cx="340" cy="240" r="56" fill="none" stroke="#fdba74" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <circle cx="340" cy="240" r="4" fill="#7c2d12"/>
+    <!-- Orientation marker arrow on coin C2 -->
+    <line x1="340" y1="240" x2="340" y2="190" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="335,198 340,186 345,198" fill="#ffffff"/>
+  </g>
+
+  <!-- Contact Point A -->
+  <circle cx="275" cy="240" r="4.5" fill="#0f172a"/>
+  <!-- Label A Badge -->
+  <g transform="translate(290, 260)" filter="url(#shadow)">
+    <rect x="-10" y="-12" width="20" height="20" rx="6" fill="#0f172a"/>
+    <text x="0" y="2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">A</text>
+  </g>
+
+  <!-- Question Badge at Bottom -->
+  <g transform="translate(270, 395)" filter="url(#shadow)">
+    <rect x="-100" y="-16" width="200" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Revolutions = ?</text>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="225 105 270 270" width="100%" height="100%">
+  <defs>
+    <!-- Cross Gradient (Deep Slate) -->
+    <linearGradient id="crossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Cross Shadow -->
+    <filter id="crossShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Greek Cross (Centered at x=360, y=240. Unit size s = 70. 3s = 210) -->
+  <g filter="url(#crossShadow)">
+    <path d="M 325,135 L 395,135 L 395,205 L 465,205 L 465,275 L 395,275 L 395,345 L 325,345 L 325,275 L 255,275 L 255,205 L 325,205 Z"
+          fill="url(#crossGrad)" stroke="#0f172a" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Subtle Inner Grid Lines showing 5 squares -->
+  <g stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6">
+    <line x1="325" y1="205" x2="395" y2="205"/>
+    <line x1="325" y1="275" x2="395" y2="275"/>
+    <line x1="325" y1="205" x2="325" y2="275"/>
+    <line x1="395" y1="205" x2="395" y2="275"/>
+  </g>
+</svg>

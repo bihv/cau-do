@@ -23,9 +23,6 @@
     </linearGradient>
   </defs>
 
-  <!-- Clean Canvas Background -->
-  <rect width="100%" height="100%" fill="#f8fafc"/>
-
   <!-- ==================================================== -->
   <!-- LEFT SIDE: 3x3 IQ MATRIX GRID                        -->
   <!-- Box: x=50, y=45, w=360, h=360                        -->

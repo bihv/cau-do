@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="holePattern" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ef4444" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <!-- Left: Figure B with Hole Highlighted -->
+  <g id="figureB_Answer" filter="url(#shadow)">
+    <!-- Base card -->
+    <rect x="50" y="60" width="260.0" height="312.0" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+
+    <!-- Grid lines -->
+    <line x1="50.0" y1="60.0" x2="50.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="76.0" y1="60.0" x2="76.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="102.0" y1="60.0" x2="102.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="128.0" y1="60.0" x2="128.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="154.0" y1="60.0" x2="154.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="180.0" y1="60.0" x2="180.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="206.0" y1="60.0" x2="206.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="232.0" y1="60.0" x2="232.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="258.0" y1="60.0" x2="258.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="284.0" y1="60.0" x2="284.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="310.0" y1="60.0" x2="310.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="60.0" x2="310.0" y2="60.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="86.0" x2="310.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="112.0" x2="310.0" y2="112.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="138.0" x2="310.0" y2="138.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="164.0" x2="310.0" y2="164.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="190.0" x2="310.0" y2="190.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="216.0" x2="310.0" y2="216.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="242.0" x2="310.0" y2="242.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="268.0" x2="310.0" y2="268.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="294.0" x2="310.0" y2="294.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="320.0" x2="310.0" y2="320.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="346.0" x2="310.0" y2="346.0" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="50.0" y1="372.0" x2="310.0" y2="372.0" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- 1. Top Triangles (3x7, Blue) -->
+    <polygon points="180.0,60 180.0,242.0 102.0,242.0" 
+             fill="#dbeafe" fill-opacity="0.75" stroke="#2563eb" stroke-width="2.5"/>
+    <polygon points="180.0,60 180.0,242.0 258.0,242.0" 
+             fill="#dbeafe" fill-opacity="0.75" stroke="#2563eb" stroke-width="2.5"/>
+
+    <!-- 2. Bottom Wings (2x5, Emerald) -->
+    <polygon points="102.0,242.0 102.0,372.0 50,372.0" 
+             fill="#d1fae5" fill-opacity="0.75" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="258.0,242.0 258.0,372.0 310.0,372.0" 
+             fill="#d1fae5" fill-opacity="0.75" stroke="#059669" stroke-width="2.5"/>
+
+    <!-- 3. Central Piece 5 (Amber) -->
+    <polygon points="154.0,242.0 258.0,242.0 258.0,372.0 206.0,372.0 206.0,294.0 154.0,294.0" 
+             fill="#fef3c7" fill-opacity="0.8" stroke="#d97706" stroke-width="2.5"/>
+
+    <!-- 4. Central Piece 6 (Violet) -->
+    <polygon points="102.0,242.0 154.0,242.0 154.0,320.0 206.0,320.0 206.0,372.0 102.0,372.0" 
+             fill="#ede9fe" fill-opacity="0.8" stroke="#7c3aed" stroke-width="2.5"/>
+
+    <!-- 5. THE HOLE -->
+    <rect x="154.0" y="294.0" width="52.0" height="26.0" 
+          fill="#fee2e2" stroke="#ef4444" stroke-width="2.5"/>
+    <rect x="154.0" y="294.0" width="52.0" height="26.0" 
+          fill="url(#holePattern)" stroke="none"/>
+    <text x="180.0" y="312.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#dc2626" text-anchor="middle">−2 ô</text>
+
+    <!-- Outer Frame -->
+    <rect x="50" y="60" width="260.0" height="312.0" fill="none" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Subtitle -->
+    <text x="180.0" y="404.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">Hình B (Lỗ hổng 2 ô vuông ở giữa)</text>
+  </g>
+
+  <!-- Right: Mathematical Explanation Card -->
+  <g transform="translate(360, 60)">
+    <!-- Main Card -->
+    <g filter="url(#shadow)">
+      <rect width="360" height="312" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <rect width="360" height="42" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <circle cx="24" cy="21" r="6" fill="#10b981"/>
+      <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#065f46">GIẢI THÍCH NGHỊCH LÝ ĐỘ DỐC</text>
+
+      <!-- Content -->
+      <text x="20" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#1e293b">1. So sánh độ dốc các tam giác:</text>
+      <text x="24" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#047857">• Tam giác 2×5 (xanh lá): tan θ₁ = 5 / 2 = 2.500</text>
+      <text x="24" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">• Tam giác 3×7 (xanh dương): tan θ₂ = 7 / 3 ≈ 2.333</text>
+
+      <text x="20" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#1e293b">2. Sự biến đổi đường biên cạnh bên:</text>
+      <text x="24" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#334155">• Hình A: Dốc 2.333 ở dưới, 2.500 ở trên</text>
+      <text x="34" y="187" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" fill="#64748b">→ Đường biên hơi lõm vào trong</text>
+      <text x="24" y="209" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#334155">• Hình B: Đổi vị trí (2.333 lên đỉnh, 2.500 xuống cánh)</text>
+      <text x="34" y="229" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-style="italic" fill="#dc2626">→ Đường biên phồng lồi ra phía ngoài</text>
+
+      <!-- Math Result Box -->
+      <rect x="16" y="246" width="328" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="180" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Diện tích phần phồng lồi ở 2 cạnh bên:</text>
+      <text x="180" y="288" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#dc2626" text-anchor="middle">2 × ½ × |3×5 − 2×7| = 2 × 0.5 = 1 ô × 2 bên = 2 ô!</text>
+    </g>
+  </g>
+</svg>

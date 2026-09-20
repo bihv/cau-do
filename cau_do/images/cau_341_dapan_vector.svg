@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 25 760 220" width="100%" height="100%">
+  <defs>
+    <!-- Emerald Success Shadow -->
+    <filter id="emeraldGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10b981" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Emerald Dot Gradient -->
+    <radialGradient id="dotEmerald" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="60%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </radialGradient>
+
+    <!-- Regular Dot Gradient -->
+    <radialGradient id="dotGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Item A (0 giờ = Số 0) -->
+  <g transform="translate(55, 35)" opacity="0.8">
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Subtle Clock Face -->
+    <circle cx="75" cy="75" r="56" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <line x1="75" y1="75" x2="75" y2="28" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="75" cy="75" r="4" fill="#64748b"/>
+    <!-- Top Dot -->
+    <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+    <circle cx="72" cy="19" r="2.5" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Pill Badge A = 0 -->
+    <g transform="translate(75, 185)">
+      <rect x="-42" y="-15" width="84" height="30" rx="15" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" fill="#475569" text-anchor="middle">A = 0</text>
+    </g>
+  </g>
+
+  <!-- Item B (9 giờ = Số 9) -->
+  <g transform="translate(245, 35)" opacity="0.8">
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <circle cx="75" cy="75" r="56" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <line x1="75" y1="75" x2="75" y2="28" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="75" y1="75" x2="28" y2="75" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="75" cy="75" r="4" fill="#64748b"/>
+    <!-- Dots -->
+    <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+    <circle cx="22" cy="75" r="10" fill="url(#dotGrad)"/>
+
+    <!-- Pill Badge B = 9 -->
+    <g transform="translate(75, 185)">
+      <rect x="-42" y="-15" width="84" height="30" rx="15" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" fill="#475569" text-anchor="middle">B = 9</text>
+    </g>
+  </g>
+
+  <!-- Item C (6 giờ = Số 6) -->
+  <g transform="translate(435, 35)" opacity="0.8">
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <circle cx="75" cy="75" r="56" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <line x1="75" y1="75" x2="75" y2="28" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="75" y1="75" x2="75" y2="122" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="75" cy="75" r="4" fill="#64748b"/>
+    <!-- Dots -->
+    <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+    <circle cx="75" cy="128" r="10" fill="url(#dotGrad)"/>
+
+    <!-- Pill Badge C = 6 -->
+    <g transform="translate(75, 185)">
+      <rect x="-42" y="-15" width="84" height="30" rx="15" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" fill="#475569" text-anchor="middle">C = 6</text>
+    </g>
+  </g>
+
+  <!-- Item D (WINNER: 3 giờ = SỐ 3) -->
+  <g transform="translate(625, 35)">
+    <!-- Highlight Card Frame -->
+    <rect x="-5" y="-5" width="160" height="160" rx="13" fill="#f0fdf4" stroke="#10b981" stroke-width="2.5" filter="url(#emeraldGlow)"/>
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+
+    <!-- Clock Face Overlay -->
+    <circle cx="75" cy="75" r="56" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5"/>
+    <line x1="75" y1="75" x2="75" y2="28" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+    <line x1="75" y1="75" x2="122" y2="75" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="75" cy="75" r="4.5" fill="#047857"/>
+
+    <!-- Emerald Target Dots -->
+    <circle cx="75" cy="22" r="11" fill="url(#dotEmerald)"/>
+    <circle cx="128" cy="75" r="11" fill="url(#dotEmerald)"/>
+    <circle cx="72" cy="19" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="125" cy="72" r="3" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Winner Badge D = 3 -->
+    <g transform="translate(75, 185)">
+      <rect x="-42" y="-15" width="84" height="30" rx="15" fill="#10b981"/>
+      <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle">D = 3</text>
+    </g>
+
+    <!-- Checkmark Badge -->
+    <circle cx="145" cy="5" r="13" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <path d="M140,5 L144,9 L150,1" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

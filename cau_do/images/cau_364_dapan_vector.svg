@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 540" width="100%" height="100%">
+  <defs>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1e293b" flood-opacity="0.16"/>
+    </filter>
+    <filter id="routeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#059669" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- Building Outer Frame & Walls -->
+  <g stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Outer Perimeter Walls -->
+    <!-- Top Wall from x1 (165) to x4 (420) -->
+    <line x1="165" y1="95" x2="420" y2="95"/>
+    <!-- Right Wall from y0 (95) to y4 (435) -->
+    <line x1="420" y1="95" x2="420" y2="435"/>
+    <!-- Bottom Wall from x0 (80) to x4 (420) -->
+    <line x1="80" y1="435" x2="420" y2="435"/>
+    <!-- Left Wall from y1 (180) to y4 (435) -->
+    <line x1="80" y1="180" x2="80" y2="435"/>
+
+    <!-- Entrance Corners (Cổng A) -->
+    <!-- Vertical tick pointing down at (x1, y0) -->
+    <line x1="165" y1="95" x2="165" y2="115"/>
+    <!-- Horizontal tick pointing right at (x0, y1) -->
+    <line x1="80" y1="180" x2="100" y2="180"/>
+
+    <!-- Perimeter Ticks -->
+    <!-- Top wall ticks at x2=250, x3=335 -->
+    <line x1="250" y1="95" x2="250" y2="115"/>
+    <line x1="335" y1="95" x2="335" y2="115"/>
+
+    <!-- Right wall ticks at y1=180, y2=265, y3=350 -->
+    <line x1="420" y1="180" x2="400" y2="180"/>
+    <line x1="420" y1="265" x2="400" y2="265"/>
+    <line x1="420" y1="350" x2="400" y2="350"/>
+
+    <!-- Bottom wall ticks at x1=165, x2=250, x3=335 -->
+    <line x1="165" y1="435" x2="165" y2="415"/>
+    <line x1="250" y1="435" x2="250" y2="415"/>
+    <line x1="335" y1="435" x2="335" y2="415"/>
+
+    <!-- Left wall ticks at y2=265, y3=350 -->
+    <line x1="80" y1="265" x2="100" y2="265"/>
+    <line x1="80" y1="350" x2="100" y2="350"/>
+
+    <!-- 9 Interior Crosses (+) -->
+    <!-- Row 1 (y=180) -->
+    <path d="M 145,180 L 185,180 M 165,160 L 165,200"/>
+    <path d="M 230,180 L 270,180 M 250,160 L 250,200"/>
+    <path d="M 315,180 L 355,180 M 335,160 L 335,200"/>
+    <!-- Row 2 (y=265) -->
+    <path d="M 145,265 L 185,265 M 165,245 L 165,285"/>
+    <path d="M 230,265 L 270,265 M 250,245 L 250,285"/>
+    <path d="M 315,265 L 355,265 M 335,245 L 335,285"/>
+    <!-- Row 3 (y=350) -->
+    <path d="M 145,350 L 185,350 M 165,330 L 165,370"/>
+    <path d="M 230,350 L 270,350 M 250,330 L 250,370"/>
+    <path d="M 315,350 L 355,350 M 335,330 L 335,370"/>
+  </g>
+
+  <!-- Patrol Route (Answer Path) -->
+  <path d="M 100,125 L 207.5,125 L 207.5,150 L 122.5,150 L 122.5,222.5 L 292.5,222.5 L 292.5,137.5 L 377.5,137.5 L 377.5,307.5 L 122.5,307.5 L 122.5,392.5 L 377.5,392.5" fill="none" stroke="#059669" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#routeGlow)"/>
+
+  <!-- Direction Arrows on Path -->
+  <g fill="#047857">
+    <polygon points="160,121 168,125 160,129"/>
+    <polygon points="203.5,134 207.5,142 211.5,134"/>
+    <polygon points="170,146 162,150 170,154"/>
+    <polygon points="118.5,180 122.5,188 126.5,180"/>
+    <polygon points="210,218.5 218,222.5 210,226.5"/>
+    <polygon points="288.5,185 292.5,177 296.5,185"/>
+    <polygon points="330,133.5 338,137.5 330,141.5"/>
+    <polygon points="373.5,225 377.5,233 381.5,225"/>
+    <polygon points="255,303.5 247,307.5 255,311.5"/>
+    <polygon points="118.5,348 122.5,356 126.5,348"/>
+    <polygon points="250,388.5 258,392.5 250,396.5"/>
+  </g>
+
+  <!-- Finish Target Marker in Room (4,4) -->
+  <circle cx="377.5" cy="392.5" r="9" fill="#10b981" stroke="#ffffff" stroke-width="2.5" filter="url(#shadow)"/>
+  <circle cx="377.5" cy="392.5" r="3.5" fill="#ffffff"/>
+
+  <!-- Labels & Callouts -->
+  <!-- Cổng A Badge -->
+  <g id="congABadge">
+    <rect x="76" y="46" width="93" height="32" rx="16" fill="#2563eb" filter="url(#shadow)"/>
+    <text x="122.5" y="62" dominant-baseline="central" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">Cổng A</text>
+  </g>
+  <!-- Entrance Arrow -->
+  <g stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="122.5" y1="84" x2="122.5" y2="98"/>
+    <polyline points="117.5,93 122.5,98.5 127.5,93"/>
+  </g>
+
+  <!-- Phòng quản lý Callout Bubble -->
+  <g id="phongQuanLy">
+    <path d="M 466,392.5 L 420,405 L 466,402 C 466,378 485,364 538,364 C 591,364 618,378 618,402 C 618,426 591,440 538,440 C 492,440 467,428 466,410 Z" fill="#ffffff" stroke="#1e293b" stroke-width="2.2" stroke-linejoin="round" filter="url(#cardShadow)"/>
+    <text x="542" y="402" dominant-baseline="central" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="middle">Phòng quản lý</text>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 25 680 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <!-- Card Shadow -->
+    <!-- River Water Gradient -->
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Wood Plank Gradient (Plank 1 - Emerald tint / vibrant wood) -->
+    <linearGradient id="plank1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+
+    <!-- Wood Plank Gradient (Plank 2) -->
+    <linearGradient id="plank2Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Plank Shadow -->
+    <filter id="plankShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Grass Gradient -->
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- River Landscape Area (x=60, y=40, w=640, h=390) -->
+  <g transform="translate(60, 40)">
+    <!-- Grass Area -->
+    <rect x="0" y="0" width="640" height="390" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+
+    <!-- L-Shaped River -->
+    <!-- River width = 100px. Outer corner at (120, 290). Inner corner at (220, 190) -->
+    <path d="M 120,0 L 220,0 L 220,190 L 640,190 L 640,290 L 120,290 Z" fill="url(#waterGrad)" stroke="#0284c7" stroke-width="2"/>
+
+    <!-- Subtle Water Ripples -->
+    <g stroke="#ffffff" stroke-width="1.5" opacity="0.4" stroke-linecap="round">
+      <path d="M 140,60 Q 155,55 170,60" />
+      <path d="M 160,110 Q 175,105 190,110" />
+      <path d="M 380,250 Q 405,243 430,250" />
+      <path d="M 480,225 Q 505,218 530,225" />
+    </g>
+
+    <!-- House Icon -->
+    <g transform="translate(135, 310)">
+      <polygon points="35,0 0,22 70,22" fill="#e11d48"/>
+      <rect x="8" y="22" width="54" height="38" rx="2" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+      <rect x="27" y="36" width="16" height="24" rx="2" fill="#7c2d12"/>
+      <rect x="14" y="28" width="10" height="10" rx="1" fill="#38bdf8"/>
+      <rect x="46" y="28" width="10" height="10" rx="1" fill="#38bdf8"/>
+    </g>
+
+    <!-- PLANK 1: Gác chéo góc vuông bờ ngoài -->
+    <!-- From (120, 219.3) to (190.7, 290), Center at (155.4, 254.6), Length = 100px, Width = 18px -->
+    <!-- Angle = 45 deg -->
+    <g transform="translate(155.35, 254.64) rotate(45)" filter="url(#plankShadow)">
+      <rect x="-50" y="-9" width="100" height="18" rx="4" fill="url(#plank1Grad)" stroke="#78350f" stroke-width="1.2"/>
+      <!-- Midpoint marker -->
+      <circle cx="0" cy="0" r="3.5" fill="#ffffff"/>
+    </g>
+
+    <!-- PLANK 2: Gác từ bờ trong (220, 190) tì lên điểm giữa Plank 1 (155.4, 254.6) -->
+    <!-- Vector from (150, 260) to (225, 185), angle = -45 deg -->
+    <g transform="translate(187.7, 222.3) rotate(-45)" filter="url(#plankShadow)">
+      <rect x="-50" y="-9" width="100" height="18" rx="4" fill="url(#plank2Grad)" stroke="#78350f" stroke-width="1.2"/>
+    </g>
+
+    <!-- Walking Path Footsteps (Emerald Dots Across the Bridge) -->
+    <g fill="#10b981" opacity="0.9">
+      <circle cx="160" cy="305" r="3.5"/>
+      <circle cx="155" cy="275" r="3.5"/>
+      <circle cx="165" cy="245" r="3.5"/>
+      <circle cx="185" cy="225" r="3.5"/>
+      <circle cx="205" cy="205" r="3.5"/>
+      <circle cx="230" cy="180" r="3.5"/>
+    </g>
+
+    <!-- Dimension & Calculation Notes Card (Right Side) -->
+    <g transform="translate(360, 40)">
+      <rect x="0" y="0" width="260" height="130" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" filter="url(#cardShadow)"/>
+      <text x="130" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Cầu chữ T thông minh</text>
+
+      <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">
+        <text x="16" y="50">• Đường chéo khúc sông: <tspan font-weight="700">3√2 ≈ 4,24m</tspan></text>
+        <text x="16" y="72">• Khoảng cách từ góc đến ván 1: <tspan font-weight="700">1,5m</tspan></text>
+        <text x="16" y="94">• Khoảng cách bờ trong tới ván 1:</text>
+        <text x="26" y="114" font-weight="700" fill="#047857">4,24m − 1,5m = 2,74m &lt; 3m</text>
+      </g>
+    </g>
+  </g>
+</svg>

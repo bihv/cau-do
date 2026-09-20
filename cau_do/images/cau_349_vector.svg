@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 25 680 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <!-- Card Shadow -->
+    <!-- River Water Gradient -->
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Wood Plank Gradient -->
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="30%" stop-color="#d97706"/>
+      <stop offset="70%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+
+    <!-- Grass Gradient -->
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- River Landscape Area (x=80, y=50, w=600, h=380) -->
+  <g transform="translate(60, 40)">
+    <!-- Grass Area (Outer Ground) -->
+    <rect x="0" y="0" width="640" height="390" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+
+    <!-- L-Shaped River Polygon -->
+    <!-- River width = 100px (representing 3m) -->
+    <!-- Inner corner at (220, 190). Outer corner at (120, 290) -->
+    <!-- Vertical channel: x from 120 to 220, y from 0 to 290 -->
+    <!-- Horizontal channel: y from 190 to 290, x from 120 to 640 -->
+    <path d="M 120,0 L 220,0 L 220,190 L 640,190 L 640,290 L 120,290 Z" fill="url(#waterGrad)" stroke="#0284c7" stroke-width="2"/>
+
+    <!-- Subtle Water Ripples -->
+    <g stroke="#ffffff" stroke-width="1.5" opacity="0.4" stroke-linecap="round">
+      <path d="M 140,60 Q 155,55 170,60" />
+      <path d="M 160,110 Q 175,105 190,110" />
+      <path d="M 135,160 Q 150,155 165,160" />
+      <path d="M 170,220 Q 190,210 210,220" />
+
+      <path d="M 280,225 Q 305,218 330,225" />
+      <path d="M 380,250 Q 405,243 430,250" />
+      <path d="M 480,225 Q 505,218 530,225" />
+      <path d="M 560,255 Q 585,248 610,255" />
+    </g>
+
+    <!-- River Width Marker (3m) -->
+    <g stroke="#0f172a" stroke-width="1.5">
+      <line x1="120" y1="90" x2="220" y2="90"/>
+      <line x1="120" y1="84" x2="120" y2="96"/>
+      <line x1="220" y1="84" x2="220" y2="96"/>
+    </g>
+    <rect x="153" y="78" width="34" height="22" rx="4" fill="#ffffff"/>
+    <text x="170" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">3m</text>
+
+    <!-- Cozy House Icon (Bottom bank, near outer corner) -->
+    <g transform="translate(135, 310)">
+      <!-- Roof -->
+      <polygon points="35,0 0,22 70,22" fill="#e11d48"/>
+      <!-- Body -->
+      <rect x="8" y="22" width="54" height="38" rx="2" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+      <!-- Door -->
+      <rect x="27" y="36" width="16" height="24" rx="2" fill="#7c2d12"/>
+      <!-- Window -->
+      <rect x="14" y="28" width="10" height="10" rx="1" fill="#38bdf8"/>
+      <rect x="46" y="28" width="10" height="10" rx="1" fill="#38bdf8"/>
+    </g>
+
+    <!-- 2 Wooden Planks on the Grass (Length = 100px = 3m, Width = 16px) -->
+    <g transform="translate(230, 325)">
+      <!-- Plank 1 -->
+      <rect x="0" y="0" width="100" height="16" rx="4" fill="url(#woodGrad)" stroke="#78350f" stroke-width="1"/>
+      <!-- Plank 2 -->
+      <rect x="0" y="24" width="100" height="16" rx="4" fill="url(#woodGrad)" stroke="#78350f" stroke-width="1"/>
+
+      <!-- Dimension Tag -->
+      <rect x="110" y="6" width="120" height="26" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="170" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#78350f" text-anchor="middle">2 tấm ván dài 3m</text>
+    </g>
+  </g>
+</svg>

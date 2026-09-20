@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 25 760 220" width="100%" height="100%">
+  <defs>
+    <!-- Dot Gradient -->
+    <radialGradient id="dotGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+
+    <!-- Dot Shadow -->
+    <filter id="dotShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- 4 Items: A, B, C, D -->
+  <!-- Item A: Center at x=130 -->
+  <g transform="translate(55, 35)">
+    <!-- Square Box (150x150) -->
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+    <!-- Top Dot -->
+    <g filter="url(#dotShadow)">
+      <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+    </g>
+    <circle cx="72" cy="19" r="2.5" fill="#ffffff" opacity="0.7"/>
+
+    <!-- Badge A -->
+    <circle cx="75" cy="185" r="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="75" y="191" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8" text-anchor="middle">A</text>
+  </g>
+
+  <!-- Item B: Center at x=320 -->
+  <g transform="translate(245, 35)">
+    <!-- Square Box (150x150) -->
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+    <!-- Top Dot & Left Dot -->
+    <g filter="url(#dotShadow)">
+      <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+      <circle cx="22" cy="75" r="10" fill="url(#dotGrad)"/>
+    </g>
+    <circle cx="72" cy="19" r="2.5" fill="#ffffff" opacity="0.7"/>
+    <circle cx="19" cy="72" r="2.5" fill="#ffffff" opacity="0.7"/>
+
+    <!-- Badge B -->
+    <circle cx="75" cy="185" r="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="75" y="191" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8" text-anchor="middle">B</text>
+  </g>
+
+  <!-- Item C: Center at x=510 -->
+  <g transform="translate(435, 35)">
+    <!-- Square Box (150x150) -->
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+    <!-- Top Dot & Bottom Dot -->
+    <g filter="url(#dotShadow)">
+      <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+      <circle cx="75" cy="128" r="10" fill="url(#dotGrad)"/>
+    </g>
+    <circle cx="72" cy="19" r="2.5" fill="#ffffff" opacity="0.7"/>
+    <circle cx="72" cy="125" r="2.5" fill="#ffffff" opacity="0.7"/>
+
+    <!-- Badge C -->
+    <circle cx="75" cy="185" r="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="75" y="191" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8" text-anchor="middle">C</text>
+  </g>
+
+  <!-- Item D: Center at x=700 -->
+  <g transform="translate(625, 35)">
+    <!-- Square Box (150x150) -->
+    <rect x="0" y="0" width="150" height="150" rx="10" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+    <!-- Top Dot & Right Dot -->
+    <g filter="url(#dotShadow)">
+      <circle cx="75" cy="22" r="10" fill="url(#dotGrad)"/>
+      <circle cx="128" cy="75" r="10" fill="url(#dotGrad)"/>
+    </g>
+    <circle cx="72" cy="19" r="2.5" fill="#ffffff" opacity="0.7"/>
+    <circle cx="125" cy="72" r="2.5" fill="#ffffff" opacity="0.7"/>
+
+    <!-- Badge D -->
+    <circle cx="75" cy="185" r="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="75" y="191" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8" text-anchor="middle">D</text>
+  </g>
+</svg>

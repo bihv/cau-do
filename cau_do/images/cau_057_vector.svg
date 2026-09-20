@@ -11,9 +11,6 @@
     </marker>
   </defs>
 
-  <!-- Clean Background -->
-  <rect width="100%" height="100%" fill="#f8fafc"/>
-
   <!-- Main Floor Plan Group -->
   <g filter="url(#gallery-shadow)">
     <!-- ========================================== -->

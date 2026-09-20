@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" width="100%" height="100%">
+  <defs>
+    <style><![CDATA[
+      /* Light theme default */
+      .card-box { fill: #ffffff; stroke: #cbd5e1; }
+      .card-text-title { fill: #334155; }
+      .card-text-primary { fill: #0f172a; }
+      .card-text-secondary { fill: #64748b; }
+      .card-emerald { fill: #ecfdf5; stroke: #10b981; }
+      .card-emerald-title { fill: #047857; }
+
+      /* Dark theme: dark slate cards and light text */
+      @media (prefers-color-scheme: dark) {
+        .card-box { fill: #1e293b; stroke: #475569; }
+        .card-text-title { fill: #cbd5e1; }
+        .card-text-primary { fill: #f8fafc; }
+        .card-text-secondary { fill: #94a3b8; }
+        .card-emerald { fill: rgba(16, 185, 129, 0.2); stroke: #10b981; }
+        .card-emerald-title { fill: #34d399; }
+      }
+    ]]></style>
+    <!-- Card Shadow (objectBoundingBox) -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+
+    <!-- Pig / Dot Shadow -->
+    <filter id="dotShadow" x="-30%" y="-30%" width="160%" height="160%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- 3D Dot Gradient (Slate 800 - 950) -->
+    <radialGradient id="dotGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+
+    <!-- Concentric Square Fill Gradients -->
+    <linearGradient id="pen4Fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="pen3Fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="pen2Fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="pen1Fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Transparent Background (No Card Rect) -->
+
+  <!-- Center of Concentric Squares: cx = 350, cy = 290 -->
+  <!-- Sizes:
+       Pen 4 (Outer): 460 x 460 (x: 120, y: 60)
+       Pen 3: 340 x 340 (x: 180, y: 120)
+       Pen 2: 220 x 220 (x: 240, y: 180)
+       Pen 1 (Inner): 110 x 110 (x: 295, y: 235)
+  -->
+
+  <!-- Pen 4 (Outer Square) -->
+  <rect x="120" y="60" width="460" height="460" rx="12" fill="url(#pen4Fill)" stroke="#94a3b8" stroke-width="3" filter="url(#cardShadow)"/>
+
+  <!-- Pen 3 -->
+  <rect x="180" y="120" width="340" height="340" rx="10" fill="url(#pen3Fill)" stroke="#64748b" stroke-width="2.5"/>
+
+  <!-- Pen 2 -->
+  <rect x="240" y="180" width="220" height="220" rx="8" fill="url(#pen2Fill)" stroke="#3b82f6" stroke-width="2.5"/>
+
+  <!-- Pen 1 (Innermost Square) -->
+  <rect x="295" y="235" width="110" height="110" rx="6" fill="url(#pen1Fill)" stroke="#10b981" stroke-width="3"/>
+
+  <!-- DOTS (PIGS) with crisp rim for dual-theme visibility -->
+  <g filter="url(#dotShadow)" stroke="#ffffff" stroke-width="1.2">
+    <!-- 1. Inside Pen 1: 5 dots (Dice 5 layout) -->
+    <!-- Center: (350, 290) -->
+    <circle cx="350" cy="290" r="7.5" fill="url(#dotGrad)"/>
+    <!-- Corners: dx = 28, dy = 28 -->
+    <circle cx="322" cy="262" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="378" cy="262" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="322" cy="318" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="378" cy="318" r="7.5" fill="url(#dotGrad)"/>
+
+    <!-- 2. Ring between Pen 1 and Pen 2: 4 dots at the 4 corners -->
+    <!-- Centers at x: 265 and 435, y: 205 and 375 -->
+    <circle cx="265" cy="205" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="435" cy="205" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="265" cy="375" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="435" cy="375" r="7.5" fill="url(#dotGrad)"/>
+
+    <!-- 3. Ring between Pen 2 and Pen 3: 4 dots at midpoints of sides -->
+    <!-- Centers: top (350, 150), bottom (350, 430), left (210, 290), right (490, 290) -->
+    <circle cx="350" cy="150" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="350" cy="430" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="210" cy="290" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="490" cy="290" r="7.5" fill="url(#dotGrad)"/>
+
+    <!-- 4. Ring between Pen 3 and Pen 4: 8 dots (4 corners + 4 midpoints) -->
+    <!-- 4 Corners: (150, 90), (550, 90), (150, 490), (550, 490) -->
+    <circle cx="150" cy="90" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="550" cy="90" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="150" cy="490" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="550" cy="490" r="7.5" fill="url(#dotGrad)"/>
+    <!-- 4 Midpoints: (350, 90), (350, 490), (150, 290), (550, 290) -->
+    <circle cx="350" cy="90" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="350" cy="490" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="150" cy="290" r="7.5" fill="url(#dotGrad)"/>
+    <circle cx="550" cy="290" r="7.5" fill="url(#dotGrad)"/>
+  </g>
+
+  <!-- Specular highlights on dots -->
+  <g fill="#ffffff" opacity="0.5">
+    <!-- Center 5 -->
+    <circle cx="348" cy="288" r="2.5"/>
+    <circle cx="320" cy="260" r="2.5"/>
+    <circle cx="376" cy="260" r="2.5"/>
+    <circle cx="320" cy="316" r="2.5"/>
+    <circle cx="376" cy="316" r="2.5"/>
+    <!-- Ring 1-2 (4 dots) -->
+    <circle cx="263" cy="203" r="2.5"/>
+    <circle cx="433" cy="203" r="2.5"/>
+    <circle cx="263" cy="373" r="2.5"/>
+    <circle cx="433" cy="373" r="2.5"/>
+    <!-- Ring 2-3 (4 dots) -->
+    <circle cx="348" cy="148" r="2.5"/>
+    <circle cx="348" cy="428" r="2.5"/>
+    <circle cx="208" cy="288" r="2.5"/>
+    <circle cx="488" cy="288" r="2.5"/>
+    <!-- Ring 3-4 (8 dots) -->
+    <circle cx="148" cy="88" r="2.5"/>
+    <circle cx="548" cy="88" r="2.5"/>
+    <circle cx="148" cy="488" r="2.5"/>
+    <circle cx="548" cy="488" r="2.5"/>
+    <circle cx="348" cy="88" r="2.5"/>
+    <circle cx="348" cy="488" r="2.5"/>
+    <circle cx="148" cy="288" r="2.5"/>
+    <circle cx="548" cy="288" r="2.5"/>
+  </g>
+
+  <!-- LEGEND / EXPLANATION PANEL ON THE RIGHT (x: 605 to 765) -->
+  <g transform="translate(605, 110)">
+    <!-- Pen 1 Card -->
+    <g transform="translate(0, 0)">
+      <rect class="card-emerald" x="0" y="0" width="160" height="68" rx="10" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <text class="card-emerald-title" x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">Chuồng 1</text>
+      <text class="card-text-primary" x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">5 con</text>
+      <text class="card-text-secondary" x="14" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">(2 đôi + 1 con)</text>
+    </g>
+
+    <!-- Pen 2 Card -->
+    <g transform="translate(0, 85)">
+      <rect class="card-box" x="0" y="0" width="160" height="68" rx="10" stroke-width="1.2" filter="url(#cardShadow)"/>
+      <text class="card-text-title" x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">Chuồng 2</text>
+      <text class="card-text-primary" x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">9 con</text>
+      <text class="card-text-secondary" x="14" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">(4 đôi + 1 con)</text>
+    </g>
+
+    <!-- Pen 3 Card -->
+    <g transform="translate(0, 170)">
+      <rect class="card-box" x="0" y="0" width="160" height="68" rx="10" stroke-width="1.2" filter="url(#cardShadow)"/>
+      <text class="card-text-title" x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">Chuồng 3</text>
+      <text class="card-text-primary" x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">13 con</text>
+      <text class="card-text-secondary" x="14" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">(6 đôi + 1 con)</text>
+    </g>
+
+    <!-- Pen 4 Card -->
+    <g transform="translate(0, 255)">
+      <rect class="card-box" x="0" y="0" width="160" height="68" rx="10" stroke-width="1.2" filter="url(#cardShadow)"/>
+      <text class="card-text-title" x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">Chuồng 4 (ngoài)</text>
+      <text class="card-text-primary" x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">21 con</text>
+      <text class="card-text-secondary" x="14" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">(10 đôi + 1 con)</text>
+    </g>
+  </g>
+</svg>

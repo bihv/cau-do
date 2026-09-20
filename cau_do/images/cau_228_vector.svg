@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="100%" height="100%">
+  <defs>
+    <style><![CDATA[
+      /* Light theme default */
+      .card-box { fill: #ffffff; stroke: #cbd5e1; }
+      .card-text { fill: #0f172a; }
+      .card-amber { fill: #fef3c7; stroke: #f59e0b; }
+      .card-amber-text { fill: #d97706; }
+      .tri-body { fill: #ffffff; stroke: #1e293b; }
+
+      /* Dark theme: dark slate cards and light text */
+      @media (prefers-color-scheme: dark) {
+        .card-box { fill: #1e293b; stroke: #475569; }
+        .card-text { fill: #f8fafc; }
+        .card-amber { fill: rgba(245, 158, 11, 0.22); stroke: #fbbf24; }
+        .card-amber-text { fill: #fbbf24; }
+        .tri-body { fill: #1e293b; stroke: #94a3b8; }
+      }
+    ]]></style>
+
+    <!-- Soft shadow for triangles -->
+    <filter id="triShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <!-- Badge shadow -->
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+
+    <!-- Triangle 1: 3 Dots on RIGHT slant edge -->
+    <g id="triRight" filter="url(#triShadow)">
+      <polygon class="tri-body" points="0,-30 35,30 -35,30" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- 3 bead dots on right edge -->
+      <circle cx="9.8" cy="-13.2" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="9" cy="-14" r="1.5" fill="#ffffff" opacity="0.6"/>
+      <circle cx="18.55" cy="1.8" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="17.75" cy="1" r="1.5" fill="#ffffff" opacity="0.6"/>
+      <circle cx="27.3" cy="16.8" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="26.5" cy="16" r="1.5" fill="#ffffff" opacity="0.6"/>
+    </g>
+
+    <!-- Triangle 2: 3 Dots on LEFT slant edge -->
+    <g id="triLeft" filter="url(#triShadow)">
+      <polygon class="tri-body" points="0,-30 35,30 -35,30" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- 3 bead dots on left edge -->
+      <circle cx="-9.8" cy="-13.2" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="-10.6" cy="-14" r="1.5" fill="#ffffff" opacity="0.6"/>
+      <circle cx="-18.55" cy="1.8" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="-19.35" cy="1" r="1.5" fill="#ffffff" opacity="0.6"/>
+      <circle cx="-27.3" cy="16.8" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="-28.1" cy="16" r="1.5" fill="#ffffff" opacity="0.6"/>
+    </g>
+
+    <!-- Triangle 3: 3 Dots on BOTTOM horizontal edge -->
+    <g id="triBottom" filter="url(#triShadow)">
+      <polygon class="tri-body" points="0,-30 35,30 -35,30" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- 3 bead dots on bottom edge -->
+      <circle cx="-17.5" cy="30" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="-18.3" cy="29.2" r="1.5" fill="#ffffff" opacity="0.6"/>
+      <circle cx="0" cy="30" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="-0.8" cy="29.2" r="1.5" fill="#ffffff" opacity="0.6"/>
+      <circle cx="17.5" cy="30" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="1.2"/>
+      <circle cx="16.7" cy="29.2" r="1.5" fill="#ffffff" opacity="0.6"/>
+    </g>
+  </defs>
+
+  <!-- Transparent Background (No Card Rect) -->
+
+  <!-- Subtle Row Dividers -->
+  <line x1="45" y1="98" x2="735" y2="98" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5" opacity="0.35"/>
+  <line x1="45" y1="183" x2="735" y2="183" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5" opacity="0.35"/>
+  <line x1="45" y1="268" x2="735" y2="268" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5" opacity="0.35"/>
+
+  <!-- ==================== ROW 1: T1 + T2 + T3 = 1368 ==================== -->
+  <g transform="translate(0, 55)">
+    <!-- Col 1: Triangle 1 -->
+    <use href="#triRight" x="95" y="0"/>
+    <!-- Op 1: + -->
+    <text x="195" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="700" fill="#3b82f6" text-anchor="middle">+</text>
+    <!-- Col 2: Triangle 2 -->
+    <use href="#triLeft" x="295" y="0"/>
+    <!-- Op 2: + -->
+    <text x="395" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="700" fill="#3b82f6" text-anchor="middle">+</text>
+    <!-- Col 3: Triangle 3 -->
+    <use href="#triBottom" x="495" y="0"/>
+    <!-- Equal: = -->
+    <text x="590" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="700" fill="#94a3b8" text-anchor="middle">=</text>
+    <!-- Value: 1368 -->
+    <g transform="translate(680, 0)">
+      <rect class="card-box" x="-48" y="-22" width="96" height="44" rx="10" stroke-width="1.5" filter="url(#badgeShadow)"/>
+      <text class="card-text" x="0" y="9" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800" text-anchor="middle">1368</text>
+    </g>
+  </g>
+
+  <!-- ==================== ROW 2: T1 - T2 - T3 = 210 ==================== -->
+  <g transform="translate(0, 140)">
+    <!-- Col 1: Triangle 1 -->
+    <use href="#triRight" x="95" y="0"/>
+    <!-- Op 1: - -->
+    <text x="195" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="700" fill="#f43f5e" text-anchor="middle">−</text>
+    <!-- Col 2: Triangle 2 -->
+    <use href="#triLeft" x="295" y="0"/>
+    <!-- Op 2: - -->
+    <text x="395" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="700" fill="#f43f5e" text-anchor="middle">−</text>
+    <!-- Col 3: Triangle 3 -->
+    <use href="#triBottom" x="495" y="0"/>
+    <!-- Equal: = -->
+    <text x="590" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="700" fill="#94a3b8" text-anchor="middle">=</text>
+    <!-- Value: 210 -->
+    <g transform="translate(680, 0)">
+      <rect class="card-box" x="-48" y="-22" width="96" height="44" rx="10" stroke-width="1.5" filter="url(#badgeShadow)"/>
+      <text class="card-text" x="0" y="9" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800" text-anchor="middle">210</text>
+    </g>
+  </g>
+
+  <!-- ==================== ROW 3: T1 + T2 - T3 = 1122 ==================== -->
+  <g transform="translate(0, 225)">
+    <!-- Col 1: Triangle 1 -->
+    <use href="#triRight" x="95" y="0"/>
+    <!-- Op 1: + -->
+    <text x="195" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="700" fill="#3b82f6" text-anchor="middle">+</text>
+    <!-- Col 2: Triangle 2 -->
+    <use href="#triLeft" x="295" y="0"/>
+    <!-- Op 2: - -->
+    <text x="395" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="700" fill="#f43f5e" text-anchor="middle">−</text>
+    <!-- Col 3: Triangle 3 -->
+    <use href="#triBottom" x="495" y="0"/>
+    <!-- Equal: = -->
+    <text x="590" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="700" fill="#94a3b8" text-anchor="middle">=</text>
+    <!-- Value: 1122 -->
+    <g transform="translate(680, 0)">
+      <rect class="card-box" x="-48" y="-22" width="96" height="44" rx="10" stroke-width="1.5" filter="url(#badgeShadow)"/>
+      <text class="card-text" x="0" y="9" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800" text-anchor="middle">1122</text>
+    </g>
+  </g>
+
+  <!-- ==================== ROW 4: T1 - T2 + T3 = ? ==================== -->
+  <g transform="translate(0, 310)">
+    <!-- Col 1: Triangle 1 -->
+    <use href="#triRight" x="95" y="0"/>
+    <!-- Op 1: - -->
+    <text x="195" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="700" fill="#f43f5e" text-anchor="middle">−</text>
+    <!-- Col 2: Triangle 2 -->
+    <use href="#triLeft" x="295" y="0"/>
+    <!-- Op 2: + -->
+    <text x="395" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="700" fill="#3b82f6" text-anchor="middle">+</text>
+    <!-- Col 3: Triangle 3 -->
+    <use href="#triBottom" x="495" y="0"/>
+    <!-- Equal: = -->
+    <text x="590" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="700" fill="#94a3b8" text-anchor="middle">=</text>
+    <!-- Value Target: ? -->
+    <g transform="translate(680, 0)">
+      <rect class="card-amber" x="-35" y="-22" width="70" height="44" rx="10" stroke-width="2" stroke-dasharray="5,3" filter="url(#badgeShadow)"/>
+      <text class="card-amber-text" x="0" y="9" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" text-anchor="middle">?</text>
+    </g>
+  </g>
+</svg>

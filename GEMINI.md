@@ -55,7 +55,10 @@ Khi vẽ hoặc cập nhật hình minh họa câu đố:
 2. **Bộ đôi Vector Đề bài & Đáp án:**
    - Đề bài: `cau_xxx_vector.svg` (thể hiện ô trống mục tiêu viền nét đứt màu hổ phách `#f59e0b`).
    - Đáp án: `cau_xxx_dapan_vector.svg` (thể hiện phương án đúng màu xanh ngọc Emerald `#10b981`, huy hiệu checkmark, làm mờ các phương án sai).
-3. **Tránh bẫy W3C Zero-Area Bounding Box Trap:** Đoạn thẳng ngang hoặc dọc đơn lẻ KHÔNG dùng `<line>` có filter mà PHẢI dùng `<rect rx="...">` để tránh lỗi biến mất đường nét trên trình duyệt.
+3. **Tách nền trong suốt & Đa theme:** KHÔNG vẽ thẻ `<rect>` bao toàn bộ canvas. Dùng `<style><![CDATA[ ... ]]></style>` hỗ trợ `@media (prefers-color-scheme: dark)` để card/badge tự thích ứng cả Light & Dark mode.
+4. **Chuẩn XML tuyệt đối:** Bắt buộc bọc `<style>` trong `<![CDATA[ ... ]]>`, tuyệt đối không để ký tự `&` tự do (thay bằng `and`/`&amp;`). Kiểm tra hợp lệ bằng `xml.etree.ElementTree` trước khi bàn giao.
+5. **Bố cục đường nét & chữ:** Khi có badge nằm trên tia số/đường thẳng, phải ngắt đường kẻ quanh badge hoặc đặt nền đục 100% để chữ không bao giờ bị đường kẻ cắt ngang hay đè lên.
+6. **Tránh bẫy W3C Zero-Area Bounding Box Trap:** Đoạn thẳng ngang hoặc dọc đơn lẻ KHÔNG dùng `<line>` có filter mà PHẢI dùng `<rect rx="...">` để tránh lỗi biến mất đường nét trên trình duyệt.
 
 #### 2.3. Quy trình Đồng Bộ Dữ Liệu Web:
 - **BẮT BUỘC CHẠY SCRIPT BIÊN DỊCH:** Sau khi thêm, sửa bất kỳ file Markdown hay ảnh SVG nào trong `cau_do/`, AI Agent phải chạy lệnh sau để cập nhật `data/puzzles.json`:

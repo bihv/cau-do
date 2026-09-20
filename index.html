@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>500 Câu Đố Trí Tuệ - Rèn Luyện Tư Duy Logic</title>
+  <meta name="description" content="Khám phá và thử thách bản thân với 500 câu đố tư duy logic, toán học và hình học rèn luyện trí tuệ thanh thiếu niên." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>" />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Compatibility shim for Disqus parseColor with Tailwind CSS v4 OKLCH/OKLAB colors and Dark Mode -->
+  <script>
+    (function() {
+      const orig = window.getComputedStyle;
+      let ctx = null;
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 1;
+        ctx = canvas.getContext('2d');
+      } catch (_) {}
+
+      function isUnsupportedColor(val) {
+        if (typeof val !== 'string') return false;
+        return val.includes('oklch') || 
+               val.includes('oklab') || 
+               val.includes('lch(') || 
+               val.includes('lab(') || 
+               val.includes('color(') || 
+               val.includes('light-dark(') ||
+               val.includes('hwb(');
+      }
+
+      function normalizeColor(nameOrProp, val) {
+        if (!isUnsupportedColor(val)) return val;
+        // 1. Thử dùng canvas 2D để chuẩn hóa mã màu hiện đại sang hex/rgba chuẩn
+        if (ctx) {
+          try {
+            ctx.fillStyle = 'rgba(1, 2, 3, 0.5)';
+            ctx.fillStyle = val;
+            if (ctx.fillStyle !== 'rgba(1, 2, 3, 0.5)' && !isUnsupportedColor(ctx.fillStyle)) {
+              return ctx.fillStyle;
+            }
+          } catch (_) {}
+        }
+        // 2. Dự phòng an toàn theo trạng thái Dark/Light
+        const isDark = document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark';
+        const propStr = typeof nameOrProp === 'string' ? nameOrProp.toLowerCase() : '';
+        const isTextColor = propStr === 'color' || (propStr.includes('color') && !propStr.includes('background') && !propStr.includes('border'));
+        if (isTextColor) {
+          return isDark ? 'rgb(241, 245, 249)' : 'rgb(15, 23, 42)';
+        }
+        if (propStr.includes('border') || propStr.includes('outline')) {
+          return isDark ? 'rgb(51, 65, 85)' : 'rgb(226, 232, 240)';
+        }
+        return isDark ? 'rgb(15, 23, 42)' : 'rgb(255, 255, 255)';
+      }
+
+      const proxyHandler = {
+        get(target, prop) {
+          if (prop === 'getPropertyValue') {
+            return function(name) {
+              const val = target.getPropertyValue(name);
+              return normalizeColor(name, val);
+            };
+          }
+          const val = target[prop];
+          if (typeof val === 'function') {
+            return val.bind(target);
+          }
+          if (typeof prop === 'string' && isNaN(Number(prop)) && prop !== 'cssText') {
+            return normalizeColor(prop, val);
+          }
+          return val;
+        }
+      };
+
+      // Áp dụng cho mọi phần tử để Disqus có thể duyệt cây DOM mà không bao giờ gặp lỗi oklab/oklch
+      const customGetComputedStyle = function(el, pseudo) {
+        const res = orig.call(window, el, pseudo);
+        if (!res) return res;
+        return new Proxy(res, proxyHandler);
+      };
+
+      window.getComputedStyle = customGetComputedStyle;
+      if (document.defaultView) {
+        document.defaultView.getComputedStyle = customGetComputedStyle;
+      }
+    })();
+  </script>
+
+  <!-- Khởi tạo sớm theme để tránh giật sáng/tối (FOUC) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('cau_do_theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS v4 Browser Build -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    @theme {
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+
+  <!-- KaTeX CSS & JS for Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Marked.js for Markdown Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+
+  <!-- Canvas Confetti for Celebration Feedback -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Base Markdown Content Styling -->
+  <style>
+    body {
+      font-family: var(--font-sans);
+    }
+    #disqus_thread {
+      color: #0f172a !important;
+      background-color: #ffffff !important;
+      padding: 0.75rem 1rem !important;
+      box-sizing: border-box !important;
+    }
+    html.dark #disqus_thread, html[data-theme="dark"] #disqus_thread {
+      color: #f1f5f9 !important;
+      background-color: #0b0f19 !important;
+    }
+    @media (min-width: 640px) {
+      #disqus_thread {
+        padding: 1.5rem 2.5rem !important;
+      }
+    }
+    .problem-content p, .answer-content p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .problem-content ul, .answer-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+    .problem-content ol, .answer-content ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+    .problem-content li, .answer-content li {
+      margin-bottom: 0.4rem;
+    }
+    .problem-content strong, .answer-content strong {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .dark .problem-content strong, .dark .answer-content strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .problem-content em, .answer-content em {
+      font-style: italic;
+      color: #334155;
+    }
+    .dark .problem-content em, .dark .answer-content em {
+      color: #cbd5e1;
+    }
+    .problem-content blockquote, .answer-content blockquote {
+      border-left: 4px solid #6366f1;
+      padding-left: 1rem;
+      color: #475569;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+    .dark .problem-content blockquote, .dark .answer-content blockquote {
+      color: #94a3b8;
+      border-left-color: #818cf8;
+    }
+    .katex-overflow-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Tối ưu hóa hiển thị Hình ảnh / SVG Vector trong đề bài và lời giải */
+    .problem-content img, .answer-content img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.5rem auto;
+      transition: transform 0.25s ease;
+    }
+    .problem-content img:hover, .answer-content img:hover {
+      transform: scale(1.015);
+      cursor: zoom-in;
+    }
+
+    /* Chế độ Tối (Dark Mode) Zen: Nền ngoài xám sẫm êm dịu, Thẻ Card đọc nội dung màu tối sâu */
+    html.dark, html[data-theme="dark"] {
+      color-scheme: dark;
+    }
+    html.dark body, html[data-theme="dark"] body {
+      background-color: #111827 !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    /* Thẻ Flashcard Trung tâm: Màu tối sâu thanh nhã, tôn nổi văn bản */
+    @media (min-width: 640px) {
+      #puzzle-main-card {
+        background-color: #ffffff;
+        border-color: #e2e8f0;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      }
+      html.dark #puzzle-main-card, html[data-theme="dark"] #puzzle-main-card {
+        background-color: #0b0f19 !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+      }
+    }
+    /* Trên Mobile: Giữ không gian đọc thông thoáng */
+    @media (max-width: 639px) {
+      #puzzle-main-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+    }
+
+    html.dark header, html[data-theme="dark"] header {
+      background-color: rgba(17, 24, 39, 0.92) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-color: rgba(255, 255, 255, 0.07) !important;
+    }
+    html.dark .problem-content, html.dark .answer-content,
+    html[data-theme="dark"] .problem-content, html[data-theme="dark"] .answer-content {
+      color: #e2e8f0;
+    }
+    html.dark .katex, html[data-theme="dark"] .katex {
+      color: #f8fafc;
+    }
+    /* Ẩn scrollbar phụ */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white bg-slate-50 text-slate-900 dark:bg-[#111827] dark:text-slate-100 pt-16 pb-12 transition-colors duration-200">
+
+  <!-- Mount Point: Header -->
+  <div id="header-mount"></div>
+
+  <!-- Mount Point: Thẻ Flashcard Trung tâm -->
+  <div id="main-mount" class="flex-1"></div>
+
+  <!-- Mount Point: Spotlight Tìm kiếm & Mục lục 10 Chuyên đề -->
+  <div id="drawer-mount"></div>
+
+  <!-- Mount Point: Modal Phóng to Ảnh Zoom -->
+  <div id="zoom-modal-mount"></div>
+
+  <!-- Mount Point: Nút Nổi Ngẫu Nhiên FAB (Góc dưới bên phải) -->
+  <div id="fab-mount"></div>
+
+  <!-- Module khởi động ứng dụng -->
+  <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

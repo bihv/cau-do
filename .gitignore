@@ -19,6 +19,11 @@ __pycache__/
 venv/
 env/
 
+# Environment files & Secrets
+.env
+.env.local
+.env.*.local
+
 # Hệ điều hành (Windows / macOS)
 Thumbs.db
 Thumbs.db:encryptable

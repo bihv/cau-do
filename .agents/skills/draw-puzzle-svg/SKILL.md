@@ -120,8 +120,12 @@ graph TD
    - Thay link ảnh đề bài cũ `cau_xxx.png` $\to$ `cau_xxx_vector.svg`.
    - Chèn link ảnh đáp án `cau_xxx_dapan_vector.svg` vào ngay sau dòng `### Đáp án:` trong thẻ `<details>`.
    - Chỉnh sửa lời giải chi tiết ăn khớp chuẩn xác với hình vẽ vector mới.
-2. **Cập nhật tài liệu tổng hợp (`PROMPTS_RECREATE_IMAGES.md`):**
-   - Bổ sung đường dẫn clickable link tới 2 file SVG vừa tạo tại mục câu tương ứng.
+2. **Đồng bộ hóa cơ sở dữ liệu Web App:**
+   - Chạy lệnh biên dịch để cập nhật `data/puzzles.json`:
+     ```bash
+     python scripts/build_web_data.py
+     ```
+   - Kiểm tra hiển thị trực tiếp trên giao diện web để đảm bảo hình SVG hiển thị sắc nét, căn giữa và hỗ trợ phóng to (zoom modal) hoàn hảo.
 
 ---
 
@@ -136,6 +140,8 @@ graph TD
 | **Ma trận IQ $3 \times 3$ (Que vạch đối xứng)** | **Câu 058** | • Tính toán tọa độ đoạn thẳng nghiêng $/$, $\backslash$, $|$, $-$ đối xứng tâm.<br>• Tâm là hình hoa thị 8 hướng kết hợp từ 4 đoạn thẳng.<br>• Highlight phương án B thắng cuộc. |
 | **Bàn cờ lưới tọa độ ($6 \times 6$)** | **Câu 053** | • Lưới kẻ $6 \times 6$ sắc nét.<br>• Quân cờ là viên bi tròn 3D gradient có bóng đổ.<br>• Hình đáp án đặt chính xác 12 quân cờ theo 6 cặp hàng/cột. |
 | **Mặt bằng kiến trúc & Lối đi** | **Câu 057** | • Vẽ mặt bằng 7 phòng triển lãm $R, S, T, U, X, Y, Z$ phối màu pastel thanh lịch.<br>• Cửa mở kiến trúc góc $90^\circ$ kèm cung tròn mở cửa tiêu chuẩn.<br>• Mũi tên dẫn đường vào phòng $R$. |
+| **Chia cắt mảnh đất hình học** | **Câu 364** | • Khôi phục chính xác chữ bị che mất từ scan gốc.<br>• Vẽ bản đồ phân chia mảnh đất thành các phần bằng nhau với màu sắc phân biệt rõ ràng. |
+| **Gấp dán hình học không gian** | **Câu 430, 431, 432** | • Vẽ lưới khai triển hình lập phương và các mặt phẳng 3D trực quan.<br>• Đánh dấu ký hiệu các mặt đối diện chính xác tuyệt đối. |
 | **Xếp hạt & Phát hiện sạn sách** | **Câu 015** | • Cây thánh giá 27 viên đá saphire xếp nhánh.<br>• Phát hiện sạn scan mất 4 viên thay vì 2 viên $\to$ Vẽ riêng đáp án chính thức 2 viên và đáp án bonus 4 viên. |
 
 ---
@@ -150,5 +156,5 @@ graph TD
 - [ ] Đã có đủ cả 2 file: file đề bài (`_vector.svg`) và file đáp án (`_dapan_vector.svg`) chưa?
 - [ ] Phối màu đã đạt chuẩn UI Premium (gradient, shadow, dark slate, emerald) chưa?
 - [ ] File `cau_xxx.md` đã được cập nhật link 2 ảnh và lời giải đã được rà soát chưa?
-- [ ] File `PROMPTS_RECREATE_IMAGES.md` đã được cập nhật mục tương ứng chưa?
+- [ ] Đã chạy `python scripts/build_web_data.py` và kiểm tra hiển thị trên Web App chưa?
 

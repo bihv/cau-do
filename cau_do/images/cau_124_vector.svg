@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 440" width="100%" height="100%">
+  <defs>
+    <style><![CDATA[
+      /* Light theme default */
+      .card-box { fill: #ffffff; stroke: #cbd5e1; }
+      .card-text-primary { fill: #0f172a; }
+      .card-text-secondary { fill: #64748b; }
+      .table-circle { fill: #f8fafc; stroke: #e2e8f0; }
+
+      .badge-amber { fill: #fffbeb; stroke: #f59e0b; }
+      .badge-amber-text { fill: #b45309; }
+
+      .coin-face-up { fill: url(#goldHeads); stroke: #d97706; }
+      .coin-face-down { fill: url(#goldTails); stroke: #92400e; }
+      .coin-inner-up { fill: #fef08a; stroke: #ca8a04; }
+      .coin-inner-down { fill: #78350f; stroke: #451a03; }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        .card-box { fill: #1e293b; stroke: #475569; }
+        .card-text-primary { fill: #f8fafc; }
+        .card-text-secondary { fill: #94a3b8; }
+        .table-circle { fill: #1e293b; stroke: #334155; }
+
+        .badge-amber { fill: #451a03; stroke: #f59e0b; }
+        .badge-amber-text { fill: #fde68a; }
+      }
+    ]]></style>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="coinShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#78350f" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Gold Coin Heads Gradient (Bright Gold) -->
+    <radialGradient id="goldHeads" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </radialGradient>
+
+    <!-- Gold Coin Tails Gradient (Dark Antique Bronze) -->
+    <radialGradient id="goldTails" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="70%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </radialGradient>
+
+    <!-- Coin Heads Symbol (Ngửa) -->
+    <g id="coinUp" filter="url(#coinShadow)">
+      <circle class="coin-face-up" cx="0" cy="0" r="18" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="13" fill="none" stroke="#fef08a" stroke-width="1.2" stroke-dasharray="2,2"/>
+      <!-- Star / Crown in center -->
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="#ffffff" opacity="0.95"/>
+    </g>
+
+    <!-- Coin Tails Symbol (Sấp) -->
+    <g id="coinDown" filter="url(#coinShadow)">
+      <circle class="coin-face-down" cx="0" cy="0" r="18" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="13" fill="none" stroke="#d97706" stroke-width="1.2"/>
+      <!-- Cross hatch pattern in center -->
+      <circle cx="0" cy="0" r="5" fill="#451a03"/>
+    </g>
+  </defs>
+
+  <!-- Transparent Background (No Card Rect) -->
+
+  <!-- Top Banner -->
+  <g transform="translate(420, 40)">
+    <rect class="badge-amber" x="-240" y="-18" width="480" height="36" rx="18" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <text class="badge-amber-text" x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">23 Đồng xu trên bàn: 10 Đồng ngửa (★) &amp; 13 Đồng sấp (●)</text>
+  </g>
+
+  <!-- Table Felt Surface (Ellipse) -->
+  <ellipse class="table-circle" cx="360" cy="225" rx="300" ry="140" stroke-width="2"/>
+
+  <!-- 23 COINS SCATTERED ON TABLE (10 Heads Up, 13 Tails Down) -->
+  <!-- 10 Heads Up (Star) -->
+  <use href="#coinUp" x="150" y="170"/>
+  <use href="#coinUp" x="220" y="140"/>
+  <use href="#coinUp" x="310" y="130"/>
+  <use href="#coinUp" x="420" y="140"/>
+  <use href="#coinUp" x="510" y="170"/>
+  <use href="#coinUp" x="180" y="240"/>
+  <use href="#coinUp" x="270" y="220"/>
+  <use href="#coinUp" x="390" y="210"/>
+  <use href="#coinUp" x="480" y="240"/>
+  <use href="#coinUp" x="330" y="290"/>
+
+  <!-- 13 Tails Down (Dot) -->
+  <use href="#coinDown" x="120" y="210"/>
+  <use href="#coinDown" x="160" y="290"/>
+  <use href="#coinDown" x="230" y="280"/>
+  <use href="#coinDown" x="260" y="175"/>
+  <use href="#coinDown" x="360" y="165"/>
+  <use href="#coinDown" x="450" y="180"/>
+  <use href="#coinDown" x="550" y="220"/>
+  <use href="#coinDown" x="520" y="280"/>
+  <use href="#coinDown" x="420" y="280"/>
+  <use href="#coinDown" x="220" y="215"/>
+  <use href="#coinDown" x="330" y="235"/>
+  <use href="#coinDown" x="450" y="235"/>
+  <use href="#coinDown" x="270" y="325"/>
+
+  <!-- Right Side Card: Challenge Constraints -->
+  <g transform="translate(680, 110)">
+    <!-- Legend Box -->
+    <rect class="card-box" x="0" y="0" width="140" height="110" rx="10" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <text class="card-text-primary" x="15" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800">Quy ước:</text>
+
+    <!-- Up Legend -->
+    <circle cx="25" cy="48" r="8" fill="url(#goldHeads)" stroke="#ca8a04" stroke-width="1.2"/>
+    <text class="card-text-secondary" x="42" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">10 Đồng ngửa</text>
+
+    <!-- Down Legend -->
+    <circle cx="25" cy="80" r="8" fill="url(#goldTails)" stroke="#92400e" stroke-width="1.2"/>
+    <text class="card-text-secondary" x="42" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">13 Đồng sấp</text>
+
+    <!-- Blindfold Condition Box -->
+    <rect class="badge-amber" x="0" y="125" width="140" height="90" rx="10" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <text class="badge-amber-text" x="12" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800">Điều kiện:</text>
+    <text class="badge-amber-text" x="12" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">• Bị bịt mắt</text>
+    <text class="badge-amber-text" x="12" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">• Đeo găng tay</text>
+    <text class="badge-amber-text" x="12" y="206" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">(Không thể sờ mặt)</text>
+  </g>
+
+  <!-- Bottom Challenge Prompt -->
+  <text class="card-text-primary" x="420" y="405" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" text-anchor="middle">Làm thế nào chia thành 2 phần có số đồng ngửa bằng nhau?</text>
+
+</svg>

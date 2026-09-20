@@ -45,10 +45,35 @@ export function renderNavigationDrawer(container) {
       return;
     }
 
+    // Khi mới mở Spotlight hoặc khi store yêu cầu chọn chuyên đề mới
+    const shouldSyncTopic = !wasOpen || (store.selectedPart && store.selectedPart !== "all" && store.selectedPart.toLowerCase() !== selectedPhan.toLowerCase());
+    if (shouldSyncTopic) {
+      wasOpen = true;
+
+      // Đồng bộ Chuyên đề từ store
+      if (store.selectedPart && store.selectedPart !== "all") {
+        const matched = PHAN_LIST.find(
+          (p) => p.toLowerCase() === store.selectedPart.toLowerCase()
+        );
+        selectedPhan = matched || "Tất cả chuyên đề";
+      } else {
+        selectedPhan = "Tất cả chuyên đề";
+      }
+
+      // Nếu mở theo chuyên đề cụ thể, xóa tìm kiếm và reset bộ lọc để hiển thị đầy đủ
+      if (selectedPhan !== "Tất cả chuyên đề") {
+        searchQuery = "";
+        activeFilter = "all";
+      }
+    }
+
     // Lọc danh sách câu đố
     const filteredPuzzles = store.puzzles.filter((p) => {
-      // 1. Lọc theo chuyên đề
-      if (selectedPhan !== "Tất cả chuyên đề" && p.phan !== selectedPhan) {
+      // 1. Lọc theo chuyên đề (so sánh không phân biệt hoa thường)
+      if (
+        selectedPhan !== "Tất cả chuyên đề" &&
+        (!p.phan || p.phan.toLowerCase() !== selectedPhan.toLowerCase())
+      ) {
         return false;
       }
 
@@ -72,13 +97,12 @@ export function renderNavigationDrawer(container) {
       return true;
     });
 
-    // Khi mới mở Spotlight, chọn câu hiện tại
-    if (!wasOpen) {
-      wasOpen = true;
-      const curIdx = filteredPuzzles.findIndex((p) => p.id === store.currentPuzzleId);
-      if (curIdx >= 0) {
-        selectedIndex = curIdx;
-      }
+    // Sau khi lọc, chọn câu hiện tại nếu có trong danh sách
+    const curIdx = filteredPuzzles.findIndex((p) => p.id === store.currentPuzzleId);
+    if (curIdx >= 0) {
+      selectedIndex = curIdx;
+    } else {
+      selectedIndex = 0;
     }
 
     // Giữ selectedIndex trong phạm vi hợp lệ
@@ -319,6 +343,7 @@ export function renderNavigationDrawer(container) {
     const phanSelect = container.querySelector("#spotlight-phan-select");
     phanSelect?.addEventListener("change", (e) => {
       selectedPhan = e.target.value;
+      store.selectedPart = selectedPhan;
       selectedIndex = 0;
       update();
     });

@@ -8,6 +8,7 @@ import { initConfig } from "./config.js";
 import { store } from "./store/state.js";
 import { initRouter, navigateToPuzzle } from "./router/router.js";
 import { showToast } from "./utils/dom.js";
+import { renderHomeView } from "./views/HomeView.js";
 import { renderHeader } from "./components/Header.js";
 import { renderPuzzleCard } from "./components/PuzzleCard.js";
 import { renderNavigationDrawer } from "./components/NavigationDrawer.js";
@@ -28,6 +29,8 @@ async function bootstrap() {
   initRouter();
 
   // 4. Mount các Component vào DOM
+  const homeEl = document.getElementById("home-view");
+  const puzzleEl = document.getElementById("puzzle-view");
   const headerEl = document.getElementById("header-mount");
   const mainEl = document.getElementById("main-mount");
   const drawerEl = document.getElementById("drawer-mount");
@@ -35,6 +38,7 @@ async function bootstrap() {
   const fabEl = document.getElementById("fab-mount");
   const bottomBarEl = document.getElementById("bottom-bar-mount");
 
+  if (homeEl) renderHomeView(homeEl);
   if (headerEl) renderHeader(headerEl);
   if (mainEl) renderPuzzleCard(mainEl);
   if (drawerEl) renderNavigationDrawer(drawerEl);
@@ -42,7 +46,42 @@ async function bootstrap() {
   if (fabEl) renderRandomFAB(fabEl);
   if (bottomBarEl) renderBottomBar(bottomBarEl);
 
-  // 5. Đăng ký phím tắt bàn phím toàn cục (Keyboard Shortcuts)
+  // 5. Quản lý chuyển đổi hiển thị giữa Home View và Puzzle View (Fade Transition 150ms)
+  function syncView() {
+    const isHome = store.currentView === "home";
+    if (homeEl) {
+      if (isHome) {
+        homeEl.style.display = "block";
+        requestAnimationFrame(() => {
+          homeEl.classList.remove("opacity-0");
+          homeEl.classList.add("opacity-100");
+        });
+      } else {
+        homeEl.classList.remove("opacity-100");
+        homeEl.classList.add("opacity-0");
+        homeEl.style.display = "none";
+      }
+    }
+
+    if (puzzleEl) {
+      if (!isHome) {
+        puzzleEl.style.display = "flex";
+        requestAnimationFrame(() => {
+          puzzleEl.classList.remove("opacity-0");
+          puzzleEl.classList.add("opacity-100");
+        });
+      } else {
+        puzzleEl.classList.remove("opacity-100");
+        puzzleEl.classList.add("opacity-0");
+        puzzleEl.style.display = "none";
+      }
+    }
+  }
+
+  store.subscribe(syncView);
+  syncView();
+
+  // 6. Đăng ký phím tắt bàn phím toàn cục (Keyboard Shortcuts)
   setupKeyboardShortcuts();
 
   console.log("✨ Ứng dụng đã sẵn sàng!");
@@ -99,7 +138,29 @@ function setupKeyboardShortcuts() {
       return;
     }
 
-    // Phím C: Mở / Đóng Bảng nháp & Vẽ hình
+    // Phím M: Mở / đóng Spotlight tìm kiếm & Danh mục
+    if (e.key === "m" || e.key === "M") {
+      e.preventDefault();
+      store.setDrawerOpen(!store.isDrawerOpen);
+      return;
+    }
+
+    // Phím R: Câu ngẫu nhiên (hoạt động cả ở Home và Puzzle View)
+    if (e.key === "r" || e.key === "R") {
+      e.preventDefault();
+      const randomId = store.getRandomUnsolvedId();
+      navigateToPuzzle(randomId);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Nếu đang ở Trang Chủ (Home View), không kích hoạt các phím điều hướng câu đố bên dưới
+    if (store.currentView === "home") return;
+
+    // Nếu drawer hoặc modal đang mở thì không bấm next/prev/space/c/b
+    if (store.isDrawerOpen || store.isZoomModalOpen) return;
+
+    // Phím C: Mở / Đóng Bảng nháp & Vẽ hình (chỉ ở Puzzle View)
     if (e.key === "c" || e.key === "C") {
       e.preventDefault();
       if (window.innerWidth < 1024) {
@@ -109,16 +170,6 @@ function setupKeyboardShortcuts() {
       }
       return;
     }
-
-    // Phím M: Mở / đóng Spotlight tìm kiếm & Danh mục
-    if (e.key === "m" || e.key === "M") {
-      e.preventDefault();
-      store.setDrawerOpen(!store.isDrawerOpen);
-      return;
-    }
-
-    // Nếu drawer hoặc modal đang mở thì không bấm next/prev/random/space
-    if (store.isDrawerOpen || store.isZoomModalOpen) return;
 
     // Phím Mũi tên trái / J / P: Câu trước
     if (e.key === "ArrowLeft" || e.key === "j" || e.key === "J" || e.key === "p" || e.key === "P") {
@@ -151,15 +202,6 @@ function setupKeyboardShortcuts() {
     if (e.key === "b" || e.key === "B") {
       e.preventDefault();
       store.toggleBookmark();
-      return;
-    }
-
-    // Phím R: Câu ngẫu nhiên
-    if (e.key === "r" || e.key === "R") {
-      e.preventDefault();
-      const randomId = store.getRandomUnsolvedId();
-      navigateToPuzzle(randomId);
-      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
   });

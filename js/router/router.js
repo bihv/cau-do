@@ -19,6 +19,7 @@ function handleUrlChange() {
     const validId = normalizePuzzleId(paramVal, store.puzzles.length || 500, null);
     if (validId) {
       store.setCurrentPuzzleId(validId);
+      store.setView("puzzle");
       return;
     }
   }
@@ -34,8 +35,8 @@ function handleUrlChange() {
     }
   }
 
-  // 3. Nếu chưa có tham số câu đố nào trên URL, gắn câu hiện tại
-  navigateToPuzzle(store.currentPuzzleId, true);
+  // 3. Nếu không có tham số câu đố nào trên URL, hiển thị Trang Chủ (Home View)
+  store.setView("home");
 }
 
 /**
@@ -46,6 +47,9 @@ export function initRouter() {
   window.addEventListener("popstate", (e) => {
     if (e.state && e.state.puzzleId) {
       store.setCurrentPuzzleId(e.state.puzzleId);
+      store.setView("puzzle");
+    } else if (e.state && e.state.view === "home") {
+      store.setView("home");
     } else {
       handleUrlChange();
     }
@@ -56,16 +60,35 @@ export function initRouter() {
 }
 
 /**
+ * Điều hướng về Trang Chủ
+ * @param {boolean} replace - Dùng replaceState thay vì pushState
+ */
+export function navigateToHome(replace = false) {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("cau");
+  url.searchParams.delete("id");
+  url.hash = "";
+
+  if (replace) {
+    window.history.replaceState({ view: "home" }, "", url.toString());
+  } else {
+    window.history.pushState({ view: "home" }, "", url.toString());
+  }
+
+  store.setView("home");
+}
+
+/**
  * Điều hướng tới một câu đố cụ thể qua Query Parameter (?cau=X)
  * @param {number|string} id - Số câu đố
  * @param {boolean} replace - Dùng replaceState thay vì pushState (không tạo lịch sử mới)
  */
 export function navigateToPuzzle(id, replace = false) {
-  const validId = normalizePuzzleId(id, store.puzzles.length || 500, store.currentPuzzleId);
+  const validId = normalizePuzzleId(id, store.puzzles.length || 500, store.currentPuzzleId || 1);
   const url = new URL(window.location.href);
   const currentParam = url.searchParams.get("cau");
 
-  if (currentParam === String(validId) && !url.hash) {
+  if (currentParam === String(validId) && !url.hash && store.currentView === "puzzle") {
     store.setCurrentPuzzleId(validId);
     return;
   }
@@ -74,10 +97,11 @@ export function navigateToPuzzle(id, replace = false) {
   url.hash = ""; // Xóa sạch dấu # nếu có
 
   if (replace) {
-    window.history.replaceState({ puzzleId: validId }, "", url.toString());
+    window.history.replaceState({ view: "puzzle", puzzleId: validId }, "", url.toString());
   } else {
-    window.history.pushState({ puzzleId: validId }, "", url.toString());
+    window.history.pushState({ view: "puzzle", puzzleId: validId }, "", url.toString());
   }
 
   store.setCurrentPuzzleId(validId);
+  store.setView("puzzle");
 }

@@ -166,3 +166,19 @@ export function enhanceImagesWithZoom(container, onZoom, selector = "img") {
     };
   });
 }
+
+/**
+ * Thoát các ký tự HTML nguy hiểm để render an toàn
+ * @param {string} str
+ * @returns {string}
+ */
+export function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+

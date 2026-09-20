@@ -8,7 +8,7 @@
  */
 
 import { store } from "../store/state.js";
-import { navigateToPuzzle } from "../router/router.js";
+import { navigateToPuzzle, navigateToHome } from "../router/router.js";
 import { showToast } from "../utils/dom.js";
 
 export function renderHeader(container) {
@@ -93,7 +93,7 @@ export function renderHeader(container) {
     // Gắn sự kiện Logo
     container.querySelector("#header-logo-link")?.addEventListener("click", (e) => {
       e.preventDefault();
-      navigateToPuzzle(1);
+      navigateToHome();
     });
 
     // Gắn sự kiện mở Spotlight

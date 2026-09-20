@@ -29,6 +29,7 @@ class Store {
     this.selectedStatus = "all"; // 'all' | 'unsolved' | 'solved' | 'bookmarked'
     this.theme = "light"; // 'light' | 'dark'
     this.activeMobileTab = "problem"; // 'problem' | 'answer' | 'scratchpad'
+    this.currentView = "home"; // 'home' | 'puzzle'
 
     // LocalStorage sets
     this.solvedSet = new Set();
@@ -231,9 +232,19 @@ class Store {
     this.saveToStorage();
   }
 
-  // Drawer
-  setDrawerOpen(isOpen) {
+  // Drawer & Spotlight
+  setDrawerOpen(isOpen, phanName = null) {
     this.isDrawerOpen = isOpen;
+    if (phanName !== null) {
+      this.selectedPart = phanName;
+    }
+    this.notify();
+  }
+
+  // Mở Drawer với chuyên đề cụ thể
+  openDrawerWithTopic(phanName) {
+    this.selectedPart = phanName || "Tất cả chuyên đề";
+    this.isDrawerOpen = true;
     this.notify();
   }
 
@@ -269,6 +280,50 @@ class Store {
     const bookmarked = this.bookmarkSet.size;
     const percent = total > 0 ? Math.round((solved / total) * 100) : 0;
     return { total, solved, review, bookmarked, percent };
+  }
+
+  // Quản lý chuyển đổi View ('home' | 'puzzle')
+  setView(view) {
+    const target = view === "puzzle" ? "puzzle" : "home";
+    if (this.currentView !== target) {
+      this.currentView = target;
+      this.notify();
+    }
+  }
+
+  // Lấy câu chưa giải gần nhất của một chuyên đề
+  getNearestUnsolvedForTopic(phanName) {
+    if (!this.puzzles.length) return 1;
+    const topicPuzzles = this.puzzles.filter(
+      (p) => p.phan && p.phan.toLowerCase() === phanName.toLowerCase()
+    );
+    if (!topicPuzzles.length) return 1;
+    const unsolved = topicPuzzles.find((p) => !this.solvedSet.has(p.id));
+    return unsolved ? unsolved.id : topicPuzzles[0].id;
+  }
+
+  // Thống kê chi tiết cho một chuyên đề
+  getTopicStats(phanName) {
+    const topicPuzzles = this.puzzles.filter(
+      (p) => p.phan && p.phan.toLowerCase() === phanName.toLowerCase()
+    );
+    const total = topicPuzzles.length;
+    if (total === 0) return { total: 0, solved: 0, percent: 0 };
+    let solved = 0;
+    for (const p of topicPuzzles) {
+      if (this.solvedSet.has(p.id)) solved++;
+    }
+    const percent = Math.round((solved / total) * 100);
+    return { total, solved, percent };
+  }
+
+  // Lấy câu đang đọc dở (lịch sử) hoặc câu 1
+  getLastViewedOrFirstId() {
+    const savedLastId = localStorage.getItem(STORAGE_KEYS.LAST_ID);
+    if (savedLastId) {
+      return normalizePuzzleId(savedLastId, this.puzzles.length || 500, 1);
+    }
+    return this.currentPuzzleId || 1;
   }
 }
 

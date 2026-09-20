@@ -489,25 +489,32 @@
     }
   </style>
 </head>
-<body class="min-h-full flex flex-col antialiased selection:bg-orange-500 selection:text-white bg-slate-50 text-slate-900 dark:bg-[#111827] dark:text-slate-100 pt-16 pb-24 sm:pb-28 transition-colors duration-200">
+<body class="min-h-full flex flex-col antialiased selection:bg-orange-500 selection:text-white bg-slate-50 text-slate-900 dark:bg-[#111827] dark:text-slate-100 transition-colors duration-200">
 
-  <!-- Mount Point: Header -->
-  <div id="header-mount"></div>
+  <!-- Container Trang Chủ Độc Lập (Home View) -->
+  <div id="home-view" class="transition-opacity duration-150"></div>
 
-  <!-- Mount Point: Thẻ Flashcard Trung tâm -->
-  <div id="main-mount" class="flex-1"></div>
+  <!-- Container Trang Câu Đố Độc Lập (Puzzle View) -->
+  <div id="puzzle-view" class="flex-1 flex flex-col pt-16 pb-24 sm:pb-28 transition-opacity duration-150">
+    <!-- Mount Point: Header Câu Đố -->
+    <div id="header-mount"></div>
 
+    <!-- Mount Point: Thẻ Flashcard Trung tâm -->
+    <div id="main-mount" class="flex-1"></div>
+
+    <!-- Mount Point: Nút Nổi Ngẫu Nhiên FAB (Góc dưới bên phải) -->
+    <div id="fab-mount"></div>
+
+    <!-- Mount Point: Sticky Footer Điều hướng Câu đố -->
+    <div id="bottom-bar-mount"></div>
+  </div>
+
+  <!-- Các Modal & Drawer dùng chung -->
   <!-- Mount Point: Spotlight Tìm kiếm & Mục lục 10 Chuyên đề -->
   <div id="drawer-mount"></div>
 
   <!-- Mount Point: Modal Phóng to Ảnh Zoom -->
   <div id="zoom-modal-mount"></div>
-
-  <!-- Mount Point: Nút Nổi Ngẫu Nhiên FAB (Góc dưới bên phải) -->
-  <div id="fab-mount"></div>
-
-  <!-- Mount Point: Sticky Footer Điều hướng Câu đố -->
-  <div id="bottom-bar-mount"></div>
 
   <!-- Module khởi động ứng dụng -->
   <script type="module" src="./js/main.js"></script>

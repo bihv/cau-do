@@ -69,14 +69,31 @@ def parse_markdown_file(filepath):
     # Phần
     m_phan = re.search(r'\*\*Phần:?\*\*:?\s*(.+)', content)
     phan_raw = clean_text(m_phan.group(1)) if m_phan else ""
-    # Chuẩn hóa tên phần để hiển thị đẹp
-    phan_name = phan_raw
-    for p in PHAN_ORDER:
-        if p.lower() in phan_raw.lower():
-            phan_name = p
-            break
-    if not phan_name:
+    
+    # Chuẩn hóa tên phần: Ưu tiên tên thư mục chuẩn xác 100%
+    folder_name = Path(filepath).parent.name
+    FOLDER_TO_PHAN = {
+        "phan_1_phuong_phap_loai_tru": "Phương pháp loại trừ",
+        "phan_2_phuong_phap_de_quy": "Phương pháp đệ quy",
+        "phan_3_phuong_phap_suy_dien_nguoc": "Phương pháp suy diễn ngược",
+        "phan_4_phuong_phap_gia_thiet": "Phương pháp giả thiết",
+        "phan_5_phuong_phap_tinh_toan": "Phương pháp tính toán",
+        "phan_6_phuong_phap_phan_tich": "Phương pháp phân tích",
+        "phan_7_phuong_phap_ve_hinh": "Phương pháp vẽ hình",
+        "phan_8_phuong_phap_loai_suy": "Phương pháp loại suy",
+        "phan_9_phuong_phap_tong_hop": "Phương pháp tổng hợp",
+        "phan_10_thu_lam_sherlock_holmes": "Thử làm Sherlock Holmes"
+    }
+    if folder_name in FOLDER_TO_PHAN:
+        phan_name = FOLDER_TO_PHAN[folder_name]
+    else:
         phan_name = phan_raw
+        for p in PHAN_ORDER:
+            if p.lower() in phan_raw.lower() or ("đệ quy" in p.lower() and "đệ quy" in phan_raw.lower()):
+                phan_name = p
+                break
+        if not phan_name:
+            phan_name = phan_raw
 
     # Mức độ
     m_muc_do = re.search(r'\*\*Mức độ:?\*\*:?\s*(.+)', content)

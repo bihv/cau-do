@@ -1,109 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 370" width="100%" height="100%">
   <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
     <pattern id="gapStripes" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
       <line x1="0" y1="0" x2="0" y2="6" stroke="#ef4444" stroke-width="2"/>
     </pattern>
-    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
-    </filter>
-
-    <linearGradient id="gP1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#bfdbfe"/>
-    </linearGradient>
-    <linearGradient id="gP2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/>
-    </linearGradient>
-    <linearGradient id="gP3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/>
-    </linearGradient>
-    <linearGradient id="gP4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/>
-    </linearGradient>
+    <style><![CDATA[
+      .grid-bg { fill: rgba(148, 163, 184, 0.05); stroke: #64748b; stroke-width: 1.5; }
+      .grid-line { stroke: rgba(148, 163, 184, 0.45); stroke-width: 0.85; }
+      .cut-line { stroke: #0f172a; stroke-width: 2.6; stroke-linecap: round; }
+      
+      .proof-card { fill: rgba(148, 163, 184, 0.07); stroke: #64748b; stroke-width: 1.6; }
+      .proof-badge { fill: rgba(16, 185, 129, 0.15); stroke: #10b981; stroke-width: 1.5; }
+    ]]></style>
   </defs>
 
-  <!-- Left: The 5x13 Rectangle with True Gap Highlighted -->
-  <g id="gap_figure" filter="url(#shadow)">
+  <!-- ==================== LEFT: 5x13 GRID WITH HIGHLIGHTED GAP ==================== -->
+  <g transform="translate(40, 60)" filter="url(#shadow)">
+    <!-- Dimension Title -->
+    <text x="156.0" y="-20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#6366f1" text-anchor="middle">
+      5 × 13 (Khe hở ΔS = 1)
+    </text>
+
     <!-- Base Card -->
-    <rect x="50.0" y="100.0" width="325.0" height="125.0" fill="#ffffff"/>
+    <rect width="312.0" height="120.0" class="grid-bg"/>
 
-    <!-- The 4 Pieces (Exact geometrical shapes) -->
-    <!-- Piece 1 (Lower-Left): slope 2/5 = 0.4 -->
-    <polygon points="50.0,100.0 175.0,150.0 175.0,225.0 50.0,225.0" fill="url(#gP1)"/>
-    <!-- Piece 4 (Lower-Right): slope 3/8 = 0.375 -->
-    <polygon points="175.0,150.0 375.0,225.0 175.0,225.0" fill="url(#gP4)"/>
-    <!-- Piece 3 (Upper-Left): slope 3/8 = 0.375 -->
-    <polygon points="50.0,100.0 250.0,100.0 250.0,175.0" fill="url(#gP3)"/>
-    <!-- Piece 2 (Upper-Right): slope 2/5 = 0.4 -->
-    <polygon points="250.0,100.0 375.0,100.0 375.0,225.0 250.0,175.0" fill="url(#gP2)"/>
+    <!-- Pieces Fills -->
+    <polygon points="0,0 120.0,48.0 120.0,120.0 0,120.0" fill="rgba(59, 130, 246, 0.28)"/>
+    <polygon points="120.0,48.0 312.0,120.0 120.0,120.0" fill="rgba(139, 92, 246, 0.28)"/>
+    <polygon points="0,0 192.0,0 192.0,72.0" fill="rgba(245, 158, 11, 0.28)"/>
+    <polygon points="192.0,0 312.0,0 312.0,120.0 192.0,72.0" fill="rgba(16, 185, 129, 0.28)"/>
 
-    <!-- THE GAP PARALLELOGRAM: (0,0) -> (5,2) -> (13,5) -> (8,3) -->
-    <polygon points="50.0,100.0 175.0,150.0 375.0,225.0 250.0,175.0"
-             fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-    <polygon points="50.0,100.0 175.0,150.0 375.0,225.0 250.0,175.0"
+    <!-- THE RED GAP PARALLELOGRAM: (0,0) - (5,2) - (13,5) - (8,3) -->
+    <polygon points="0,0 120.0,48.0 312.0,120.0 192.0,72.0"
+             fill="rgba(239, 68, 68, 0.28)" stroke="#ef4444" stroke-width="2"/>
+    <polygon points="0,0 120.0,48.0 312.0,120.0 192.0,72.0"
              fill="url(#gapStripes)"/>
 
-    <!-- Grid lines -->
-    <g stroke="#cbd5e1" stroke-width="1">
-      <line x1="50.0" y1="100.0" x2="50.0" y2="225.0"/>
-      <line x1="75.0" y1="100.0" x2="75.0" y2="225.0"/>
-      <line x1="100.0" y1="100.0" x2="100.0" y2="225.0"/>
-      <line x1="125.0" y1="100.0" x2="125.0" y2="225.0"/>
-      <line x1="150.0" y1="100.0" x2="150.0" y2="225.0"/>
-      <line x1="175.0" y1="100.0" x2="175.0" y2="225.0"/>
-      <line x1="200.0" y1="100.0" x2="200.0" y2="225.0"/>
-      <line x1="225.0" y1="100.0" x2="225.0" y2="225.0"/>
-      <line x1="250.0" y1="100.0" x2="250.0" y2="225.0"/>
-      <line x1="275.0" y1="100.0" x2="275.0" y2="225.0"/>
-      <line x1="300.0" y1="100.0" x2="300.0" y2="225.0"/>
-      <line x1="325.0" y1="100.0" x2="325.0" y2="225.0"/>
-      <line x1="350.0" y1="100.0" x2="350.0" y2="225.0"/>
-      <line x1="375.0" y1="100.0" x2="375.0" y2="225.0"/>
-      <line x1="50.0" y1="100.0" x2="375.0" y2="100.0"/>
-      <line x1="50.0" y1="125.0" x2="375.0" y2="125.0"/>
-      <line x1="50.0" y1="150.0" x2="375.0" y2="150.0"/>
-      <line x1="50.0" y1="175.0" x2="375.0" y2="175.0"/>
-      <line x1="50.0" y1="200.0" x2="375.0" y2="200.0"/>
-      <line x1="50.0" y1="225.0" x2="375.0" y2="225.0"/>
+    <!-- SQUARE GRID LINES: 100% chuẩn xác x: 0..312, y: 0..120 -->
+    <g class="grid-line">
+      <line x1="0.0" y1="0" x2="0.0" y2="120.0"/>
+      <line x1="24.0" y1="0" x2="24.0" y2="120.0"/>
+      <line x1="48.0" y1="0" x2="48.0" y2="120.0"/>
+      <line x1="72.0" y1="0" x2="72.0" y2="120.0"/>
+      <line x1="96.0" y1="0" x2="96.0" y2="120.0"/>
+      <line x1="120.0" y1="0" x2="120.0" y2="120.0"/>
+      <line x1="144.0" y1="0" x2="144.0" y2="120.0"/>
+      <line x1="168.0" y1="0" x2="168.0" y2="120.0"/>
+      <line x1="192.0" y1="0" x2="192.0" y2="120.0"/>
+      <line x1="216.0" y1="0" x2="216.0" y2="120.0"/>
+      <line x1="240.0" y1="0" x2="240.0" y2="120.0"/>
+      <line x1="264.0" y1="0" x2="264.0" y2="120.0"/>
+      <line x1="288.0" y1="0" x2="288.0" y2="120.0"/>
+      <line x1="312.0" y1="0" x2="312.0" y2="120.0"/>
+      <line x1="0" y1="0.0" x2="312.0" y2="0.0"/>
+      <line x1="0" y1="24.0" x2="312.0" y2="24.0"/>
+      <line x1="0" y1="48.0" x2="312.0" y2="48.0"/>
+      <line x1="0" y1="72.0" x2="312.0" y2="72.0"/>
+      <line x1="0" y1="96.0" x2="312.0" y2="96.0"/>
+      <line x1="0" y1="120.0" x2="312.0" y2="120.0"/>
     </g>
 
-    <!-- Cuts -->
-    <line x1="175.0" y1="150.0" x2="175.0" y2="225.0" stroke="#0f172a" stroke-width="2"/>
-    <line x1="250.0" y1="100.0" x2="250.0" y2="175.0" stroke="#0f172a" stroke-width="2"/>
+    <!-- Actual boundaries of pieces (True cuts) -->
+    <!-- Lower piece edge: (0,0) -> (5,2) -> (13,5) -->
+    <polyline points="0,0 120.0,48.0 312.0,120.0" stroke="#ef4444" stroke-width="2.2" fill="none"/>
+    <!-- Upper piece edge: (0,0) -> (8,3) -> (13,5) -->
+    <polyline points="0,0 192.0,72.0 312.0,120.0" stroke="#ef4444" stroke-width="2.2" fill="none"/>
+    <!-- Internal cuts -->
+    <line x1="120.0" y1="48.0" x2="120.0" y2="120.0" class="cut-line"/>
+    <line x1="192.0" y1="0" x2="192.0" y2="72.0" class="cut-line"/>
 
-    <!-- Outer border -->
-    <rect x="50.0" y="100.0" width="325.0" height="125.0" fill="none" stroke="#0f172a" stroke-width="2"/>
+
 
     <!-- Gap Callout Badge -->
-    <g transform="translate(212.5, 162.5)">
-      <rect x="-65" y="-14" width="130" height="28" rx="6" fill="#dc2626"/>
-      <text y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">Khe hở S = 1 ô !</text>
+    <g transform="translate(156.0, 60.0)">
+      <rect x="-46" y="-13" width="92" height="26" rx="13" fill="#ef4444"/>
+      <text y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">ΔS = 1</text>
     </g>
 
-    <!-- Subtitle -->
-    <text x="212.5" y="255.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">Hình bình hành kẽ hở tạo thêm 1 ô</text>
+    <!-- Dimension labels -->
+    <text x="156.0" y="144.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#64748b" text-anchor="middle">
+      13 đơn vị
+    </text>
+    <text x="-15" y="65.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#64748b" text-anchor="middle">
+      5
+    </text>
   </g>
 
-  <!-- Right: Mathematical Proof Card -->
-  <g transform="translate(410, 40)" filter="url(#shadow)">
-    <rect width="350" height="300" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-    <rect width="350" height="38" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
-    <circle cx="20" cy="19" r="6" fill="#10b981"/>
-    <text x="34" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#065f46">BẢO TOÀN DIỆN TÍCH TUYỆT ĐỐI</text>
+  <!-- ==================== RIGHT: MATHEMATICAL VISUAL PROOF ==================== -->
+  <g transform="translate(420, 30)" filter="url(#shadow)">
+    <rect width="380" height="310" rx="16" class="proof-card"/>
+    <rect width="380" height="40" rx="16" class="proof-badge"/>
+    <circle cx="24" cy="20" r="7" fill="#10b981"/>
+    <text x="42" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="900" fill="#10b981">CHỨNG MINH NGHỊCH LÝ: ΔS = 1</text>
 
-    <!-- Content -->
-    <text x="16" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#1e293b">1. So sánh độ dốc các cạnh:</text>
-    <text x="20" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#047857">• Tam giác 3 &amp; 4: tan θ₁ = 3 / 8 = 0.375</text>
-    <text x="20" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#d97706">• Hình thang 1 &amp; 2: tan θ₂ = 2 / 5 = 0.400</text>
+    <!-- Slope Comparisons -->
+    <g transform="translate(20, 60)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      <text x="0" y="20" font-size="13" font-weight="800" fill="#94a3b8">Độ lệch độ dốc (hệ số góc):</text>
+      <text x="10" y="46" font-size="13" font-weight="800" fill="#3b82f6">• Tam giác (3 &amp; 4): 3 / 8 = 0,375</text>
+      <text x="10" y="72" font-size="13" font-weight="800" fill="#10b981">• Hình thang (1 &amp; 2): 2 / 5 = 0,400</text>
+      <text x="10" y="98" font-size="12" font-weight="700" fill="#ef4444">• 0,375 ≠ 0,400 ⟹ Ranh giới không thẳng hàng</text>
+    </g>
 
-    <text x="16" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#1e293b">2. Nghịch lý đường chéo ảo giác:</text>
-    <text x="20" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#334155">• Đường chéo nối (0,0) đến (13,5): tan θ ≈ 0.3846</text>
-    <text x="20" y="176" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#334155">• Do 0.375 &lt; 0.3846 &lt; 0.400: không thẳng hàng</text>
-    <text x="20" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-style="italic" fill="#dc2626">→ Tạo thành một hình bình hành kẽ hở dài ở giữa!</text>
+    <!-- Red Highlighted Gap Formula -->
+    <g transform="translate(20, 180)">
+      <rect width="340" height="48" rx="10" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="1.8"/>
+      <text x="170" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#ef4444" text-anchor="middle">Diện tích khe hở (hình bình hành):</text>
+      <text x="170" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#ef4444" text-anchor="middle">ΔS = |8 × 2 − 3 × 5| = 1 đơn vị²</text>
+    </g>
 
-    <!-- Math Box -->
-    <rect x="14" y="212" width="322" height="74" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-    <text x="175" y="234" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Diện tích hình bình hành kẽ hở:</text>
-    <text x="175" y="254" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#dc2626" text-anchor="middle">S = |8 × 2 − 3 × 5| = |16 − 15| = 1 ô vuông</text>
-    <text x="175" y="274" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#15803d" text-anchor="middle">Tổng diện tích thực: 65 − 1 = 64 ô (bảo toàn 100%)</text>
+    <!-- Conservation -->
+    <g transform="translate(20, 242)">
+      <rect width="340" height="46" rx="10" fill="rgba(16, 185, 129, 0.12)" stroke="#10b981" stroke-width="1.5"/>
+      <text x="170" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#10b981" text-anchor="middle">Bảo toàn diện tích:</text>
+      <text x="170" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle">65 − 1 (khe hở) = 64 đơn vị²</text>
+    </g>
   </g>
 </svg>

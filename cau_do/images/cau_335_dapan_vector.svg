@@ -1,242 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 475" width="100%" height="100%">
   <defs>
-    <!-- Multi-tier Drop Shadows & Glows -->
-    <filter id="board-shadow" x="-8%" y="-8%" width="116%" height="116%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    <filter id="shadow" x="-5%" y="-5%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.12"/>
     </filter>
-
-    <filter id="shape-depth" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#047857" flood-opacity="0.14"/>
-    </filter>
-
-    <filter id="left-cake-depth" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#78350f" flood-opacity="0.14"/>
-    </filter>
-
     <filter id="laser-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#10b981" flood-opacity="0.75"/>
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#047857" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10b981" flood-opacity="0.75"/>
+    </filter>
+    <filter id="target-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f59e0b" flood-opacity="0.6"/>
     </filter>
 
-    <filter id="badge-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
-    </filter>
-
-    <!-- Canvas Gradient -->
-    <!-- Card Background Gradient -->
-    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f8fafc"/>
-    </linearGradient>
-
-    <!-- Golden Honey Pastry Gradient for Left Card -->
     <linearGradient id="cake-sponge" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fffbeb"/>
-      <stop offset="30%" stop-color="#fef3c7"/>
-      <stop offset="70%" stop-color="#fde68a"/>
-      <stop offset="100%" stop-color="#fcd34d"/>
+      <stop offset="50%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
     </linearGradient>
 
-    <!-- Emerald Success Theme for S₁ & S₂ -->
-    <linearGradient id="emerald-cake-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f0fdf4"/>
-      <stop offset="40%" stop-color="#dcfce7"/>
-      <stop offset="100%" stop-color="#bbf7d0"/>
-    </linearGradient>
-
-    <!-- Plate / Board Gradient -->
-    <linearGradient id="plate-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f1f5f9"/>
-    </linearGradient>
-
-    <!-- Cutout Cavity Hatch Pattern -->
     <pattern id="cutout-hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="10" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="0" y1="0" x2="0" y2="10" class="hatch-line"/>
     </pattern>
+
+    <style><![CDATA[
+      /* Universal Dual-Mode Styling */
+      .plate-tray { fill: rgba(148, 163, 184, 0.07); stroke: #64748b; stroke-width: 1.6; }
+      .math-label { fill: #6366f1; font-weight: 900; font-style: italic; }
+      .hatch-line { stroke: #64748b; stroke-width: 1.8; }
+    ]]></style>
   </defs>
 
-  <!-- ==================== LEFT CARD: SYMMETRY CENTER PROPERTY ==================== -->
-  <g>
-    <!-- Outer Card Frame -->
-    <rect x="40" y="40" width="370" height="420" rx="24" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+  <!-- LEFT TRAY: ORIGINAL CAKE WITH CENTER O1 -->
+  <rect x="75" y="40" width="290" height="370" rx="16" class="plate-tray" filter="url(#shadow)"/>
+  <!-- Sponge Rectangular Cake -->
+  <rect x="120" y="80" width="200" height="280" rx="12" fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5"/>
+  <!-- Symmetry axes through O1 (220, 220) -->
+  <g stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="6,4">
+    <line x1="95" y1="220" x2="345" y2="220"/>
+    <line x1="220" y1="55" x2="220" y2="385"/>
+  </g>
+  <!-- Center marker O1 -->
+  <circle cx="220" cy="220" r="5.5" fill="#6366f1" stroke="#ffffff" stroke-width="2"/>
+  <text x="235" y="215" font-family="-apple-system, sans-serif" font-size="15" class="math-label">O₁</text>
 
-    <!-- Bakery Board / Tray -->
-    <rect x="80" y="75" width="290" height="325" rx="16" fill="url(#plate-grad)" stroke="#e2e8f0" stroke-width="1.5"/>
-
-    <!-- Whole Cake Body -->
-    <g filter="url(#left-cake-depth)">
-      <rect x="125" y="105" width="200" height="280" rx="12" fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5"/>
-      <rect x="134" y="114" width="182" height="262" rx="7" fill="none" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="6,4" opacity="0.8"/>
-      <!-- Glossy Reflection Highlight -->
-      <path d="M 129,115 Q 175,109 225,119 Q 175,127 129,125 Z" fill="#ffffff" opacity="0.45"/>
-    </g>
-
-    <!-- Center Symmetry Axes (Crosshairs through O₁) -->
-    <g stroke="#64748b" stroke-width="1.6" stroke-dasharray="6,4">
-      <line x1="100" y1="245" x2="350" y2="245"/>
-      <line x1="225" y1="80" x2="225" y2="410"/>
-    </g>
-
-    <!-- Diagonal Symmetry Guides (Intersection creates O₁) -->
-    <g stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6">
-      <line x1="125" y1="105" x2="325" y2="385"/>
-      <line x1="125" y1="385" x2="325" y2="105"/>
-    </g>
-
-    <!-- Center Point Marker O₁ -->
-    <circle cx="225" cy="245" r="5.5" fill="#0f172a" stroke="#ffffff" stroke-width="2" filter="url(#badge-shadow)"/>
-    <text x="240" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" font-style="italic" fill="#1e293b">O₁</text>
-
-    <!-- Top Badge: Center Icon -->
-    <g transform="translate(180, 50)">
-      <rect x="0" y="0" width="90" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2"/>
-      <circle cx="20" cy="13" r="4.5" fill="#2563eb"/>
-      <text x="48" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" text-anchor="middle" fill="#1d4ed8">Center</text>
-    </g>
-
-    <!-- Bottom Symmetry Formula Badge -->
-    <g transform="translate(145, 415)">
-      <rect x="0" y="0" width="160" height="32" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" filter="url(#badge-shadow)"/>
-      <text x="80" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle" fill="#1e40af">1/2 · Area = 1/2 · Area</text>
-    </g>
+  <!-- MIDDLE TRANSITION ARROW -->
+  <g transform="translate(432, 225)">
+    <circle cx="0" cy="0" r="18" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="1.5"/>
+    <path d="M -5,-6 L 3,0 L -5,6" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <!-- ==================== MIDDLE CONNECTOR ==================== -->
-  <g transform="translate(432, 245)">
-    <circle cx="0" cy="0" r="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#badge-shadow)"/>
-    <path d="M -5,-6 L 3,0 L -5,6" fill="none" stroke="#059669" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
+    <!-- RIGHT TRAY: 1 STRAIGHT CUT THROUGH O1 & O2 DIVIDING CAKE IN HALF -->
+    <rect x="495" y="40" width="310" height="370" rx="16" class="plate-tray"/>
 
-  <!-- ==================== RIGHT CARD: DUAL CENTER CUT SOLUTION ==================== -->
-  <g>
-    <!-- Outer Card Frame -->
-    <rect x="455" y="40" width="425" height="420" rx="24" fill="url(#card-grad)" stroke="#10b981" stroke-width="2" filter="url(#board-shadow)"/>
+    <!-- Cutout missing corner with hatch pattern -->
+    <rect x="550" y="80" width="110" height="85" rx="6" fill="url(#cutout-hatch)" stroke="#64748b" stroke-width="1.8" stroke-dasharray="6,4"/>
 
-    <!-- Bakery Board / Tray -->
-    <rect x="495" y="75" width="310" height="325" rx="16" fill="url(#plate-grad)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- L-Shaped Cake Body -->
+    <path d="M 660,80 L 738,80 Q 750,80 750,92 L 750,348 Q 750,360 738,360 L 562,360 Q 550,360 550,348 L 550,165 L 660,165 Z"
+          fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5" stroke-linejoin="round"/>
 
-    <!-- ================= CAKE REGIONS ================= -->
-    <!-- S₄: Left Half of Cutout Cavity -->
-    <path d="M 550,105 L 585.38,105 L 624.62,190 L 550,190 Z" 
-          fill="url(#cutout-hatch)" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="4,3"/>
-    <path d="M 550,105 L 585.38,105 L 624.62,190 L 550,190 Z" 
-          fill="#f43f5e" opacity="0.08"/>
-
-    <!-- S₃: Right Half of Cutout Cavity -->
-    <path d="M 585.38,105 L 660,105 L 660,190 L 624.62,190 Z" 
-          fill="url(#cutout-hatch)" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="4,3"/>
-    <path d="M 585.38,105 L 660,105 L 660,190 L 624.62,190 Z" 
-          fill="#3b82f6" opacity="0.08"/>
-
-    <!-- S₂: Left Half of Remaining Cake (Emerald Theme) -->
-    <g filter="url(#shape-depth)">
-      <path d="M 550,190 
-               L 624.62,190 
-               L 714.62,385 
-               L 562,385 Q 550,385 550,373 
-               Z" 
-            fill="url(#emerald-cake-grad)" stroke="#059669" stroke-width="2.4" stroke-linejoin="round"/>
-      <!-- Inner Glaze Accent -->
-      <path d="M 558,198 L 617,198 L 702,377 L 565,377 Q 558,377 558,370 Z" 
-            fill="none" stroke="#10b981" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.75"/>
+    <!-- Symmetry Axes for missing corner to locate O2 (605, 122.5) -->
+    <g stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3">
+      <line x1="550" y1="122.5" x2="660" y2="122.5"/>
+      <line x1="605" y1="80" x2="605" y2="165"/>
     </g>
 
-    <!-- S₁: Right Half of Remaining Cake (Emerald Theme) -->
-    <g filter="url(#shape-depth)">
-      <path d="M 660,105 
-               L 738,105 Q 750,105 750,117 
-               L 750,373 Q 750,385 738,385 
-               L 714.62,385 
-               L 624.62,190 
-               L 660,190 
-               Z" 
-            fill="url(#emerald-cake-grad)" stroke="#059669" stroke-width="2.4" stroke-linejoin="round"/>
-      <!-- Inner Glaze Accent -->
-      <path d="M 668,113 L 732,113 Q 742,113 742,123 L 742,367 Q 742,377 732,377 L 712,377 L 629,198 L 668,198 Z" 
-            fill="none" stroke="#10b981" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.75"/>
-      <!-- Glossy Reflection Highlight -->
-      <path d="M 668,114 Q 700,109 735,118 Q 700,124 668,122 Z" fill="#ffffff" opacity="0.45"/>
-    </g>
+    <!-- Center markers O1 (650, 220) and O2 (605, 122.5) -->
+    <circle cx="650" cy="220" r="5" fill="#6366f1" stroke="#ffffff" stroke-width="2"/>
+    <text x="663" y="215" font-family="-apple-system, sans-serif" font-size="14" class="math-label">O₁</text>
 
-    <!-- ================= AXIS CROSSHAIRS ================= -->
-    <!-- Axes through Cutout Center O₂ (605, 147.5) -->
-    <g stroke="#64748b" stroke-width="1.4" stroke-dasharray="4,3">
-      <line x1="535" y1="147.5" x2="675" y2="147.5"/>
-      <line x1="605" y1="95" x2="605" y2="205"/>
-    </g>
+    <circle cx="605" cy="122.5" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+    <text x="618" y="117.5" font-family="-apple-system, sans-serif" font-size="14" class="math-label">O₂</text>
 
-    <!-- Axes through Full Cake Center O₁ (650, 245) -->
-    <g stroke="#64748b" stroke-width="1.4" stroke-dasharray="5,4">
-      <line x1="525" y1="245" x2="775" y2="245"/>
-      <line x1="650" y1="85" x2="650" y2="405"/>
-    </g>
-
-    <!-- ================= THE SINGLE STRAIGHT CUT LINE ================= -->
-    <!-- Luminous Emerald Laser Cut Line passing through O₂ and O₁ -->
+    <!-- THE STRAIGHT CUT LINE THROUGH O1 & O2 (EMERALD LASER CUT) -->
     <g filter="url(#laser-glow)">
-      <line x1="571.54" y1="75" x2="728.46" y2="415" 
-            stroke="#10b981" stroke-width="3.6" stroke-linecap="round"/>
+      <!-- Line equation through (605, 122.5) and (650, 220): dx=45, dy=97.5, slope=2.167 -->
+      <line x1="575" y1="57.5" x2="715" y2="360.8" stroke="#10b981" stroke-width="3.5" stroke-linecap="round"/>
     </g>
 
-    <!-- ================= CENTER MARKERS ================= -->
-    <!-- Marker O₂ -->
-    <circle cx="605" cy="147.5" r="5" fill="#0f172a" stroke="#ffffff" stroke-width="2" filter="url(#badge-shadow)"/>
-    <text x="585" y="142" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" font-style="italic" fill="#0f172a">O₂</text>
-
-    <!-- Marker O₁ -->
-    <circle cx="650" cy="245" r="5.5" fill="#0f172a" stroke="#ffffff" stroke-width="2" filter="url(#badge-shadow)"/>
-    <text x="665" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" font-style="italic" fill="#0f172a">O₁</text>
-
-    <!-- ================= CALLOUT BADGES ================= -->
-    <!-- Callout S₄ -->
-    <g>
-      <line x1="512" y1="135" x2="568" y2="147.5" stroke="#64748b" stroke-width="1.5"/>
-      <circle cx="568" cy="147.5" r="2.5" fill="#64748b"/>
-      <circle cx="496" cy="135" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1.8" filter="url(#badge-shadow)"/>
-      <text x="496" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle" fill="#334155">S₄</text>
+    <!-- Equal Area Badges S1 = S2 -->
+    <g transform="translate(565, 270)">
+      <circle cx="20" cy="20" r="16" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1.8"/>
+      <text x="20" y="25" font-family="-apple-system, sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">S₁</text>
+    </g>
+    <g transform="translate(710, 160)">
+      <circle cx="20" cy="20" r="16" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1.8"/>
+      <text x="20" y="25" font-family="-apple-system, sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">S₂</text>
     </g>
 
-    <!-- Callout S₃ -->
-    <g>
-      <line x1="822" y1="135" x2="635" y2="147.5" stroke="#64748b" stroke-width="1.5"/>
-      <circle cx="635" cy="147.5" r="2.5" fill="#64748b"/>
-      <circle cx="838" cy="135" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1.8" filter="url(#badge-shadow)"/>
-      <text x="838" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle" fill="#334155">S₃</text>
+    <!-- Formula pill -->
+    <g transform="translate(560, 420)">
+      <rect width="180" height="34" rx="17" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2"/>
+      <text x="90" y="22" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle">O₁ ⨉ O₂ ⟹ S₁ = S₂</text>
     </g>
-
-    <!-- Callout S₂ -->
-    <g>
-      <line x1="512" y1="300" x2="590" y2="285" stroke="#059669" stroke-width="1.8"/>
-      <circle cx="590" cy="285" r="3" fill="#059669"/>
-      <circle cx="496" cy="300" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2.2" filter="url(#badge-shadow)"/>
-      <text x="496" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="900" text-anchor="middle" fill="#047857">S₂</text>
-    </g>
-
-    <!-- Callout S₁ -->
-    <g>
-      <line x1="820" y1="300" x2="695" y2="285" stroke="#059669" stroke-width="1.8"/>
-      <circle cx="695" cy="285" r="3" fill="#059669"/>
-      <circle cx="838" cy="300" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2.2" filter="url(#badge-shadow)"/>
-      <text x="838" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="900" text-anchor="middle" fill="#047857">S₁</text>
-    </g>
-
-    <!-- Top Badge: Solution Verification Pill -->
-    <g transform="translate(620, 50)">
-      <rect x="0" y="0" width="115" height="26" rx="13" fill="#f0fdf4" stroke="#86efac" stroke-width="1.4"/>
-      <!-- Checkmark icon -->
-      <circle cx="16" cy="13" r="6.5" fill="#10b981"/>
-      <path d="M 13,13 L 15.5,15.5 L 19,10.5" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="65" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" text-anchor="middle" fill="#047857">Solution</text>
-    </g>
-
-    <!-- Bottom Victory Formula Badge: S₁ = S₂ -->
-    <g transform="translate(585, 415)">
-      <rect x="0" y="0" width="180" height="34" rx="17" fill="#f0fdf4" stroke="#10b981" stroke-width="2.2" filter="url(#badge-shadow)"/>
-      <circle cx="22" cy="17" r="8" fill="#10b981"/>
-      <path d="M 18,17 L 21,20 L 26,14" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="102" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#047857">S₁ = S₂  (S₃ = S₄)</text>
-    </g>
-  </g>
 </svg>

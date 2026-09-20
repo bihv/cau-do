@@ -1,69 +1,102 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
+                <style><![CDATA[
+      /* Light theme: Classic Luxury Wood Sudoku Board */
+      .board-bezel { fill: url(#board-bezel-light); stroke: #3b1402; stroke-width: 2.5; }
+      .grid-base { fill: #fdf8eb; stroke: #78350f; }
+      .diag-cell { fill: #fde68a; opacity: 0.65; }
+      .line-thin { stroke: #a16207; stroke-width: 1; opacity: 0.45; }
+      .line-thick { stroke: #78350f; stroke-width: 2.5; }
+      .num-given { fill: #0f172a; font-weight: 800; }
+      .num-solution { fill: #047857; font-weight: 800; }
+
+      /* Dark theme: Midnight Ebony & Smoked Rosewood */
+      @media (prefers-color-scheme: dark) {
+        .board-bezel { fill: url(#board-bezel-dark); stroke: #5a2810; stroke-width: 2.5; }
+        .grid-base { fill: #2d180c; stroke: #5a2810; }
+        .diag-cell { fill: #451a03; opacity: 0.9; }
+        .line-thin { stroke: #120703; stroke-width: 1; opacity: 0.85; }
+        .line-thick { stroke: #854d0e; stroke-width: 2.5; }
+        .num-given { fill: #f8fafc; font-weight: 800; }
+        .num-solution { fill: #34d399; font-weight: 800; }
+      }
+    ]]></style>
+        <!-- Wood Board Gradients -->
+    <linearGradient id="board-bezel-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/>
+      <stop offset="50%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="board-bezel-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b1d11"/>
+      <stop offset="50%" stop-color="#2a1208"/>
+      <stop offset="100%" stop-color="#120602"/>
+    </linearGradient>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.1"/>
     </filter>
   </defs>
   <g filter="url(#shadow)" transform="translate(40, 40)">
-    <rect width="432" height="432" fill="#ffffff" rx="8"/>
-    <rect x="0" y="0" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="384" y="0" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="48" y="48" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="336" y="48" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="96" y="96" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="288" y="96" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="144" y="144" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="240" y="144" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="192" y="192" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="144" y="240" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="240" y="240" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="96" y="288" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="288" y="288" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="48" y="336" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="336" y="336" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="0" y="384" width="48" height="48" fill="#e0f2fe"/>
-    <rect x="384" y="384" width="48" height="48" fill="#e0f2fe"/>
-    <line x1="48" y1="0" x2="48" y2="432" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="48" x2="432" y2="48" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="96" y1="0" x2="96" y2="432" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="96" x2="432" y2="96" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="192" y1="0" x2="192" y2="432" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="192" x2="432" y2="192" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="240" y1="0" x2="240" y2="432" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="240" x2="432" y2="240" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="336" y1="0" x2="336" y2="432" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="336" x2="432" y2="336" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="384" y1="0" x2="384" y2="432" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="384" x2="432" y2="384" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="144" y1="0" x2="144" y2="432" stroke="#475569" stroke-width="2.5"/>
-    <line x1="0" y1="144" x2="432" y2="144" stroke="#475569" stroke-width="2.5"/>
-    <line x1="288" y1="0" x2="288" y2="432" stroke="#475569" stroke-width="2.5"/>
-    <line x1="0" y1="288" x2="432" y2="288" stroke="#475569" stroke-width="2.5"/>
-    <rect width="432" height="432" fill="none" stroke="#1e293b" stroke-width="3" rx="8"/>
-    <text x="72" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
-    <text x="264" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
-    <text x="360" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
-    <text x="168" y="79" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
-    <text x="312" y="79" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
-    <text x="264" y="127" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
-    <text x="360" y="127" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
-    <text x="72" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
-    <text x="216" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
-    <text x="120" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
-    <text x="168" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
-    <text x="24" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
-    <text x="168" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
-    <text x="360" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
-    <text x="408" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">9</text>
-    <text x="120" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
-    <text x="216" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
-    <text x="264" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
-    <text x="408" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
-    <text x="24" y="367" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">9</text>
-    <text x="312" y="367" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
-    <text x="408" y="367" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
-    <text x="72" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
-    <text x="216" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
-    <text x="360" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">9</text>
+    <rect class="board-bezel" x="-10" y="-10" width="452" height="452" rx="14"/>
+    <rect class="grid-base" width="432" height="432" rx="8" stroke-width="2"/>
+    <rect class="diag-cell" x="0" y="0" width="48" height="48"/>
+    <rect x="384" y="0" width="48" height="48" class="diag-cell"/>
+    <rect x="48" y="48" width="48" height="48" class="diag-cell"/>
+    <rect x="336" y="48" width="48" height="48" class="diag-cell"/>
+    <rect x="96" y="96" width="48" height="48" class="diag-cell"/>
+    <rect x="288" y="96" width="48" height="48" class="diag-cell"/>
+    <rect x="144" y="144" width="48" height="48" class="diag-cell"/>
+    <rect x="240" y="144" width="48" height="48" class="diag-cell"/>
+    <rect x="192" y="192" width="48" height="48" class="diag-cell"/>
+    <rect x="144" y="240" width="48" height="48" class="diag-cell"/>
+    <rect x="240" y="240" width="48" height="48" class="diag-cell"/>
+    <rect x="96" y="288" width="48" height="48" class="diag-cell"/>
+    <rect x="288" y="288" width="48" height="48" class="diag-cell"/>
+    <rect x="48" y="336" width="48" height="48" class="diag-cell"/>
+    <rect x="336" y="336" width="48" height="48" class="diag-cell"/>
+    <rect x="0" y="384" width="48" height="48" class="diag-cell"/>
+    <rect x="384" y="384" width="48" height="48" class="diag-cell"/>
+    <line x1="48" y1="0" x2="48" y2="432" class="line-thin"/>
+    <line x1="0" y1="48" x2="432" y2="48" class="line-thin"/>
+    <line x1="96" y1="0" x2="96" y2="432" class="line-thin"/>
+    <line x1="0" y1="96" x2="432" y2="96" class="line-thin"/>
+    <line x1="192" y1="0" x2="192" y2="432" class="line-thin"/>
+    <line x1="0" y1="192" x2="432" y2="192" class="line-thin"/>
+    <line x1="240" y1="0" x2="240" y2="432" class="line-thin"/>
+    <line x1="0" y1="240" x2="432" y2="240" class="line-thin"/>
+    <line x1="336" y1="0" x2="336" y2="432" class="line-thin"/>
+    <line x1="0" y1="336" x2="432" y2="336" class="line-thin"/>
+    <line x1="384" y1="0" x2="384" y2="432" class="line-thin"/>
+    <line x1="0" y1="384" x2="432" y2="384" class="line-thin"/>
+    <line x1="144" y1="0" x2="144" y2="432" class="line-thick"/>
+    <line x1="0" y1="144" x2="432" y2="144" class="line-thick"/>
+    <line x1="288" y1="0" x2="288" y2="432" class="line-thick"/>
+    <line x1="0" y1="288" x2="432" y2="288" class="line-thick"/>
+    <rect width="432" height="432" fill="none" class="line-thick" rx="8"/>
+    <text x="72" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">7</text>
+    <text x="264" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">8</text>
+    <text x="360" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">6</text>
+    <text x="168" y="79" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">8</text>
+    <text x="312" y="79" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">4</text>
+    <text x="264" y="127" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">4</text>
+    <text x="360" y="127" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">7</text>
+    <text x="72" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">3</text>
+    <text x="216" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">1</text>
+    <text x="120" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">1</text>
+    <text x="168" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">7</text>
+    <text x="24" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">1</text>
+    <text x="168" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">5</text>
+    <text x="360" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">3</text>
+    <text x="408" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">9</text>
+    <text x="120" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">7</text>
+    <text x="216" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">6</text>
+    <text x="264" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">1</text>
+    <text x="408" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">2</text>
+    <text x="24" y="367" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">9</text>
+    <text x="312" y="367" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">2</text>
+    <text x="408" y="367" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">8</text>
+    <text x="72" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">4</text>
+    <text x="216" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">3</text>
+    <text x="360" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" class="num-given" text-anchor="middle">9</text>
   </g>
 </svg>

@@ -1,177 +1,158 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="100%" height="100%">
   <defs>
-    <!-- Soft Shadows & Glows -->
-    <filter id="box-shadow" x="-8%" y="-8%" width="120%" height="124%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
     </filter>
     <filter id="target-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#f59e0b" flood-opacity="0.5"/>
-    </filter>
-    <filter id="shape-depth" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f59e0b" flood-opacity="0.55"/>
     </filter>
 
-    <!-- Premium Dark Fill (Deep Indigo Slate) -->
-    <linearGradient id="dark-fill" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </linearGradient>
-
-    <!-- Target Cell Gradient -->
-    <linearGradient id="target-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fffbeb"/>
-      <stop offset="100%" stop-color="#fef3c7"/>
-    </linearGradient>
-
-    <!-- Shaded Cell Base Gradient -->
-    <linearGradient id="shaded-base" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
-    </linearGradient>
-
-    <!-- Modern Diagonal Hatching Pattern -->
-    <pattern id="modern-hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="10" stroke="#475569" stroke-width="2.2" stroke-linecap="square"/>
+    <pattern id="modern-hatch" width="12" height="12" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="12" class="hatch-stroke" stroke-width="2.5" stroke-linecap="square"/>
     </pattern>
 
-    <!-- 5-Pointed Star Definition (Centered at 0,0, radius 8.5px) -->
-    <polygon id="star-icon" points="0,-8.5 2.23,-3.07 8.08,-2.63 3.61,1.17 5.00,6.88 0,3.8 -5.00,6.88 -3.61,1.17 -8.08,-2.63 -2.23,-3.07" fill="url(#dark-fill)"/>
+    <!-- 5-Pointed Star (radius 8.5px) -->
+    <polygon id="star-icon" points="0,-8.5 2.23,-3.07 8.08,-2.63 3.61,1.17 5.00,6.88 0,3.8 -5.00,6.88 -3.61,1.17 -8.08,-2.63 -2.23,-3.07" class="star-dark"/>
 
-    <!-- Clip Path for Matrix Frame (Smooth Rounded Corners) -->
-    <clipPath id="matrix-clip">
-      <rect x="60" y="55" width="348" height="348" rx="16"/>
-    </clipPath>
+    <style><![CDATA[
+      /* Universal Dual-Mode Styling: Seamless on both Light and Dark backgrounds */
+      .matrix-bezel { fill: none; stroke: #6366f1; stroke-width: 2; }
+      
+      .cell-tile { fill: rgba(148, 163, 184, 0.08); stroke: #64748b; stroke-width: 1.5; }
+      .cell-shaded { fill: rgba(100, 116, 139, 0.18); stroke: #64748b; stroke-width: 1.5; }
+      .hatch-stroke { stroke: #64748b; }
+
+      /* Dual-Contrast Shapes */
+      .shape-white { fill: #ffffff; stroke: #0f172a; stroke-width: 2.6; stroke-linejoin: round; }
+      .shape-dark { fill: #1e293b; stroke: #94a3b8; stroke-width: 1.8; stroke-linejoin: round; }
+      .star-dark { fill: #1e293b; stroke: #94a3b8; stroke-width: 1.2; stroke-linejoin: round; }
+
+      /* Option Cards */
+      .card-option { fill: rgba(148, 163, 184, 0.07); stroke: #64748b; stroke-width: 1.8; }
+      .badge-opt-bg { fill: rgba(99, 102, 241, 0.18); stroke: #6366f1; stroke-width: 1.2; }
+      .badge-opt-text { fill: #6366f1; font-weight: 800; }
+
+      /* Target Empty Cell */
+      .target-empty-bg { fill: rgba(245, 158, 11, 0.09); stroke: #f59e0b; stroke-width: 2.8; stroke-dasharray: 6 4; }
+      .target-empty-text { fill: #f59e0b; font-weight: 800; font-size: 46px; }
+
+      @media (prefers-color-scheme: dark) {
+        .cell-tile { fill: rgba(255, 255, 255, 0.06); stroke: #475569; }
+        .cell-shaded { fill: rgba(148, 163, 184, 0.15); stroke: #475569; }
+        .card-option { fill: rgba(255, 255, 255, 0.06); stroke: #475569; }
+      }
+    ]]></style>
   </defs>
 
-  <!-- ==================================================== -->
-  <!-- LEFT SIDE: 3x3 IQ MATRIX CONTAINER                   -->
-  <!-- Box: x=60, y=55, w=348, h=348                        -->
-  <!-- Cell Size: 116x116 each                              -->
-  <!-- ==================================================== -->
-  <g filter="url(#box-shadow)">
-    <!-- Base Matrix Background Card -->
-    <rect x="60" y="55" width="348" height="348" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
-
-    <!-- Clipped Area for Interior Patterns & Backgrounds -->
-    <g clip-path="url(#matrix-clip)">
-      <!-- Shaded Cell (2,3) Background & Hatching -->
-      <rect x="292" y="171" width="116" height="116" fill="url(#shaded-base)"/>
-      <rect x="292" y="171" width="116" height="116" fill="url(#modern-hatch)"/>
-
-      <!-- Shaded Cell (3,1) Background & Hatching -->
-      <rect x="60" y="287" width="116" height="116" fill="url(#shaded-base)"/>
-      <rect x="60" y="287" width="116" height="116" fill="url(#modern-hatch)"/>
-    </g>
-
-    <!-- Target Empty Cell (3,3) Warm Glow Styling -->
-    <rect x="296" y="291" width="108" height="108" rx="12" fill="url(#target-bg)" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,4" filter="url(#target-glow)"/>
-    <text x="350" y="347" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" fill="#d97706" text-anchor="middle" dominant-baseline="central">?</text>
-
-    <!-- Grid Divider Lines -->
-    <line x1="176" y1="55" x2="176" y2="403" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="292" y1="55" x2="292" y2="403" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="60" y1="171" x2="408" y2="171" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="60" y1="287" x2="408" y2="287" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- LEFT 3x3 MATRIX CONTAINER (TRANSPARENT OUTLINED STRUCTURE) -->
+  <g filter="url(#board-shadow)">
+    <!-- Matrix Outer Border -->
+    <rect x="52" y="47" width="364" height="364" rx="18" class="matrix-bezel"/>
 
     <!-- ================= ROW 1 (White Circles) ================= -->
     <!-- Cell (1,1): Star (left) + White Circle -->
-    <g filter="url(#shape-depth)">
+    <g>
+      <rect x="64" y="59" width="108" height="108" rx="12" class="cell-tile"/>
       <use href="#star-icon" x="88" y="113"/>
-      <circle cx="124" cy="113" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
+      <circle cx="124" cy="113" r="22" class="shape-white"/>
     </g>
 
     <!-- Cell (1,2): White Circle alone -->
-    <g filter="url(#shape-depth)">
-      <circle cx="234" cy="113" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
+    <g>
+      <rect x="180" y="59" width="108" height="108" rx="12" class="cell-tile"/>
+      <circle cx="234" cy="113" r="22" class="shape-white"/>
     </g>
 
     <!-- Cell (1,3): White Circle + Black Dot (top-right) -->
-    <g filter="url(#shape-depth)">
-      <circle cx="344" cy="115" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
-      <circle cx="366" cy="93" r="5.5" fill="url(#dark-fill)"/>
+    <g>
+      <rect x="296" y="59" width="108" height="108" rx="12" class="cell-tile"/>
+      <circle cx="344" cy="115" r="22" class="shape-white"/>
+      <circle cx="366" cy="93" r="5.5" class="shape-dark"/>
     </g>
 
     <!-- ================= ROW 2 (Black Squares) ================= -->
     <!-- Cell (2,1): Star (left) + Black Square -->
-    <g filter="url(#shape-depth)">
+    <g>
+      <rect x="64" y="175" width="108" height="108" rx="12" class="cell-tile"/>
       <use href="#star-icon" x="88" y="229"/>
-      <rect x="104" y="209" width="40" height="40" rx="4" fill="url(#dark-fill)"/>
+      <rect x="104" y="209" width="40" height="40" rx="4" class="shape-dark"/>
     </g>
 
     <!-- Cell (2,2): Black Square alone -->
-    <g filter="url(#shape-depth)">
-      <rect x="214" y="209" width="40" height="40" rx="4" fill="url(#dark-fill)"/>
+    <g>
+      <rect x="180" y="175" width="108" height="108" rx="12" class="cell-tile"/>
+      <rect x="214" y="209" width="40" height="40" rx="4" class="shape-dark"/>
     </g>
 
-    <!-- Cell (2,3): Shaded cell (already rendered above) -->
+    <!-- Cell (2,3): Shaded Cell -->
+    <g>
+      <rect x="296" y="175" width="108" height="108" rx="12" class="cell-shaded"/>
+      <rect x="296" y="175" width="108" height="108" rx="12" fill="url(#modern-hatch)"/>
+    </g>
 
     <!-- ================= ROW 3 (White Triangles) ================= -->
-    <!-- Cell (3,1): Shaded cell (already rendered above) -->
-
-    <!-- Cell (3,2): White Triangle alone -->
-    <g filter="url(#shape-depth)">
-      <polygon points="234,323 257,363 211,363" fill="#ffffff" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- Cell (3,1): Shaded Cell -->
+    <g>
+      <rect x="64" y="291" width="108" height="108" rx="12" class="cell-shaded"/>
+      <rect x="64" y="291" width="108" height="108" rx="12" fill="url(#modern-hatch)"/>
     </g>
 
-    <!-- Cell (3,3): Target empty cell (already rendered above) -->
+    <!-- Cell (3,2): White Triangle alone -->
+    <g>
+      <rect x="180" y="291" width="108" height="108" rx="12" class="cell-tile"/>
+      <polygon points="234,323 257,363 211,363" class="shape-white"/>
+    </g>
+
+    <!-- Cell (3,3): Target Empty Cell -->
+    <g filter="url(#target-glow)">
+      <rect x="296" y="291" width="108" height="108" rx="12" class="target-empty-bg"/>
+      <text x="350" y="347" font-family="-apple-system, sans-serif" class="target-empty-text" text-anchor="middle" dominant-baseline="central">?</text>
+    </g>
   </g>
 
-  <!-- ==================================================== -->
-  <!-- RIGHT SIDE: 4 MULTIPLE CHOICE OPTIONS A, B, C, D     -->
-  <!-- Layout: A (top-left), B (top-right)                  -->
-  <!--         C (bottom-left), D (bottom-right)            -->
-  <!-- ==================================================== -->
-  <g filter="url(#box-shadow)">
+  <!-- ================= RIGHT OPTIONS A, B, C, D ================= -->
+  <g>
     <!-- OPTION A (Top Left) -->
-    <g>
-      <rect x="460" y="65" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
-      <!-- Letter 'A' Badge on LEFT -->
-      <circle cx="492" cy="125" r="16" fill="#eff6ff"/>
-      <text x="492" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">A</text>
+    <g class="card-option" filter="url(#card-shadow)">
+      <rect x="460" y="65" width="140" height="120" rx="14"/>
+      <circle cx="492" cy="125" r="16" class="badge-opt-bg"/>
+      <text x="492" y="125" font-family="-apple-system, sans-serif" font-size="20" class="badge-opt-text" text-anchor="middle" dominant-baseline="central">A</text>
       <!-- Shapes for A: Black Triangle + Black Dot top-right -->
-      <g filter="url(#shape-depth)">
-        <polygon points="548,105 570,145 526,145" fill="url(#dark-fill)" stroke="#0f172a" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="572" cy="98" r="5.5" fill="url(#dark-fill)"/>
-      </g>
+      <polygon points="548,105 570,145 526,145" class="shape-dark"/>
+      <circle cx="572" cy="98" r="5.5" class="shape-dark"/>
     </g>
 
     <!-- OPTION B (Top Right) -->
-    <g>
-      <rect x="630" y="65" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
+    <g class="card-option" filter="url(#card-shadow)">
+      <rect x="630" y="65" width="140" height="120" rx="14"/>
       <!-- Shapes for B: White Circle + Black Dot top-right -->
-      <g filter="url(#shape-depth)">
-        <circle cx="676" cy="127" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
-        <circle cx="698" cy="105" r="5.5" fill="url(#dark-fill)"/>
-      </g>
-      <!-- Letter 'B' Badge on RIGHT -->
-      <circle cx="738" cy="125" r="16" fill="#eff6ff"/>
-      <text x="738" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">B</text>
+      <circle cx="676" cy="127" r="22" class="shape-white"/>
+      <circle cx="698" cy="105" r="5.5" class="shape-dark"/>
+      <circle cx="738" cy="125" r="16" class="badge-opt-bg"/>
+      <text x="738" y="125" font-family="-apple-system, sans-serif" font-size="20" class="badge-opt-text" text-anchor="middle" dominant-baseline="central">B</text>
     </g>
 
     <!-- OPTION C (Bottom Left) -->
-    <g>
-      <rect x="460" y="250" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
-      <!-- Letter 'C' Badge on LEFT -->
-      <circle cx="492" cy="310" r="16" fill="#eff6ff"/>
-      <text x="492" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">C</text>
+    <g class="card-option" filter="url(#card-shadow)">
+      <rect x="460" y="250" width="140" height="120" rx="14"/>
+      <circle cx="492" cy="310" r="16" class="badge-opt-bg"/>
+      <text x="492" y="310" font-family="-apple-system, sans-serif" font-size="20" class="badge-opt-text" text-anchor="middle" dominant-baseline="central">C</text>
       <!-- Shapes for C: White Triangle + Black Dot top-right -->
-      <g filter="url(#shape-depth)">
-        <polygon points="548,290 570,330 526,330" fill="#ffffff" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
-        <circle cx="572" cy="283" r="5.5" fill="url(#dark-fill)"/>
-      </g>
+      <polygon points="548,290 570,330 526,330" class="shape-white"/>
+      <circle cx="572" cy="283" r="5.5" class="shape-dark"/>
     </g>
 
     <!-- OPTION D (Bottom Right) -->
-    <g>
-      <rect x="630" y="250" width="140" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.8"/>
+    <g class="card-option" filter="url(#card-shadow)">
+      <rect x="630" y="250" width="140" height="120" rx="14"/>
       <!-- Shapes for D: White Triangle + Star top-right -->
-      <g filter="url(#shape-depth)">
-        <polygon points="676,290 698,330 654,330" fill="#ffffff" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
-        <use href="#star-icon" x="696" y="281"/>
-      </g>
-      <!-- Letter 'D' Badge on RIGHT -->
-      <circle cx="738" cy="310" r="16" fill="#eff6ff"/>
-      <text x="738" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#2563eb" text-anchor="middle" dominant-baseline="central">D</text>
+      <polygon points="676,290 698,330 654,330" class="shape-white"/>
+      <use href="#star-icon" x="696" y="281"/>
+      <circle cx="738" cy="310" r="16" class="badge-opt-bg"/>
+      <text x="738" y="310" font-family="-apple-system, sans-serif" font-size="20" class="badge-opt-text" text-anchor="middle" dominant-baseline="central">D</text>
     </g>
   </g>
 </svg>

@@ -64,8 +64,7 @@
     </radialGradient>
   </defs>
 
-  <!-- Main Board Frame -->
-  <rect x="30" y="30" width="800" height="380" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5" filter="url(#board-shadow)"/>
+  <!-- Transparent Background (No Board Rect) -->
 
   <!-- Header Banner -->
   <g transform="translate(55, 48)">

@@ -3,6 +3,43 @@
     <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.1"/>
     </filter>
+    <filter id="center-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#0284c7" flood-opacity="0.35"/>
+    </filter>
+
+    <style><![CDATA[
+      /* Center Square: High contrast, never blends into dark mode background */
+      .center-square {
+        fill: #0284c7;
+        stroke: #38bdf8;
+        stroke-width: 2;
+      }
+
+      /* Grapefruit Trees */
+      .tree-trunk {
+        fill: #15803d;
+        stroke: #14532d;
+        stroke-width: 2;
+      }
+      .tree-highlight {
+        fill: #86efac;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .center-square {
+          fill: #38bdf8;
+          stroke: #f0f9ff;
+          stroke-width: 2;
+        }
+        .tree-trunk {
+          fill: #22c55e;
+          stroke: #166534;
+        }
+        .tree-highlight {
+          fill: #dcfce7;
+        }
+      }
+    ]]></style>
   </defs>
   <g filter="url(#shadow)">
     <rect x="90" y="370" width="40" height="40" fill="#dbeafe"/>
@@ -74,14 +111,14 @@
     <path d="M 130,410 L 130,170 L 290,170 L 290,250 L 250,250" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 90,130 L 330,130 L 330,290 L 250,290 L 250,250" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <rect x="90" y="90" width="320" height="320" fill="none" stroke="#0f172a" stroke-width="3.5" rx="4"/>
-    <rect x="243" y="243" width="14" height="14" fill="#0f172a"/>
-    <circle cx="230.0" cy="230.0" r="9" fill="#15803d" stroke="#14532d" stroke-width="2"/>
-    <circle cx="228.0" cy="228.0" r="3" fill="#86efac"/>
-    <circle cx="230.0" cy="190.0" r="9" fill="#15803d" stroke="#14532d" stroke-width="2"/>
-    <circle cx="228.0" cy="188.0" r="3" fill="#86efac"/>
-    <circle cx="230.0" cy="150.0" r="9" fill="#15803d" stroke="#14532d" stroke-width="2"/>
-    <circle cx="228.0" cy="148.0" r="3" fill="#86efac"/>
-    <circle cx="230.0" cy="110.0" r="9" fill="#15803d" stroke="#14532d" stroke-width="2"/>
-    <circle cx="228.0" cy="108.0" r="3" fill="#86efac"/>
+    <rect x="243" y="243" width="14" height="14" class="center-square" rx="2.5" filter="url(#center-glow)"/>
+    <circle cx="230.0" cy="230.0" r="9" class="tree-trunk"/>
+    <circle cx="228.0" cy="228.0" r="3" class="tree-highlight"/>
+    <circle cx="230.0" cy="190.0" r="9" class="tree-trunk"/>
+    <circle cx="228.0" cy="188.0" r="3" class="tree-highlight"/>
+    <circle cx="230.0" cy="150.0" r="9" class="tree-trunk"/>
+    <circle cx="228.0" cy="148.0" r="3" class="tree-highlight"/>
+    <circle cx="230.0" cy="110.0" r="9" class="tree-trunk"/>
+    <circle cx="228.0" cy="108.0" r="3" class="tree-highlight"/>
   </g>
 </svg>

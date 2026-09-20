@@ -1,5 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 50 550 550" width="100%" height="100%">
   <defs>
+                <style><![CDATA[
+      /* Light theme: Classic Luxury Wood Chessboard */
+      .board-frame { fill: #fdf8eb; stroke: #78350f; }
+      .board-outer-bezel { fill: url(#wood-frame-light); stroke: #451a03; }
+      .diag-cell { fill: #edd6b6; }
+      .grid-groove { stroke: #a16207; stroke-width: 1.2; opacity: 0.45; }
+      .coord-text { fill: #78350f; font-weight: 700; }
+
+      /* Dark theme: Midnight Ebony & Smoked Rosewood */
+      @media (prefers-color-scheme: dark) {
+        .board-frame { fill: #3c2415; stroke: #5a2810; }
+        .board-outer-bezel { fill: url(#wood-frame-dark); stroke: #2a1208; }
+        .diag-cell { fill: #231209; }
+        .grid-groove { stroke: #120703; stroke-width: 1.2; opacity: 0.8; }
+        .coord-text { fill: #d97706; font-weight: 700; }
+      }
+    ]]></style>
+
     <!-- Pre-given Piece Gradient (Cyan / Deep Indigo) -->
     <radialGradient id="piecePreGiven" cx="35%" cy="30%" r="65%">
       <stop offset="0%" stop-color="#38bdf8"/>
@@ -15,6 +33,17 @@
     </radialGradient>
 
     <!-- Piece Shadow -->
+        <!-- Wood Board Gradients -->
+    <linearGradient id="wood-frame-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#92400e"/>
+      <stop offset="50%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="wood-frame-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b1d11"/>
+      <stop offset="50%" stop-color="#2a1208"/>
+      <stop offset="100%" stop-color="#120602"/>
+    </linearGradient>
     <filter id="pieceShadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.25"/>
     </filter>
@@ -22,27 +51,28 @@
 
   <!-- Chessboard Group (x=100, y=100, width=480, height=480) -->
   <g transform="translate(100, 100)">
-    <!-- Base Board White -->
-    <rect x="0" y="0" width="480" height="480" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+    <!-- Base Board -->
+    <rect class="board-outer-bezel" x="-12" y="-12" width="504" height="504" rx="14" stroke-width="3"/>
+    <rect class="board-frame" x="0" y="0" width="480" height="480" rx="4" stroke-width="2"/>
 
     <!-- Diagonal Cells Background -->
     <g>
-      <rect x="0" y="0" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="60" y="60" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="120" y="120" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="180" y="180" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="240" y="240" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="300" y="300" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="360" y="360" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="420" y="420" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="420" y="0" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="360" y="60" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="300" y="120" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="240" y="180" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="180" y="240" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="120" y="300" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="60" y="360" width="60" height="60" fill="#f1f5f9"/>
-      <rect x="0" y="420" width="60" height="60" fill="#f1f5f9"/>
+      <rect x="0" y="0" width="60" height="60" class="diag-cell"/>
+      <rect x="60" y="60" width="60" height="60" class="diag-cell"/>
+      <rect x="120" y="120" width="60" height="60" class="diag-cell"/>
+      <rect x="180" y="180" width="60" height="60" class="diag-cell"/>
+      <rect x="240" y="240" width="60" height="60" class="diag-cell"/>
+      <rect x="300" y="300" width="60" height="60" class="diag-cell"/>
+      <rect x="360" y="360" width="60" height="60" class="diag-cell"/>
+      <rect x="420" y="420" width="60" height="60" class="diag-cell"/>
+      <rect x="420" y="0" width="60" height="60" class="diag-cell"/>
+      <rect x="360" y="60" width="60" height="60" class="diag-cell"/>
+      <rect x="300" y="120" width="60" height="60" class="diag-cell"/>
+      <rect x="240" y="180" width="60" height="60" class="diag-cell"/>
+      <rect x="180" y="240" width="60" height="60" class="diag-cell"/>
+      <rect x="120" y="300" width="60" height="60" class="diag-cell"/>
+      <rect x="60" y="360" width="60" height="60" class="diag-cell"/>
+      <rect x="0" y="420" width="60" height="60" class="diag-cell"/>
     </g>
 
     <!-- Diagonal Hatch Lines -->

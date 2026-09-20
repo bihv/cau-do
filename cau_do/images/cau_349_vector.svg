@@ -1,7 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="40 25 680 420" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
-    <!-- Card Shadow -->
+    <style><![CDATA[
+      /* Light theme default */
+      .grass-area { fill: #f0fdf4; stroke: #bbf7d0; }
+      .label-badge { fill: #ffffff; stroke: #cbd5e1; }
+      .label-text { fill: #78350f; }
+      .measure-badge { fill: #ffffff; }
+      .measure-text { fill: #0f172a; }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        .grass-area { fill: #064e3b; stroke: #047857; }
+        .label-badge { fill: #1e293b; stroke: #475569; }
+        .label-text { fill: #fde68a; }
+        .measure-badge { fill: #1e293b; }
+        .measure-text { fill: #f8fafc; }
+      }
+    ]]></style>
+
     <!-- River Water Gradient -->
     <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8"/>
@@ -27,7 +43,7 @@
   <!-- River Landscape Area (x=80, y=50, w=600, h=380) -->
   <g transform="translate(60, 40)">
     <!-- Grass Area (Outer Ground) -->
-    <rect x="0" y="0" width="640" height="390" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+    <rect class="grass-area" x="0" y="0" width="640" height="390" rx="12" stroke-width="1.5"/>
 
     <!-- L-Shaped River Polygon -->
     <!-- River width = 100px (representing 3m) -->

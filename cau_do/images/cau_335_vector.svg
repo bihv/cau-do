@@ -1,153 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 475" width="100%" height="100%">
   <defs>
-    <!-- Multi-tier Drop Shadows & Glows -->
-    <filter id="board-shadow" x="-8%" y="-8%" width="116%" height="116%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    <filter id="shadow" x="-5%" y="-5%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="laser-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10b981" flood-opacity="0.75"/>
+    </filter>
+    <filter id="target-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f59e0b" flood-opacity="0.6"/>
     </filter>
 
-    <filter id="shape-depth" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#78350f" flood-opacity="0.16"/>
-    </filter>
-
-    <filter id="target-glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f59e0b" flood-opacity="0.65"/>
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#d97706" flood-opacity="0.35"/>
-    </filter>
-
-    <filter id="badge-shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
-    </filter>
-
-    <!-- Canvas Gradient -->
-    <!-- Card Background Gradient -->
-    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f8fafc"/>
-    </linearGradient>
-
-    <!-- Golden Honey Pastry Sponge Gradient -->
     <linearGradient id="cake-sponge" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fffbeb"/>
-      <stop offset="30%" stop-color="#fef3c7"/>
-      <stop offset="70%" stop-color="#fde68a"/>
-      <stop offset="100%" stop-color="#fcd34d"/>
-    </linearGradient>
-
-    <!-- Plate / Board Gradient -->
-    <linearGradient id="plate-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f1f5f9"/>
-    </linearGradient>
-
-    <!-- Cutout Cavity Hatch Pattern -->
-    <pattern id="cutout-hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="10" stroke="#94a3b8" stroke-width="2"/>
-    </pattern>
-
-    <!-- Amber Badge Gradient -->
-    <linearGradient id="amber-badge" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fffbeb"/>
       <stop offset="50%" stop-color="#fef3c7"/>
       <stop offset="100%" stop-color="#fde68a"/>
     </linearGradient>
+
+    <pattern id="cutout-hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" class="hatch-line"/>
+    </pattern>
+
+    <style><![CDATA[
+      /* Universal Dual-Mode Styling */
+      .plate-tray { fill: rgba(148, 163, 184, 0.07); stroke: #64748b; stroke-width: 1.6; }
+      .math-label { fill: #6366f1; font-weight: 900; font-style: italic; }
+      .hatch-line { stroke: #64748b; stroke-width: 1.8; }
+    ]]></style>
   </defs>
 
-  <!-- ==================== LEFT CARD: ORIGINAL RECTANGULAR CAKE ==================== -->
-  <g>
-    <!-- Outer Card Frame -->
-    <rect x="40" y="40" width="370" height="420" rx="24" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+  <!-- LEFT TRAY: ORIGINAL CAKE WITH CENTER O1 -->
+  <rect x="75" y="40" width="290" height="370" rx="16" class="plate-tray" filter="url(#shadow)"/>
+  <!-- Sponge Rectangular Cake -->
+  <rect x="120" y="80" width="200" height="280" rx="12" fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5"/>
+  <!-- Symmetry axes through O1 (220, 220) -->
+  <g stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="6,4">
+    <line x1="95" y1="220" x2="345" y2="220"/>
+    <line x1="220" y1="55" x2="220" y2="385"/>
+  </g>
+  <!-- Center marker O1 -->
+  <circle cx="220" cy="220" r="5.5" fill="#6366f1" stroke="#ffffff" stroke-width="2"/>
+  <text x="235" y="215" font-family="-apple-system, sans-serif" font-size="15" class="math-label">O₁</text>
 
-    <!-- Bakery Board / Tray -->
-    <rect x="80" y="75" width="290" height="325" rx="16" fill="url(#plate-grad)" stroke="#e2e8f0" stroke-width="1.5"/>
-
-    <!-- Whole Cake Body -->
-    <g filter="url(#shape-depth)">
-      <rect x="125" y="105" width="200" height="280" rx="12" fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5"/>
-      <!-- Inner Caramel Glaze Trim Line -->
-      <rect x="134" y="114" width="182" height="262" rx="7" fill="none" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="6,4" opacity="0.8"/>
-      <!-- Glossy Reflection Highlight -->
-      <path d="M 129,115 Q 175,109 225,119 Q 175,127 129,125 Z" fill="#ffffff" opacity="0.45"/>
-    </g>
-
-    <!-- Center Symmetry Axes (Subtle Guide) -->
-    <g stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4">
-      <line x1="100" y1="245" x2="350" y2="245"/>
-      <line x1="225" y1="80" x2="225" y2="410"/>
-      <!-- Diagonal symmetry guides -->
-      <line x1="125" y1="105" x2="325" y2="385" opacity="0.5"/>
-      <line x1="125" y1="385" x2="325" y2="105" opacity="0.5"/>
-    </g>
-
-    <!-- Center Point Marker O₁ -->
-    <circle cx="225" cy="245" r="4.5" fill="#1e293b" stroke="#ffffff" stroke-width="1.5"/>
-    <text x="238" y="241" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" font-style="italic" fill="#64748b">O₁</text>
-
-    <!-- Card Top Badge: Pristine Cake Icon -->
-    <g transform="translate(180, 50)">
-      <rect x="0" y="0" width="90" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2"/>
-      <rect x="32" y="7" width="26" height="12" rx="2" fill="#3b82f6" opacity="0.8"/>
-    </g>
+  <!-- MIDDLE TRANSITION ARROW -->
+  <g transform="translate(432, 225)">
+    <circle cx="0" cy="0" r="18" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="1.5"/>
+    <path d="M -5,-6 L 3,0 L -5,6" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <!-- ==================== MIDDLE TRANSITION ARROW ==================== -->
-  <g transform="translate(432, 245)">
-    <circle cx="0" cy="0" r="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#badge-shadow)"/>
-    <path d="M -5,-6 L 3,0 L -5,6" fill="none" stroke="#64748b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
+    <!-- RIGHT TRAY: MISSING CORNER CAKE & QUESTION -->
+    <rect x="495" y="40" width="310" height="370" rx="16" class="plate-tray"/>
 
-  <!-- ==================== RIGHT CARD: CAKE WITH CUTOUT CORNER & CHALLENGE ==================== -->
-  <g>
-    <!-- Outer Card Frame -->
-    <rect x="455" y="40" width="425" height="420" rx="24" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+    <!-- Cutout missing corner with hatch pattern -->
+    <rect x="550" y="80" width="110" height="85" rx="6" fill="url(#cutout-hatch)" stroke="#64748b" stroke-width="1.8" stroke-dasharray="6,4"/>
 
-    <!-- Bakery Board / Tray -->
-    <rect x="495" y="75" width="310" height="325" rx="16" fill="url(#plate-grad)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <!-- L-Shaped Remaining Cake -->
+    <path d="M 660,80 L 738,80 Q 750,80 750,92 L 750,348 Q 750,360 738,360 L 562,360 Q 550,360 550,348 L 550,165 L 660,165 Z"
+          fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5" stroke-linejoin="round"/>
 
-    <!-- Cutout Cavity (Hatched Dark Area under Missing Piece) -->
-    <rect x="550" y="105" width="110" height="85" rx="6" fill="url(#cutout-hatch)" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4"/>
-    <rect x="550" y="105" width="110" height="85" rx="6" fill="#64748b" opacity="0.12"/>
-
-    <!-- Remaining Cake Body (L-Shaped Geometric Polygon) -->
-    <g filter="url(#shape-depth)">
-      <path d="M 660,105 
-               L 738,105 Q 750,105 750,117 
-               L 750,373 Q 750,385 738,385 
-               L 562,385 Q 550,385 550,373 
-               L 550,190 
-               L 660,190 
-               Z" 
-            fill="url(#cake-sponge)" stroke="#d97706" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- Inner Caramel Glaze Trim Line along Remaining Edges -->
-      <path d="M 669,114 
-               L 733,114 Q 741,114 741,122 
-               L 741,368 Q 741,376 733,376 
-               L 567,376 Q 559,376 559,368 
-               L 559,199 
-               L 669,199 
-               Z" 
-            fill="none" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="6,4" opacity="0.8"/>
-      <!-- Glossy Highlight -->
-      <path d="M 668,114 Q 700,109 735,118 Q 700,124 668,122 Z" fill="#ffffff" opacity="0.45"/>
+    <!-- Question Mark Glow Badge -->
+    <g transform="translate(650, 235)" filter="url(#target-glow)">
+      <circle cx="0" cy="0" r="28" fill="rgba(245, 158, 11, 0.18)" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="0" y="10" font-family="-apple-system, sans-serif" font-size="32" font-weight="900" text-anchor="middle" fill="#f59e0b">?</text>
     </g>
 
-    <!-- Glowing Question Challenge Badge -->
-    <g transform="translate(650, 260)" filter="url(#target-glow)">
-      <circle cx="0" cy="0" r="28" fill="url(#amber-badge)" stroke="#f59e0b" stroke-width="2.5"/>
-      <text x="0" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#b45309">?</text>
+    <!-- Formula pill -->
+    <g transform="translate(550, 420)">
+      <rect width="200" height="34" rx="17" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="2"/>
+      <text x="100" y="22" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#f59e0b" text-anchor="middle">1 nhát cắt ⟹ S₁ = S₂ ?</text>
     </g>
-
-    <!-- Card Top Badge: Missing Piece Puzzle Icon -->
-    <g transform="translate(620, 50)">
-      <rect x="0" y="0" width="90" height="26" rx="13" fill="#fffbeb" stroke="#fde68a" stroke-width="1.2"/>
-      <!-- Icon of cut corner -->
-      <path d="M 41,9 L 54,9 L 54,19 L 36,19 L 36,14 L 41,14 Z" fill="#f59e0b" opacity="0.85"/>
-    </g>
-
-    <!-- Bottom Challenge Formula Badge: 1 Cut = 2 Equal Parts? -->
-    <g transform="translate(585, 415)">
-      <rect x="0" y="0" width="180" height="34" rx="17" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8" filter="url(#badge-shadow)"/>
-      <text x="90" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" text-anchor="middle" fill="#b45309">1 Cut  ⟹  S₁ = S₂ ?</text>
-    </g>
-  </g>
 </svg>

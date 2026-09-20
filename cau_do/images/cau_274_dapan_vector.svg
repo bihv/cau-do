@@ -1,10 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" width="100%" height="100%">
   <defs>
+    <style><![CDATA[
+      /* Light theme default */
+      .orbit-line { stroke: #cbd5e1; }
+      .outer-node { fill: #ffffff; stroke: #334155; }
+      .outer-node-text { fill: #0f172a; }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        .orbit-line { stroke: #334155; }
+        .outer-node { fill: #1e293b; stroke: #475569; }
+        .outer-node-text { fill: #f8fafc; }
+      }
+    ]]></style>
+
     <!-- Shadows & Glows -->
-    <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08"/>
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
-    </filter>
     <filter id="node-shadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
     </filter>
@@ -12,13 +22,6 @@
       <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f59e0b" flood-opacity="0.55"/>
       <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#b45309" flood-opacity="0.25"/>
     </filter>
-
-    <!-- Canvas Gradient -->
-    <!-- Board Surface Gradient -->
-    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f8fafc"/>
-    </linearGradient>
 
     <!-- Center Golden Medallion Gradient -->
     <linearGradient id="gold-medallion" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -29,11 +32,10 @@
     </linearGradient>
   </defs>
 
-  <!-- Main Puzzle Board -->
-  <rect x="30" y="30" width="700" height="700" rx="28" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+  <!-- Transparent Background (No Board Rect) -->
 
   <!-- Decorative Orbit Guide Circle (Dashed) -->
-  <circle cx="380" cy="380" r="260" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,6"/>
+  <circle class="orbit-line" cx="380" cy="380" r="260" fill="none" stroke-width="1.5" stroke-dasharray="6,6"/>
 
   <!-- 9 Connecting Lines Passing Through Center (Harmonized with pair colors, no filter to prevent zero-dimension bugs) -->
   <g stroke-width="2.6" stroke-linecap="round">

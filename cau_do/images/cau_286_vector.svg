@@ -41,8 +41,7 @@
     </radialGradient>
   </defs>
 
-  <!-- Main Board Frame -->
-  <rect x="30" y="30" width="800" height="380" rx="24" fill="url(#card-grad)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#board-shadow)"/>
+  <!-- Transparent Background (No Board Rect) -->
 
   <!-- ==================== LEFT SIDE: 100 ==================== -->
   <!-- Left Digit '1': (x=140, y from 182 to 258) -->

@@ -44,11 +44,11 @@
   </g>
 
   <!-- Breakout 1 Pill Badge -->
-  <g transform="translate(60, 105)" filter="url(#badge-shadow)">
-    <rect x="0" y="0" width="105" height="26" rx="13" fill="url(#amber-badge-grad)" stroke="#fde68a" stroke-width="1.2"/>
-    <text x="52" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#b45309" letter-spacing="0.5" text-anchor="middle">BREAKOUT 1</text>
+  <g transform="translate(52, 105)" filter="url(#badge-shadow)">
+    <rect x="0" y="0" width="115" height="26" rx="13" fill="url(#amber-badge-grad)" stroke="#fde68a" stroke-width="1.2"/>
+    <text x="57" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#b45309" letter-spacing="0.5" text-anchor="middle">ĐIỂM NGOÀI 1</text>
     <!-- Pointer to vertex -->
-    <line x1="85" y1="26" x2="98" y2="45" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="2,2"/>
+    <line x1="95" y1="26" x2="108" y2="45" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="2,2"/>
   </g>
 
   <!-- Breakout Vertex 2: (640, 640) - Bottom-Right Outside -->
@@ -66,8 +66,8 @@
 
   <!-- Breakout 2 Pill Badge -->
   <g transform="translate(635, 690)" filter="url(#badge-shadow)">
-    <rect x="0" y="0" width="105" height="26" rx="13" fill="url(#amber-badge-grad)" stroke="#fde68a" stroke-width="1.2"/>
-    <text x="52" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#b45309" letter-spacing="0.5" text-anchor="middle">BREAKOUT 2</text>
+    <rect x="0" y="0" width="115" height="26" rx="13" fill="url(#amber-badge-grad)" stroke="#fde68a" stroke-width="1.2"/>
+    <text x="57" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#b45309" letter-spacing="0.5" text-anchor="middle">ĐIỂM NGOÀI 2</text>
     <!-- Pointer to vertex -->
     <line x1="20" y1="0" x2="10" y2="-20" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="2,2"/>
   </g>
@@ -193,13 +193,13 @@
   </g>
 
   <!-- ==================== START BADGE AT (320, 480) ==================== -->
-  <g transform="translate(205, 464)" filter="url(#badge-shadow)">
-    <rect x="0" y="0" width="84" height="32" rx="16" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+  <g transform="translate(195, 464)" filter="url(#badge-shadow)">
+    <rect x="0" y="0" width="96" height="32" rx="16" fill="#059669" stroke="#ffffff" stroke-width="2"/>
     <!-- Play Triangle -->
-    <polygon points="18,10 18,22 28,16" fill="#ffffff"/>
-    <text x="35" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" letter-spacing="1">START</text>
+    <polygon points="15,10 15,22 25,16" fill="#ffffff"/>
+    <text x="29" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#ffffff" letter-spacing="0.5">BẮT ĐẦU</text>
     <!-- Pointer -->
-    <line x1="84" y1="16" x2="100" y2="16" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="96" y1="16" x2="110" y2="16" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
   </g>
 
   <!-- ==================== STROKE STEP NUMBER BADGES (1, 2, 3, 4) ==================== -->

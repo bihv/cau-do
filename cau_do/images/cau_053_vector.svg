@@ -2,16 +2,23 @@
   <defs>
     <!-- Shadow filter for board and tokens -->
     <filter id="board-shadow" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.16"/>
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#2a1205" flood-opacity="0.32"/>
     </filter>
     <filter id="token-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.3"/>
     </filter>
 
-    <!-- Wood / Board Gradients -->
-    <linearGradient id="board-frame" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#475569"/>
-      <stop offset="100%" stop-color="#1e293b"/>
+        <!-- Classic Luxury Wood Gradients -->
+    <linearGradient id="board-frame-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/>
+      <stop offset="35%" stop-color="#9a3412"/>
+      <stop offset="70%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="board-frame-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b1d11"/>
+      <stop offset="40%" stop-color="#2a1208"/>
+      <stop offset="100%" stop-color="#120602"/>
     </linearGradient>
 
     <!-- Initial Game Token Gradients (Deep Crimson Ruby) -->
@@ -34,82 +41,104 @@
       <ellipse cx="-7" cy="-9" rx="8" ry="4.5" transform="rotate(-30 -7 -9)" fill="url(#token-highlight)"/>
       <circle cx="7" cy="8" r="2" fill="#ffffff" opacity="0.4"/>
     </g>
+
+                    <style><![CDATA[
+      /* Light theme: Classic Luxury Handcrafted Wood (Maple & Honey Walnut) */
+      .board-outer { fill: url(#board-frame-light); stroke: #3b1402; stroke-width: 3; }
+      .board-inlay { stroke: #d97706; stroke-width: 1.5; stroke-dasharray: 8 4; opacity: 0.75; }
+      .board-inner-border { stroke: #78350f; stroke-width: 3; }
+      .tile-a { fill: #fdf8eb; }
+      .tile-b { fill: #edd6b6; }
+      .grid-groove { stroke: #a16207; stroke-width: 1.5; opacity: 0.5; }
+      .grid-groove-major { stroke: #854d0e; stroke-width: 2.5; opacity: 0.75; }
+
+      /* Dark theme: Midnight Ebony & Smoked Rosewood */
+      @media (prefers-color-scheme: dark) {
+        .board-outer { fill: url(#board-frame-dark); stroke: #5a2810; stroke-width: 3; }
+        .board-inlay { stroke: #b45309; stroke-width: 1.5; stroke-dasharray: 8 4; opacity: 0.65; }
+        .board-inner-border { stroke: #451a03; stroke-width: 3; }
+        .tile-a { fill: #3c2415; }
+        .tile-b { fill: #231209; }
+        .grid-groove { stroke: #120703; stroke-width: 1.5; opacity: 0.85; }
+        .grid-groove-major { stroke: #54250c; stroke-width: 2.5; opacity: 0.8; }
+      }
+    ]]></style>
   </defs>
 
   <!-- Main Board Container -->
   <g filter="url(#board-shadow)">
     <!-- Outer Board Frame -->
-    <rect x="42" y="42" width="516" height="516" rx="16" fill="url(#board-frame)" stroke="#0f172a" stroke-width="3"/>
-    <!-- Board Inner Bevel -->
-    <rect x="50" y="50" width="500" height="500" rx="8" fill="#ffffff"/>
+    <rect class="board-outer" x="42" y="42" width="516" height="516" rx="16"/>
+    <!-- Inlaid Craftsmanship Marquetry Border -->
+    <rect class="board-inlay" x="46" y="46" width="508" height="508" rx="13" fill="none"/>
 
     <!-- 6x6 Grid Cells (each cell 83.333 x 83.333) -->
     <!-- Alternating subtle clean checker tiles -->
     <!-- Row 1 -->
-    <rect x="50" y="50" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="133.333" y="50" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="216.667" y="50" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="300" y="50" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="383.333" y="50" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="466.667" y="50" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="50" y="50" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="133.333" y="50" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="216.667" y="50" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="300" y="50" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="383.333" y="50" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="466.667" y="50" width="83.333" height="83.333" class="tile-b"/>
 
     <!-- Row 2 -->
-    <rect x="50" y="133.333" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="133.333" y="133.333" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="216.667" y="133.333" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="300" y="133.333" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="383.333" y="133.333" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="466.667" y="133.333" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="50" y="133.333" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="133.333" y="133.333" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="216.667" y="133.333" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="300" y="133.333" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="383.333" y="133.333" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="466.667" y="133.333" width="83.333" height="83.333" class="tile-a"/>
 
     <!-- Row 3 -->
-    <rect x="50" y="216.667" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="133.333" y="216.667" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="216.667" y="216.667" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="300" y="216.667" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="383.333" y="216.667" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="466.667" y="216.667" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="50" y="216.667" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="133.333" y="216.667" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="216.667" y="216.667" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="300" y="216.667" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="383.333" y="216.667" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="466.667" y="216.667" width="83.333" height="83.333" class="tile-b"/>
 
     <!-- Row 4 -->
-    <rect x="50" y="300" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="133.333" y="300" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="216.667" y="300" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="300" y="300" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="383.333" y="300" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="466.667" y="300" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="50" y="300" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="133.333" y="300" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="216.667" y="300" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="300" y="300" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="383.333" y="300" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="466.667" y="300" width="83.333" height="83.333" class="tile-a"/>
 
     <!-- Row 5 -->
-    <rect x="50" y="383.333" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="133.333" y="383.333" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="216.667" y="383.333" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="300" y="383.333" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="383.333" y="383.333" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="466.667" y="383.333" width="83.333" height="83.333" fill="#f1f5f9"/>
+    <rect x="50" y="383.333" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="133.333" y="383.333" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="216.667" y="383.333" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="300" y="383.333" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="383.333" y="383.333" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="466.667" y="383.333" width="83.333" height="83.333" class="tile-b"/>
 
     <!-- Row 6 -->
-    <rect x="50" y="466.667" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="133.333" y="466.667" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="216.667" y="466.667" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="300" y="466.667" width="83.333" height="83.333" fill="#f8fafc"/>
-    <rect x="383.333" y="466.667" width="83.333" height="83.333" fill="#f1f5f9"/>
-    <rect x="466.667" y="466.667" width="83.333" height="83.333" fill="#f8fafc"/>
+    <rect x="50" y="466.667" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="133.333" y="466.667" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="216.667" y="466.667" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="300" y="466.667" width="83.333" height="83.333" class="tile-a"/>
+    <rect x="383.333" y="466.667" width="83.333" height="83.333" class="tile-b"/>
+    <rect x="466.667" y="466.667" width="83.333" height="83.333" class="tile-a"/>
 
     <!-- Grid Lines -->
     <!-- Vertical Grid Lines -->
-    <line x1="133.333" y1="50" x2="133.333" y2="550" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="216.667" y1="50" x2="216.667" y2="550" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="300" y1="50" x2="300" y2="550" stroke="#94a3b8" stroke-width="2.5"/>
-    <line x1="383.333" y1="50" x2="383.333" y2="550" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="466.667" y1="50" x2="466.667" y2="550" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="133.333" y1="50" x2="133.333" y2="550" class="grid-groove"/>
+    <line x1="216.667" y1="50" x2="216.667" y2="550" class="grid-groove"/>
+    <line x1="300" y1="50" x2="300" y2="550" class="grid-groove-major"/>
+    <line x1="383.333" y1="50" x2="383.333" y2="550" class="grid-groove"/>
+    <line x1="466.667" y1="50" x2="466.667" y2="550" class="grid-groove"/>
 
     <!-- Horizontal Grid Lines -->
-    <line x1="50" y1="133.333" x2="550" y2="133.333" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="50" y1="216.667" x2="550" y2="216.667" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="50" y1="300" x2="550" y2="300" stroke="#94a3b8" stroke-width="2.5"/>
-    <line x1="50" y1="383.333" x2="550" y2="383.333" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="50" y1="466.667" x2="550" y2="466.667" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="133.333" x2="550" y2="133.333" class="grid-groove"/>
+    <line x1="50" y1="216.667" x2="550" y2="216.667" class="grid-groove"/>
+    <line x1="50" y1="300" x2="550" y2="300" class="grid-groove-major"/>
+    <line x1="50" y1="383.333" x2="550" y2="383.333" class="grid-groove"/>
+    <line x1="50" y1="466.667" x2="550" y2="466.667" class="grid-groove"/>
 
     <!-- Board Perimeter Border -->
-    <rect x="50" y="50" width="500" height="500" fill="none" stroke="#334155" stroke-width="3"/>
+    <rect x="50" y="50" width="500" height="500" fill="none" class="board-inner-border"/>
   </g>
 
   <!-- ======================================================== -->

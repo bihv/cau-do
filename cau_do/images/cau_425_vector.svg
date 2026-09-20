@@ -37,7 +37,7 @@
     <circle cx="210" cy="240" r="12" fill="#78350f"/>
     <circle cx="210" cy="240" r="5" fill="#fef08a"/>
     <!-- Label -->
-    <text x="210" y="278" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#451a03" text-anchor="middle">FIXED</text>
+    <text x="210" y="278" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#451a03" text-anchor="middle">CỐ ĐỊNH</text>
   </g>
 
   <!-- Moving Coin C2 (Center at 340, 240, R=65) -->
@@ -61,6 +61,6 @@
   <!-- Question Badge at Bottom -->
   <g transform="translate(270, 395)" filter="url(#shadow)">
     <rect x="-100" y="-16" width="200" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Revolutions = ?</text>
+    <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Số vòng quay = ?</text>
   </g>
 </svg>

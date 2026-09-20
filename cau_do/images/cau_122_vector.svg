@@ -81,11 +81,9 @@
       <stop offset="100%" stop-color="#dcfce7"/>
     </linearGradient>
   </defs>
-  <!-- Inner Playing Mat -->
-  <g filter="url(#board-shadow)">
-    <rect x="80" y="35" width="600" height="550" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5"/>
-  </g>
-  <rect x="182.0" y="112.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
+
+  <!-- Transparent Background (No Mat Rect) -->
+  <rect x="182.0" y="112.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
   <rect x="454.0" y="112.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
   <rect x="318.0" y="248.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>
   <rect x="182.0" y="384.0" width="124" height="124" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="1.2"/>

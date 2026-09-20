@@ -81,10 +81,7 @@
       <stop offset="100%" stop-color="#dcfce7"/>
     </linearGradient>
   </defs>
-  <!-- Left: Solved Board -->
-  <g filter="url(#board-shadow)">
-    <rect x="35" y="35" width="490" height="510" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5"/>
-  </g>
+  <!-- Left: Solved Board (Transparent Canvas) -->
   <rect x="66" y="116.0" width="108" height="108" rx="10" fill="url(#cell-mint)" stroke="#a7f3d0" stroke-width="1.2"/>
   <circle cx="120.0" cy="170.0" r="15" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#badge-shadow)"/>
   <text x="120.0" y="175.0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="15" font-weight="800" fill="#047857" text-anchor="middle">1</text>
@@ -225,10 +222,7 @@
   <path d="M 360.0 92.0 Q 290 72.0 258.0 92.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="4,4" marker-end="url(#arrow-emerald)"/>
   <path d="M 432 120.0 C 435 60.0 180 55.0 38 100.0 C 22 125.0 22 230.0 40 272.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="4,4" marker-end="url(#arrow-emerald)"/>
   <path d="M 432 245.0 C 465 280.0 465 410.0 435 485.0 C 420 510.0 300 515.0 260.0 490.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="4,4" marker-end="url(#arrow-emerald)"/>
-  <!-- Right Panel: Geometric Breakdown -->
-  <g filter="url(#board-shadow)">
-    <rect x="555" y="35" width="390" height="510" rx="24" fill="url(#card-grad)" stroke="#cbd5e1" stroke-width="1.5"/>
-  </g>
+  <!-- Right Panel: Geometric Breakdown (Transparent Canvas) -->
   <!-- Mini Diagram 1: 2x2 Square (Top) -->
   <rect x="575" y="53" width="340" height="155" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
   <rect x="590" y="65" width="44" height="44" fill="#dcfce7" stroke="#10b981" stroke-width="1.5"/>
@@ -262,5 +256,5 @@
   <circle cx="615" cy="473" r="18" fill="#10b981"/>
   <path d="M 607 473 L 613 479 L 623 467" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="650" y="465" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="15" font-weight="700" fill="#065f46">7 × (1×1) + 2 × (2×2)</text>
-  <text x="650" y="495" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="24" font-weight="900" fill="#047857">= 9 SQUARES</text>
+  <text x="650" y="495" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="24" font-weight="900" fill="#047857">= 9 HÌNH VUÔNG</text>
 </svg>

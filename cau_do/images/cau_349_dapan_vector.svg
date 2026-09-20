@@ -1,5 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="40 25 680 420" width="100%" height="100%">
   <defs>
+    <style><![CDATA[
+      /* Light theme default */
+      .grass-area { fill: #f0fdf4; stroke: #bbf7d0; }
+      .label-badge { fill: #ffffff; stroke: #cbd5e1; }
+      .label-text { fill: #78350f; }
+      .card-white { fill: #ffffff; stroke: #cbd5e1; }
+      .card-text { fill: #0f172a; }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        .grass-area { fill: #064e3b; stroke: #047857; }
+        .label-badge { fill: #1e293b; stroke: #475569; }
+        .label-text { fill: #fde68a; }
+        .card-white { fill: #1e293b; stroke: #475569; }
+        .card-text { fill: #f8fafc; }
+      }
+    ]]></style>
+
     <!-- Background Gradient -->
     <!-- Card Shadow -->
     <!-- River Water Gradient -->
@@ -9,14 +27,15 @@
       <stop offset="100%" stop-color="#0369a1"/>
     </linearGradient>
 
-    <!-- Wood Plank Gradient (Plank 1 - Emerald tint / vibrant wood) -->
+    <!-- Wood Plank 1 Gradient -->
     <linearGradient id="plank1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#b45309"/>
-      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="30%" stop-color="#d97706"/>
+      <stop offset="70%" stop-color="#f59e0b"/>
       <stop offset="100%" stop-color="#92400e"/>
     </linearGradient>
 
-    <!-- Wood Plank Gradient (Plank 2) -->
+    <!-- Wood Plank 2 Gradient -->
     <linearGradient id="plank2Grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#d97706"/>
       <stop offset="50%" stop-color="#fbbf24"/>
@@ -38,7 +57,7 @@
   <!-- River Landscape Area (x=60, y=40, w=640, h=390) -->
   <g transform="translate(60, 40)">
     <!-- Grass Area -->
-    <rect x="0" y="0" width="640" height="390" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+    <rect class="grass-area" x="0" y="0" width="640" height="390" rx="12" stroke-width="1.5"/>
 
     <!-- L-Shaped River -->
     <!-- River width = 100px. Outer corner at (120, 290). Inner corner at (220, 190) -->

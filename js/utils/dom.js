@@ -108,7 +108,7 @@ export function showToast(message, type = "info") {
   };
   const bgStyles = {
     success: "bg-emerald-600 text-white shadow-emerald-500/20",
-    info: "bg-indigo-600 text-white shadow-indigo-500/20",
+    info: "bg-orange-600 text-white shadow-orange-500/20",
     warning: "bg-amber-500 text-white shadow-amber-500/20",
     error: "bg-rose-600 text-white shadow-rose-500/20"
   };

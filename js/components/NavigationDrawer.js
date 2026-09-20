@@ -132,42 +132,42 @@ export function renderNavigationDrawer(container) {
             <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs">
               <button data-filter="all" class="filter-pill shrink-0 px-2.5 py-1 rounded-lg font-medium cursor-pointer transition-all ${
                 activeFilter === 'all'
-                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
+                  ? 'bg-orange-600 text-white shadow-xs font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }">
                 Tất cả (${store.puzzles.length})
               </button>
               <button data-filter="unsolved" class="filter-pill shrink-0 px-2.5 py-1 rounded-lg font-medium cursor-pointer transition-all ${
                 activeFilter === 'unsolved'
-                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
+                  ? 'bg-orange-600 text-white shadow-xs font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }">
                 Chưa giải (${store.puzzles.length - store.solvedSet.size})
               </button>
               <button data-filter="solved" class="filter-pill shrink-0 px-2.5 py-1 rounded-lg font-medium cursor-pointer transition-all ${
                 activeFilter === 'solved'
-                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
+                  ? 'bg-orange-600 text-white shadow-xs font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }">
                 Đã giải (${store.solvedSet.size})
               </button>
               <button data-filter="review" class="filter-pill shrink-0 px-2.5 py-1 rounded-lg font-medium cursor-pointer transition-all ${
                 activeFilter === 'review'
-                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
+                  ? 'bg-orange-600 text-white shadow-xs font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }">
                 🤔 Cần ngẫm (${store.reviewSet.size})
               </button>
               <button data-filter="bookmarked" class="filter-pill shrink-0 px-2.5 py-1 rounded-lg font-medium cursor-pointer transition-all ${
                 activeFilter === 'bookmarked'
-                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
+                  ? 'bg-orange-600 text-white shadow-xs font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }">
                 ⭐ Đã lưu (${store.bookmarkSet.size})
               </button>
               <button data-filter="has_image" class="filter-pill shrink-0 px-2.5 py-1 rounded-lg font-medium cursor-pointer transition-all ${
                 activeFilter === 'has_image'
-                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
+                  ? 'bg-orange-600 text-white shadow-xs font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }">
                 🖼️ Có hình
@@ -187,7 +187,7 @@ export function renderNavigationDrawer(container) {
 
               <div class="text-2xs font-semibold text-slate-500 dark:text-slate-400 shrink-0 flex items-center gap-1">
                 <span>Tiến độ:</span>
-                <span class="text-indigo-600 dark:text-indigo-400 font-bold">${stats.solved}/${stats.total} (${stats.percent}%)</span>
+                <span class="text-orange-600 dark:text-orange-400 font-bold">${stats.solved}/${stats.total} (${stats.percent}%)</span>
               </div>
             </div>
           </div>
@@ -215,20 +215,20 @@ export function renderNavigationDrawer(container) {
                 <button data-puzzle-index="${idx}" data-puzzle-id="${p.id}"
                   class="w-full text-left p-2.5 rounded-xl flex items-center justify-between gap-3 transition-colors cursor-pointer group ${
                     isSelected
-                      ? 'bg-indigo-50/90 dark:bg-indigo-500/20 text-indigo-950 dark:text-indigo-100 ring-1 ring-indigo-500/40'
+                      ? 'bg-orange-50/90 dark:bg-orange-500/20 text-orange-950 dark:text-orange-100 ring-1 ring-orange-500/40'
                       : isCurrent
                       ? 'bg-slate-100/70 dark:bg-slate-800/60 text-slate-900 dark:text-slate-100'
                       : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 text-slate-700 dark:text-slate-200'
                   }">
                   <div class="flex items-center gap-2.5 min-w-0">
                     <span class="font-mono text-xs font-bold shrink-0 ${
-                      isSelected ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-400'
+                      isSelected ? 'text-orange-600 dark:text-orange-400' : 'text-slate-400 dark:text-slate-400'
                     }">
                       #${String(p.id).padStart(3, '0')}
                     </span>
                     <div class="min-w-0">
                       <div class="text-xs sm:text-sm font-semibold truncate ${
-                        isSelected ? 'text-indigo-950 dark:text-white font-bold' : ''
+                        isSelected ? 'text-orange-950 dark:text-white font-bold' : ''
                       }">
                         ${p.title}
                       </div>

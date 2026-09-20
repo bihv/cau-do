@@ -13,6 +13,7 @@ import { renderPuzzleCard } from "./components/PuzzleCard.js";
 import { renderNavigationDrawer } from "./components/NavigationDrawer.js";
 import { renderImageZoomModal } from "./components/ImageZoomModal.js";
 import { renderRandomFAB } from "./components/RandomFAB.js";
+import { renderBottomBar } from "./components/BottomBar.js";
 
 async function bootstrap() {
   console.log("🚀 Đang khởi động 500 Câu Đố Trí Tuệ Web App...");
@@ -32,12 +33,14 @@ async function bootstrap() {
   const drawerEl = document.getElementById("drawer-mount");
   const zoomEl = document.getElementById("zoom-modal-mount");
   const fabEl = document.getElementById("fab-mount");
+  const bottomBarEl = document.getElementById("bottom-bar-mount");
 
   if (headerEl) renderHeader(headerEl);
   if (mainEl) renderPuzzleCard(mainEl);
   if (drawerEl) renderNavigationDrawer(drawerEl);
   if (zoomEl) renderImageZoomModal(zoomEl);
   if (fabEl) renderRandomFAB(fabEl);
+  if (bottomBarEl) renderBottomBar(bottomBarEl);
 
   // 5. Đăng ký phím tắt bàn phím toàn cục (Keyboard Shortcuts)
   setupKeyboardShortcuts();
@@ -99,7 +102,11 @@ function setupKeyboardShortcuts() {
     // Phím C: Mở / Đóng Bảng nháp & Vẽ hình
     if (e.key === "c" || e.key === "C") {
       e.preventDefault();
-      document.getElementById("btn-toggle-scratchpad")?.click();
+      if (window.innerWidth < 1024) {
+        store.setMobileTab(store.activeMobileTab === "scratchpad" ? "problem" : "scratchpad");
+      } else {
+        document.getElementById("btn-toggle-scratchpad")?.click();
+      }
       return;
     }
 

@@ -22,7 +22,7 @@ export function renderAnswerSection(container, puzzle) {
     container.innerHTML = `
       <div class="py-6 text-center">
         <button id="btn-reveal-answer"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-bold text-sm sm:text-base border border-indigo-200/80 dark:border-indigo-800/80 transition-all cursor-pointer">
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-orange-50 dark:bg-orange-950/40 hover:bg-orange-100 dark:hover:bg-orange-900/50 text-orange-700 dark:text-orange-300 font-bold text-sm sm:text-base border border-orange-200/80 dark:border-orange-800/80 transition-all cursor-pointer">
           <span>💡</span>
           <span>Xem Lời Giải & Đáp Án</span>
           <span class="hidden sm:inline text-xs font-normal opacity-70 ml-1">(Space)</span>
@@ -40,20 +40,15 @@ export function renderAnswerSection(container, puzzle) {
   const parsedDapAn = safeParseMarkdown(puzzle.dap_an);
 
   container.innerHTML = `
-    <div class="border-t border-slate-200/80 dark:border-slate-800 pt-6 space-y-5 animate-in fade-in duration-300">
+    <div class="space-y-5 animate-in fade-in duration-300">
       
-      <!-- Thanh Tiêu đề Lời giải + Nút đóng nhẹ -->
+      <!-- Thanh Tiêu đề Lời giải tinh gọn -->
       <div class="flex items-center justify-between pb-3 border-b border-slate-200/60 dark:border-slate-800">
         <div class="flex items-center gap-2">
-          <span class="text-indigo-600 dark:text-indigo-400 font-bold text-xs sm:text-sm tracking-wide uppercase">
+          <span class="text-orange-600 dark:text-orange-400 font-bold text-xs sm:text-sm tracking-wide uppercase">
             💡 Lời Giải & Phân Tích Logic
           </span>
         </div>
-
-        <button id="btn-hide-answer"
-          class="text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2.5 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
-          Ẩn lời giải
-        </button>
       </div>
 
       <!-- Nội dung Lời giải chuẩn typographic -->
@@ -101,11 +96,6 @@ export function renderAnswerSection(container, puzzle) {
 
   // Nâng cấp hình ảnh trong lời giải: click để phóng to
   enhanceImagesWithZoom(container, (src) => store.openZoomModal(src), ".answer-content img");
-
-  // Gắn sự kiện đóng
-  container.querySelector("#btn-hide-answer")?.addEventListener("click", () => {
-    store.toggleAnswer(false);
-  });
 
   // Gắn sự kiện tự chấm điểm
   container.querySelector("#btn-rate-solved")?.addEventListener("click", () => {

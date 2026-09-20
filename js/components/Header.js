@@ -18,38 +18,26 @@ export function renderHeader(container) {
     const totalPuzzles = store.puzzles.length || 500;
     const isBookmarked = currentPuzzle ? store.bookmarkSet.has(currentPuzzle.id) : false;
     const isDark = store.theme === "dark";
-    const prevId = currentId > 1 ? currentId - 1 : null;
-    const nextId = currentId < totalPuzzles ? currentId + 1 : null;
 
     container.innerHTML = `
       <header class="fixed top-0 inset-x-0 z-40 bg-white/90 dark:bg-[#111827]/90 backdrop-blur-md border-b border-slate-200/70 dark:border-slate-800/70 transition-colors">
-        <div class="max-w-4xl mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-2">
+        <div class="w-full max-w-[96%] xl:max-w-[1700px] 2xl:max-w-[1880px] mx-auto px-2 sm:px-4 lg:px-6 h-14 flex items-center justify-between gap-2">
           
           <!-- Trái: Logo & Tên web gọn -->
           <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <a href="./" id="header-logo-link" class="flex items-center gap-2 text-slate-800 dark:text-slate-200 font-bold text-sm tracking-tight hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+            <a href="./" id="header-logo-link" class="flex items-center gap-2 text-slate-800 dark:text-slate-200 font-bold text-sm tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
               <span class="text-xl">🧩</span>
               <span class="hidden sm:inline font-extrabold text-slate-900 dark:text-white text-base">500 Câu Đố</span>
             </a>
           </div>
 
-          <!-- Giữa: Thanh tìm kiếm Spotlight nổi bật & Bộ điều hướng Zen (← Search Bar →) -->
-          <div class="flex items-center gap-1 sm:gap-2 flex-1 max-w-xs sm:max-w-md mx-2">
-            <button id="header-nav-prev" 
-              ${!prevId ? "disabled" : ""}
-              class="p-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-25 disabled:pointer-events-none transition-colors cursor-pointer shrink-0"
-              title="Câu trước (←)">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            <!-- Thanh tìm kiếm Spotlight trung tâm nổi bật -->
+          <!-- Giữa: Thanh tìm kiếm Spotlight trung tâm -->
+          <div class="flex items-center flex-1 max-w-xs sm:max-w-md lg:max-w-lg mx-2">
             <button id="btn-open-spotlight" 
-              class="flex-1 flex items-center justify-between gap-2 px-3 py-1.5 bg-slate-100/90 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/70 hover:border-indigo-300 dark:hover:border-indigo-500/50 rounded-xl text-xs transition-all cursor-pointer shadow-2xs group"
+              class="w-full flex items-center justify-between gap-2 px-3 py-1.5 bg-slate-100/90 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-700/80 border border-slate-200/80 dark:border-slate-700/70 hover:border-orange-300 dark:hover:border-orange-500/50 rounded-xl text-xs transition-all cursor-pointer shadow-2xs group"
               title="Mở Spotlight tìm kiếm & Mục lục (Ctrl+K / / / M)">
               <div class="flex items-center gap-2 min-w-0 truncate">
-                <svg class="w-4 h-4 text-slate-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-orange-500 dark:group-hover:text-orange-400 shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <span class="font-mono font-bold text-slate-700 dark:text-slate-300 shrink-0">#${currentId}</span>
@@ -60,22 +48,13 @@ export function renderHeader(container) {
                 ⌘K
               </kbd>
             </button>
-
-            <button id="header-nav-next" 
-              ${!nextId ? "disabled" : ""}
-              class="p-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-25 disabled:pointer-events-none transition-colors cursor-pointer shrink-0"
-              title="Câu sau (→)">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
 
           <!-- Phải: Random 🎲, Bookmark ⭐, Theme ☀️/🌙, Menu Phím tắt ⌨️ -->
           <div class="flex items-center gap-0.5 sm:gap-1">
             <!-- Nút Ngẫu Nhiên -->
             <button id="btn-random-puzzle"
-              class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
+              class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-orange-600 dark:hover:text-orange-400 transition-colors cursor-pointer"
               title="Câu ngẫu nhiên (Phím R)">
               <span class="text-base leading-none">🎲</span>
             </button>
@@ -120,21 +99,6 @@ export function renderHeader(container) {
     // Gắn sự kiện mở Spotlight
     container.querySelector("#btn-open-spotlight")?.addEventListener("click", () => {
       store.setDrawerOpen(true);
-    });
-
-    // Gắn sự kiện điều hướng Prev / Next
-    container.querySelector("#header-nav-prev")?.addEventListener("click", () => {
-      if (prevId) {
-        navigateToPuzzle(prevId);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
-
-    container.querySelector("#header-nav-next")?.addEventListener("click", () => {
-      if (nextId) {
-        navigateToPuzzle(nextId);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
     });
 
     // Gắn sự kiện Ngẫu nhiên
@@ -234,7 +198,7 @@ function showShortcutsModal() {
           <span>🔗</span>
           <span>Sao chép link chia sẻ</span>
         </button>
-        <button id="btn-ack-shortcuts" class="py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-colors cursor-pointer">
+        <button id="btn-ack-shortcuts" class="py-2 px-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl text-xs transition-colors cursor-pointer">
           Đóng
         </button>
       </div>

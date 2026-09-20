@@ -10,7 +10,7 @@ import { store } from "../store/state.js";
 import { showToast } from "../utils/dom.js";
 import { showConfirmModal } from "./ConfirmModal.js";
 
-export function renderScratchpad(container, puzzle) {
+export function renderScratchpad(container, puzzle, options = {}) {
   if (!puzzle) {
     container.innerHTML = "";
     return;
@@ -18,13 +18,18 @@ export function renderScratchpad(container, puzzle) {
 
   const noteText = store.getNote(puzzle.id);
   const drawingData = store.getDrawing(puzzle.id);
+  const isDesktop = window.innerWidth >= 1024;
   
-  // Tự động mở nếu đã có ghi chú hoặc hình vẽ trước đó
-  let isExpanded = Boolean(noteText || drawingData);
-  let activeTab = drawingData ? "canvas" : (noteText ? "text" : "canvas");
+  // Desktop: Mặc định luôn hiển thị bảng ghi chú nháp
+  // Mobile: Mở khi chọn tab scratchpad hoặc có sẵn dữ liệu
+  let isExpanded = isDesktop || Boolean(noteText || drawingData) || (store.activeMobileTab === "scratchpad") || Boolean(options.forceExpand);
+
+  // Desktop: Mặc định ưu tiên tab Ghi chú chữ (Text) để gõ phím suy luận
+  // Mobile: Mặc định Canvas vẽ tay
+  let activeTab = drawingData ? "canvas" : (noteText ? "text" : (isDesktop ? "text" : "canvas"));
 
   // Trạng thái công cụ vẽ
-  let currentColor = "#4f46e5"; // Indigo mặc định
+  let currentColor = "#f97316"; // Orange mặc định
   let currentLineWidth = 3;
   let isEraser = false;
   let undoStack = [];
@@ -35,50 +40,51 @@ export function renderScratchpad(container, puzzle) {
     const hasDrawing = Boolean(store.getDrawing(puzzle.id));
 
     container.innerHTML = `
-      <div class="border-t border-slate-100 dark:border-slate-800/80 pt-4 transition-all">
-        <!-- Thanh kích hoạt nháp tối giản -->
-        <div class="flex items-center justify-between gap-2">
-          <div class="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
+      <div class="space-y-4 transition-all">
+        <!-- Thanh tiêu đề nháp -->
+        <div class="flex items-center justify-between gap-2 pb-3 border-b border-slate-200/60 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-slate-800 dark:text-white text-xs sm:text-sm flex items-center gap-1.5 uppercase tracking-wide">
+              <span>✏️</span>
+              <span>Ghi Chú & Nháp Suy Luận</span>
+            </span>
             ${(hasNote || hasDrawing) ? `
-              <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">
+              <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold text-xs ml-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                Đã có bản nháp câu này
+                Đã lưu
               </span>
-            ` : `
-              <span class="hidden sm:inline">Cần vẽ hình hoặc ghi chú lập luận?</span>
-            `}
+            ` : ""}
           </div>
 
           <button id="btn-toggle-scratchpad" 
             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200/80 dark:hover:bg-slate-700 transition-colors cursor-pointer border border-slate-200/60 dark:border-slate-700/60"
             title="Bật/Tắt bảng nháp (Phím C)">
-            <span>✏️</span>
-            <span>${isExpanded ? 'Thu gọn nháp' : (hasNote || hasDrawing ? 'Mở lại bản nháp' : 'Mở bảng nháp')}</span>
+            <span>${isExpanded ? 'Thu gọn' : (hasNote || hasDrawing ? 'Mở lại nháp' : 'Mở nháp')}</span>
             <span class="text-slate-400 text-2xs font-mono">(C)</span>
           </button>
         </div>
 
-        <!-- Khu vực nội dung khi mở rộng -->
+        <!-- Khu vực nội dung khi mở rộng: Phẳng hoàn toàn, không lồng card -->
         ${isExpanded ? `
-          <div class="mt-3.5 space-y-3 p-4 rounded-2xl bg-slate-50/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 animate-in fade-in duration-200">
+          <div class="space-y-3 animate-in fade-in duration-200">
             
             <!-- Bộ chuyển Tab: Bảng vẽ / Ghi chú chữ -->
-            <div class="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800 pb-2.5">
-              <div class="flex items-center gap-1 bg-slate-200/60 dark:bg-slate-800/90 p-1 rounded-xl">
+            <div class="flex items-center justify-between pb-1">
+              <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800/90 p-1 rounded-xl">
                 <button id="tab-canvas-btn" 
                   class="px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                     activeTab === 'canvas' 
-                      ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-xs' 
+                      ? 'bg-white dark:bg-slate-700 text-orange-600 dark:text-orange-400 shadow-xs' 
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }">
                   <span>✏️</span>
                   <span>Bảng vẽ</span>
-                  ${hasDrawing ? '<span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>' : ''}
+                  ${hasDrawing ? '<span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>' : ''}
                 </button>
                 <button id="tab-text-btn" 
                   class="px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                     activeTab === 'text' 
-                      ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-xs' 
+                      ? 'bg-white dark:bg-slate-700 text-orange-600 dark:text-orange-400 shadow-xs' 
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }">
                   <span>📝</span>
@@ -101,13 +107,13 @@ export function renderScratchpad(container, puzzle) {
                 <div class="flex items-center gap-1">
                   <button id="tool-pen" 
                     class="px-2.5 py-1 rounded-lg text-xs font-bold cursor-pointer transition-all ${
-                      !isEraser ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
+                      !isEraser ? 'bg-orange-600 text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                     }" title="Bút vẽ">
                     ✏️ Vẽ
                   </button>
                   <button id="tool-eraser" 
                     class="px-2.5 py-1 rounded-lg text-xs font-bold cursor-pointer transition-all ${
-                      isEraser ? 'bg-indigo-600 text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
+                      isEraser ? 'bg-orange-600 text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                     }" title="Bút tẩy">
                     🧹 Tẩy
                   </button>
@@ -118,7 +124,7 @@ export function renderScratchpad(container, puzzle) {
                   <button data-color="${store.theme === 'dark' ? '#f8fafc' : '#0f172a'}" 
                     class="color-picker-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full ${store.theme === 'dark' ? 'bg-white border-slate-300' : 'bg-slate-900 border-white'} border-2 transition-transform cursor-pointer" 
                     title="${store.theme === 'dark' ? 'Trắng sáng' : 'Đen'}"></button>
-                  <button data-color="#6366f1" class="color-picker-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-indigo-500 border-2 border-white dark:border-slate-900 transition-transform cursor-pointer" title="Xanh Indigo"></button>
+                  <button data-color="#f97316" class="color-picker-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-orange-500 border-2 border-white dark:border-slate-900 transition-transform cursor-pointer" title="Cam Năng Động"></button>
                   <button data-color="#f59e0b" class="color-picker-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 transition-transform cursor-pointer" title="Vàng Hổ Phách"></button>
                   <button data-color="#10b981" class="color-picker-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 transition-transform cursor-pointer" title="Lục Emerald"></button>
                 </div>
@@ -161,7 +167,7 @@ export function renderScratchpad(container, puzzle) {
               <textarea id="scratchpad-input"
                 rows="4"
                 placeholder="Ghi nhanh lập luận, giả thiết, phép tính nháp hoặc dự đoán của bạn..."
-                class="w-full p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-indigo-500 rounded-xl text-sm outline-none transition-all resize-y text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 leading-relaxed">${store.getNote(puzzle.id)}</textarea>
+                class="w-full p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-orange-500 rounded-xl text-sm outline-none transition-all resize-y text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 leading-relaxed">${store.getNote(puzzle.id)}</textarea>
 
               <div class="flex items-center justify-between text-xs text-slate-400 dark:text-slate-500">
                 <span>💾 Tự động lưu</span>

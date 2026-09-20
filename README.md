@@ -61,7 +61,7 @@ http://localhost:8080
 - **Bộ đôi Vector Đề bài & Đáp án:**
   - `cau_xxx_vector.svg`: Thể hiện đề bài với ô trống mục tiêu viền nét đứt vàng hổ phách `#f59e0b` và dấu hỏi `?`.
   - `cau_xxx_dapan_vector.svg`: Thể hiện đáp án hoàn chỉnh với phương án đúng màu xanh ngọc Emerald `#10b981`, huy hiệu checkmark và làm mờ các phương án sai.
-- **Giao diện hiện đại (UI Premium):** Bảng màu Indigo Slate / Emerald / Amber sang trọng, bóng đổ đa tầng và triệt tiêu lỗi mất nét W3C SVG trên mọi trình duyệt.
+- **Giao diện hiện đại (UI Premium):** Bảng màu Vibrant Orange / Slate / Emerald sang trọng, bóng đổ đa tầng và triệt tiêu lỗi mất nét W3C SVG trên mọi trình duyệt.
 
 ---
 

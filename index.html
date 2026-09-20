@@ -184,7 +184,7 @@
       color: #cbd5e1;
     }
     .problem-content blockquote, .answer-content blockquote {
-      border-left: 4px solid #6366f1;
+      border-left: 4px solid #ea580c;
       padding-left: 1rem;
       color: #475569;
       font-style: italic;
@@ -192,7 +192,7 @@
     }
     .dark .problem-content blockquote, .dark .answer-content blockquote {
       color: #94a3b8;
-      border-left-color: #818cf8;
+      border-left-color: #fb923c;
     }
     .katex-overflow-wrapper {
       overflow-x: auto;
@@ -324,7 +324,7 @@
     html.dark .answer-content tbody tr:hover,
     html[data-theme="dark"] .problem-content tbody tr:hover,
     html[data-theme="dark"] .answer-content tbody tr:hover {
-      background-color: rgba(99, 102, 241, 0.08);
+      background-color: rgba(249, 115, 22, 0.08);
     }
 
     /* Chữ in đậm trong ô bảng */
@@ -395,26 +395,47 @@
       background-image: none !important;
       color: #f1f5f9 !important;
     }
-    /* Thẻ Flashcard Trung tâm: Màu tối sâu thanh nhã, tôn nổi văn bản */
-    @media (min-width: 640px) {
-      #puzzle-main-card {
-        background-color: #ffffff;
-        border-color: #e2e8f0;
-        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-      }
-      html.dark #puzzle-main-card, html[data-theme="dark"] #puzzle-main-card {
-        background-color: #0b0f19 !important;
-        border-color: rgba(255, 255, 255, 0.08) !important;
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
-      }
+    /* Thẻ Panel Split View & Mobile Panels */
+    #panel-problem, #panel-scratchpad, #panel-answer {
+      background-color: #ffffff;
+      border-color: #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
-    /* Trên Mobile: Giữ không gian đọc thông thoáng */
-    @media (max-width: 639px) {
-      #puzzle-main-card {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
+    html.dark #panel-problem, html[data-theme="dark"] #panel-problem,
+    html.dark #panel-scratchpad, html[data-theme="dark"] #panel-scratchpad,
+    html.dark #panel-answer, html[data-theme="dark"] #panel-answer {
+      background-color: #0b0f19 !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* Điều khiển chuyển đổi Segmented Tabs trên Mobile / Tablet dọc (< 1024px) */
+    @media (max-width: 1023px) {
+      #puzzle-main-wrapper[data-active-tab="problem"] #panel-problem {
+        display: block !important;
+      }
+      #puzzle-main-wrapper[data-active-tab="problem"] #panel-right,
+      #puzzle-main-wrapper[data-active-tab="problem"] #panel-scratchpad,
+      #puzzle-main-wrapper[data-active-tab="problem"] #panel-answer {
+        display: none !important;
+      }
+
+      #puzzle-main-wrapper[data-active-tab="answer"] #panel-right,
+      #puzzle-main-wrapper[data-active-tab="answer"] #panel-answer {
+        display: block !important;
+      }
+      #puzzle-main-wrapper[data-active-tab="answer"] #panel-problem,
+      #puzzle-main-wrapper[data-active-tab="answer"] #panel-scratchpad {
+        display: none !important;
+      }
+
+      #puzzle-main-wrapper[data-active-tab="scratchpad"] #panel-right,
+      #puzzle-main-wrapper[data-active-tab="scratchpad"] #panel-scratchpad {
+        display: block !important;
+      }
+      #puzzle-main-wrapper[data-active-tab="scratchpad"] #panel-problem,
+      #puzzle-main-wrapper[data-active-tab="scratchpad"] #panel-answer {
+        display: none !important;
       }
     }
 
@@ -431,6 +452,33 @@
     html.dark .katex, html[data-theme="dark"] .katex {
       color: #f8fafc;
     }
+    /* Thanh cuộn tinh gọn cho Cột Đề bài Sticky Split View */
+    .split-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+    html.dark .split-scroll,
+    html[data-theme="dark"] .split-scroll {
+      scrollbar-color: #334155 transparent;
+    }
+    .split-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .split-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .split-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    html.dark .split-scroll::-webkit-scrollbar-thumb,
+    html[data-theme="dark"] .split-scroll::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+    .split-scroll::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
     /* Ẩn scrollbar phụ */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -441,7 +489,7 @@
     }
   </style>
 </head>
-<body class="min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white bg-slate-50 text-slate-900 dark:bg-[#111827] dark:text-slate-100 pt-16 pb-12 transition-colors duration-200">
+<body class="min-h-full flex flex-col antialiased selection:bg-orange-500 selection:text-white bg-slate-50 text-slate-900 dark:bg-[#111827] dark:text-slate-100 pt-16 pb-24 sm:pb-28 transition-colors duration-200">
 
   <!-- Mount Point: Header -->
   <div id="header-mount"></div>
@@ -457,6 +505,9 @@
 
   <!-- Mount Point: Nút Nổi Ngẫu Nhiên FAB (Góc dưới bên phải) -->
   <div id="fab-mount"></div>
+
+  <!-- Mount Point: Sticky Footer Điều hướng Câu đố -->
+  <div id="bottom-bar-mount"></div>
 
   <!-- Module khởi động ứng dụng -->
   <script type="module" src="./js/main.js"></script>

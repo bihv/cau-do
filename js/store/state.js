@@ -28,6 +28,7 @@ class Store {
     this.selectedDifficulty = "all";
     this.selectedStatus = "all"; // 'all' | 'unsolved' | 'solved' | 'bookmarked'
     this.theme = "light"; // 'light' | 'dark'
+    this.activeMobileTab = "problem"; // 'problem' | 'answer' | 'scratchpad'
 
     // LocalStorage sets
     this.solvedSet = new Set();
@@ -149,9 +150,20 @@ class Store {
     if (this.currentPuzzleId !== num) {
       this.currentPuzzleId = num;
       this.isAnswerRevealed = false; // Luôn ẩn đáp án khi sang câu mới
+      this.activeMobileTab = "problem"; // Reset về tab đề bài khi sang câu mới
       this.saveToStorage();
       this.notify();
     }
+  }
+
+  // Chuyển đổi tab trên màn hình di động ('problem' | 'answer' | 'scratchpad')
+  setMobileTab(tab) {
+    if (tab === "answer") {
+      this.isAnswerRevealed = true; // Tự động mở lời giải ngay lập tức khi người dùng chọn tab Lời giải
+    }
+    const tabChanged = this.activeMobileTab !== tab;
+    this.activeMobileTab = tab;
+    this.notify();
   }
 
   // Bật / tắt đáp án
@@ -160,6 +172,10 @@ class Store {
       this.isAnswerRevealed = forceState;
     } else {
       this.isAnswerRevealed = !this.isAnswerRevealed;
+    }
+    // Khi mở đáp án, nếu đang ở mobile (< 1024px) thì tự động chuyển sang tab đáp án
+    if (this.isAnswerRevealed && window.innerWidth < 1024) {
+      this.activeMobileTab = "answer";
     }
     this.notify();
   }

@@ -35,13 +35,13 @@ export function showConfirmModal({
 
     const buttonStyles = {
       danger: "bg-rose-600 hover:bg-rose-700 text-white shadow-rose-500/20",
-      primary: "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-500/20",
+      primary: "bg-orange-600 hover:bg-orange-700 text-white shadow-orange-500/20",
       warning: "bg-amber-600 hover:bg-amber-700 text-white shadow-amber-500/20"
     };
 
     const iconBgStyles = {
       danger: "bg-rose-100 dark:bg-rose-500/20 text-rose-600 dark:text-rose-300 border border-transparent dark:border-rose-500/30",
-      primary: "bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 border border-transparent dark:border-indigo-500/30",
+      primary: "bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-300 border border-transparent dark:border-orange-500/30",
       warning: "bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-300 border border-transparent dark:border-amber-500/30"
     };
 

@@ -27,7 +27,7 @@ export function renderProblemBox(container, puzzle) {
       
       <!-- Dòng Metadata thanh lịch, chuẩn mực biên tập -->
       <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
-        <span class="font-bold text-indigo-600 dark:text-indigo-400">
+        <span class="font-bold text-orange-600 dark:text-orange-400">
           ${puzzle.phan}
         </span>
         <span>•</span>
@@ -49,7 +49,7 @@ export function renderProblemBox(container, puzzle) {
 
       <!-- Đoạn dẫn nhập tóm tắt trang nhã (nếu có) -->
       ${puzzle.tom_tat ? `
-        <div class="border-l-2 border-indigo-400/60 dark:border-indigo-500/60 pl-3.5 py-0.5 text-slate-600 dark:text-slate-300 text-sm sm:text-base italic leading-relaxed">
+        <div class="border-l-2 border-orange-400/60 dark:border-orange-500/60 pl-3.5 py-0.5 text-slate-600 dark:text-slate-300 text-sm sm:text-base italic leading-relaxed">
           ${puzzle.tom_tat}
         </div>
       ` : ""}

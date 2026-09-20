@@ -42,14 +42,14 @@ export function renderDisqusThread(container, puzzle) {
             </h3>
           </div>
           <span class="text-xs text-slate-400 dark:text-slate-500 hidden sm:inline font-medium">
-            Cùng trao đổi và tìm nhiều cách giải thú vị
+            Cùng trao đổi và tìm nhiều cách giải thú vị từ cộng đồng
           </span>
         </div>
         
-        <!-- Khung nhúng Disqus có khoảng thở rộng rãi -->
+        <!-- Khung nhúng Disqus tự động tải -->
         <div id="disqus_thread" class="min-h-[220px] pt-2 relative">
           <div id="disqus-placeholder" class="py-12 text-center text-slate-400 text-xs flex items-center justify-center gap-2">
-            <span class="w-4 h-4 border-2 border-indigo-300 border-t-indigo-600 rounded-full animate-spin"></span>
+            <span class="w-4 h-4 border-2 border-orange-300 border-t-orange-600 rounded-full animate-spin"></span>
             <span>Đang tải bình luận...</span>
           </div>
         </div>
@@ -108,7 +108,7 @@ export function renderDisqusThread(container, puzzle) {
     if (thread) {
       thread.innerHTML = `
         <div id="disqus-placeholder" class="py-12 text-center text-slate-400 text-xs flex items-center justify-center gap-2">
-          <span class="w-4 h-4 border-2 border-indigo-300 border-t-indigo-600 rounded-full animate-spin"></span>
+          <span class="w-4 h-4 border-2 border-orange-300 border-t-orange-600 rounded-full animate-spin"></span>
           <span>Đang nạp lại bình luận theo giao diện mới...</span>
         </div>
       `;
@@ -163,27 +163,6 @@ export function renderDisqusThread(container, puzzle) {
     }
   }
 
-  // Tự động Lazy-load khi cuộn tới vùng bình luận (IntersectionObserver)
-  if (!isDisqusScriptInjected) {
-    if ("IntersectionObserver" in window) {
-      if (currentObserver) currentObserver.disconnect();
-      currentObserver = new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0];
-          if (entry && entry.isIntersecting) {
-            currentObserver.disconnect();
-            currentObserver = null;
-            loadOrResetDisqus();
-          }
-        },
-        { rootMargin: "250px" } // Kích hoạt sớm khi cách khung 250px
-      );
-      currentObserver.observe(container);
-    } else {
-      setTimeout(loadOrResetDisqus, 500);
-    }
-  } else {
-    // Nếu script đã được nạp từ trước, reset hoặc reinit ngay khi đổi câu / đổi theme
-    loadOrResetDisqus();
-  }
+  // Tự động tải hoặc cập nhật Disqus ngay khi render
+  loadOrResetDisqus();
 }

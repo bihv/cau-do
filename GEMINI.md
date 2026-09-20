@@ -45,7 +45,7 @@ Trọng tâm cốt lõi hiện tại của dự án là **phát triển, tối �
 ### 2. Quy Định Bắt Buộc Khi Thao Tác (CRITICAL CONSTRAINTS)
 
 #### 2.1. Phát triển & Tinh chỉnh Giao diện Web:
-1. **Thiết kế cao cấp (UI Premium):** Tuân thủ bảng màu Slate / Indigo / Emerald hiện đại, bo góc mượt mà, shadow nhiều tầng, micro-interactions sống động.
+1. **Thiết kế cao cấp (UI Premium):** Tuân thủ bảng màu Slate / Orange (Vibrant Orange) / Emerald hiện đại, bo góc mượt mà, shadow nhiều tầng, micro-interactions sống động.
 2. **Khả năng tương thích responsive:** Giao diện phải hiển thị hoàn hảo trên cả điện thoại di động (mobile), máy tính bảng (tablet) và màn hình máy tính để bàn (desktop).
 3. **Phím tắt tiện dụng:** Đảm bảo hệ thống phím tắt (`←`, `→`, `Space`, `R`, `N`, `Esc`) luôn hoạt động nhịp nhàng và không xung đột khi người dùng đang nhập liệu trong ô tìm kiếm.
 

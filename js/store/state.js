@@ -47,7 +47,7 @@ class Store {
     this.applyTheme();
 
     try {
-      const res = await fetch("data/puzzles.json");
+      const res = await fetch("data/puzzles.json", { cache: "no-cache" });
       if (!res.ok) throw new Error("Không thể tải data/puzzles.json");
       this.puzzles = await res.json();
       console.log(`📚 Đã nạp ${this.puzzles.length} câu đố vào Store`);

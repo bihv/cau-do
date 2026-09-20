@@ -68,6 +68,24 @@ export function renderMath(container) {
 }
 
 /**
+ * Tự động bọc bảng HTML Markdown trong khung cuộn ngang mượt mà (responsive table wrapper)
+ * Giúp hiển thị đẹp, rõ ràng, không bị xô lệch trên cả Mobile và Desktop
+ * @param {HTMLElement} container
+ */
+export function enhanceTables(container) {
+  if (!container) return;
+  const tables = container.querySelectorAll("table");
+  tables.forEach((table) => {
+    if (!table.parentElement.classList.contains("table-responsive-wrapper")) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "table-responsive-wrapper";
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+  });
+}
+
+/**
  * Hiển thị thông báo nổi Toast thanh lịch, tự động biến mất
  * @param {string} message - Nội dung thông báo
  * @param {"success"|"info"|"warning"|"error"} type - Loại thông báo

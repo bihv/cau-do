@@ -5,7 +5,7 @@
  */
 
 import { store } from "../store/state.js";
-import { renderMath, enhanceImagesWithZoom, showToast, safeParseMarkdown } from "../utils/dom.js";
+import { renderMath, enhanceImagesWithZoom, enhanceTables, showToast, safeParseMarkdown } from "../utils/dom.js";
 
 export function renderAnswerSection(container, puzzle) {
   if (!puzzle) {
@@ -95,6 +95,9 @@ export function renderAnswerSection(container, puzzle) {
 
   // Render toán học KaTeX trong lời giải nếu có
   renderMath(container);
+
+  // Tối ưu hóa hiển thị bảng dữ liệu Markdown
+  enhanceTables(container);
 
   // Nâng cấp hình ảnh trong lời giải: click để phóng to
   enhanceImagesWithZoom(container, (src) => store.openZoomModal(src), ".answer-content img");
